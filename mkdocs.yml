@@ -30,13 +30,13 @@ theme:
       toggle:
         icon: material/toggle-switch-off-outline 
         name: Switch to dark mode
-      primary: blue
-      accent: purple 
+      primary: grey
+      accent: light blue 
     - scheme: slate 
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode    
-      primary: blue
+      primary: grey
       accent: lime
 
 
@@ -70,5 +70,19 @@ markdown_extensions:
   - pymdownx.betterem:
       smart_enable: all
   
+nav:
+  - Home: index.md
+  - database:
+    - Overview: database/index.md 
+    - SQL: database/SQL.md
+  - Django:
+    - Overview: Django/index.md  
+    - Django: Django/Django.md
+  - js:
+    - Overview: js/durgajs.md
+    - DOM: js/dom.md
+    - JQuery: js/jQuery.md
+
+      
 copyright: |
   &copy; 2024 <a href="https://github.com/ashishbindra2"  target="_blank" rel="noopener">Ashish Bindra</a>
