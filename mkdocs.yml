@@ -74,7 +74,15 @@ nav:
   - Home: index.md
   - database:
     - Overview: database/index.md 
-    - SQL: database/SQL.md
+    - View: database/view.md
+    - index: database/indexes.md
+    - Equi-join: database/Equi.md
+    - self-join: database/self_join.md
+    - sub-query: database/subqueries.md
+    - FAQ SQL: database/sql faq.md
+    - query: database/query.md
+    - practice: database/practice.md
+    - interview: database/interview.md
   - Django:
     - Overview: Django/index.md  
     - Django: Django/Django.md

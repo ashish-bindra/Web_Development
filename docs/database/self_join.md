@@ -55,7 +55,6 @@ INSERT INTO students (ename, city) VALUES ('johai', 'delhi');
 SELECT * FROM students;
 
 ```
-
         * sqlite:///HR.db
         Done.
         id ename city
