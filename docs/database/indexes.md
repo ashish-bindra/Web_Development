@@ -5,7 +5,7 @@
 - to select how many tables are there write `select * from tab;`
 - to check that whater primary key is ablable in colunm or not
     `select constraint_name from user_constraints where table_name = 'CUST_ACT_DTLS'`
-- ![alt text](download.png)
+- ![download.png](images/download.png)
 - to clear screen use cl scr;
 
 ## To check index information
@@ -15,5 +15,6 @@
 - all views information is maintained under user_views
 - simlarly all index information is maintained under user_indexes.
 
-#### What are columns in the system define tables user_indexes
+## What are columns in the system define tables user_indexes
+
 `desc user_indexes`

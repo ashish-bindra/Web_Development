@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS Student (
     (208, 'Navleen', 'Kaur', 7.00, '2021-09-01 06:30:00', 'Mathematics');
 ```
 
-  ![alt text](download-1.png)
+  ![alt text](images/download-1.png)
 
 ## Create the Program table
 
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS Student (
     (203, 'Biology', '2021-09-01 00:00:00');
 ```
 
-![alt text](download-3.png)
+![alt text](images/download-3.png)
 
 ## Create the Scholarship table
 
@@ -89,7 +89,7 @@ CREATE TABLE IF NOT EXISTS Student (
     (201, 4000, '2021-10-15 00:00:00');
 ```
 
-![alt text](download-4.png)
+![alt text](images/download-4.png)
 
 ## GFG Questions
 
@@ -99,7 +99,7 @@ CREATE TABLE IF NOT EXISTS Student (
         SELECT upper(FIRST_NAME) as STUDENT_NAME FROM Student
     ```
 
-    ![alt text](1.png)
+    ![alt text](images/1.png)
 
 2. ***Write a SQL query to fetch unique values of MAJOR Subjects from Student table.***
 
@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS Student (
         SELECT MAJOR FROM Student GROUP By MAJOR;
     ```
 
-    ![alt text](2.png)
+    ![alt text](images/2.png)
 
 3. ***Write a SQL query to print the first 3 characters of FIRST_NAME from Student table.***
 
@@ -117,7 +117,7 @@ CREATE TABLE IF NOT EXISTS Student (
         SELECT SUBSTRING(FIRST_NAME, 1, 3)  FROM Student;
     ```
 
-    ![alt text](3.png)
+    ![alt text](images/3.png)
 
 4. ***Write a SQL query to find the position of alphabet (‘a’) int the first name column ‘Shivansh’ from Student table.***
 
@@ -125,7 +125,7 @@ CREATE TABLE IF NOT EXISTS Student (
         SELECT INSTR(FIRST_NAME, 'a') FROM Student Where FIRST_NAME= "Shivansh"
     ```
 
-    ![alt text](4.png)
+    ![alt text](images/4.png)
 
 5. ***Write a SQL query that fetches the unique values of MAJOR Subjects from Student table and print its length.***
 
@@ -134,7 +134,7 @@ CREATE TABLE IF NOT EXISTS Student (
         SELECT DISTINCT MAJOR, LENGTH(MAJOR) FROM Student;
     ```
 
-    ![alt text](5.png)
+    ![alt text](images/5.png)
 
 6. ***Write a SQL query to print FIRST_NAME from the Student table after replacing ‘a’ with ‘A’***
 
@@ -142,7 +142,7 @@ CREATE TABLE IF NOT EXISTS Student (
         SELECT replace(FIRST_NAME,'a','A') FROM Student;
     ```
 
-    ![alt text](6.png)
+    ![alt text](images/6.png)
 
 7. ***Write a SQL query to print the FIRST_NAME and LAST_NAME from Student table into single column COMPLETE_NAME.***
 
@@ -151,7 +151,7 @@ CREATE TABLE IF NOT EXISTS Student (
 
     ```
 
-    ![alt text](7.png)
+    ![alt text](images/7.png)
 
 8. ***Write a SQL query to print all Student details from Student table order by FIRST_NAME Ascending and MAJOR Subject descending.***
 
@@ -160,7 +160,7 @@ CREATE TABLE IF NOT EXISTS Student (
 
     ```
 
-    ![alt text](8.png)
+    ![alt text](images/8.png)
 
 9. ***Write a SQL query to print details of the Students with the FIRST_NAME as ‘Prem’ and ‘Shivansh’ from Student table***
 
@@ -169,7 +169,7 @@ CREATE TABLE IF NOT EXISTS Student (
         SELECT * FROM Student WHERE FIRST_NAME = 'Prem' or FIRST_NAME = "Shivansh";
     ```
 
-    ![alt text](9.png)
+    ![alt text](images/9.png)
 
 10. ***Write a SQL query to print details of the Students excluding FIRST_NAME as ‘Prem’ and ‘Shivansh’ from Student table.***
 
@@ -178,7 +178,7 @@ CREATE TABLE IF NOT EXISTS Student (
     SELECT * FROM Student WHERE FIRST_NAME NOT IN ("Prem","Shivansh");
     ```
 
-    ![alt text](10.png)
+    ![alt text](images/10.png)
 
 11. ***Write a SQL query to print details of the Students whose FIRST_NAME ends with ‘a’.***
 
@@ -186,7 +186,7 @@ CREATE TABLE IF NOT EXISTS Student (
     SELECT * FROM Student WHERE FIRST_NAME LIKE "%a";
     ```
 
-    ![alt text](11.png)
+    ![alt text](images/11.png)
 
 12. ***Write an SQL query to print details of the Students whose FIRST_NAME ends with ‘a’ and contains six alphabets.***
 
@@ -200,7 +200,7 @@ CREATE TABLE IF NOT EXISTS Student (
     SELECT * FROM Student WHERE GPA BETWEEN 9.00 AND 9.99;
     ```
 
-    ![alt text](13.png)
+    ![alt text](images/13.png)
 
 14. ***Write an SQL query to fetch the count of Students having Major Subject ‘Computer Science’.***
 
@@ -208,7 +208,7 @@ CREATE TABLE IF NOT EXISTS Student (
     SELECT MAJOR,COUNT(MAJOR) as TOTAL FROM Student WHERE MAJOR ="Computer Science";
     ```
 
-    ![alt text](14.png)
+    ![alt text](images/14.png)
 
 15. ***Write an SQL query to fetch Students full names with GPA >= 8.5 and <= 9.5.***
 
@@ -216,7 +216,7 @@ CREATE TABLE IF NOT EXISTS Student (
     SELECT FIRST_NAME || ' ' || LAST_NAME AS FULL_NAME FROM Student WHERE GPA >= 8.5 AND GPA<= 9.5;
     ```
 
-    ![alt text](15.png)
+    ![alt text](images/15.png)
 
 16. ***Write an SQL query to fetch the no. of Students for each MAJOR subject in the descending order.***
 
@@ -224,7 +224,7 @@ CREATE TABLE IF NOT EXISTS Student (
     SELECT MAJOR, count(MAJOR) as TOTAL  FROM Student GROUP BY  MAJOR ORDER BY TOTAL DESC;
     ```
 
-    ![alt text](16.png)
+    ![alt text](images/16.png)
 
 17. ***Display the details of students who have received scholarships, including their names, scholarship amounts, and scholarship dates.***
 
@@ -234,7 +234,7 @@ CREATE TABLE IF NOT EXISTS Student (
     ON  st.STUDENT_ID = sc.STUDENT_REF_ID;
     ```
 
-    ![alt text](17.png)
+    ![alt text](images/17.png)
 
 18. ***Write an SQL query to show only odd rows from Student table.***
 
@@ -243,7 +243,7 @@ CREATE TABLE IF NOT EXISTS Student (
     SELECT * FROM Student where STUDENT_ID%2!=0;
     ```
 
-    ![alt text](18.png)
+    ![alt text](images/18.png)
 
 19. ***Write an SQL query to show only even rows from Student table.***
 
@@ -251,7 +251,7 @@ CREATE TABLE IF NOT EXISTS Student (
      SELECT * FROM Student where STUDENT_ID%2=0;
     ```
 
-    ![alt text](19.png)
+    ![alt text](images/19.png)
 
 20. ***List all students and their scholarship amounts if they have received any. If a student has not received a scholarship, display NULL for the scholarship details.***
 
@@ -271,7 +271,7 @@ CREATE TABLE IF NOT EXISTS Student (
         Scholarship ON Student.STUDENT_ID = Scholarship.STUDENT_REF_ID;
     ```
 
-    ![alt text](20.png)
+    ![alt text](images/20.png)
 
 21. ***Write an SQL query to show the top n (say 5) records of Student table order by descending GPA.***
 
@@ -279,7 +279,7 @@ CREATE TABLE IF NOT EXISTS Student (
     SELECT * FROM Student ORDER by GPA DESC limit 5
     ```
 
-    ![alt text](21.png)
+    ![alt text](images/21.png)
 
 22. ***Write an SQL query to determine the nth (say n=5) highest GPA from a table.***
 
@@ -287,7 +287,7 @@ CREATE TABLE IF NOT EXISTS Student (
     SELECT * FROM Student ORDER by GPA DESC limit 4,1
     ```
 
-    ![alt text](22.png)
+    ![alt text](images/22.png)
 
 23. ***Write an SQL query to determine the 5th highest GPA without using LIMIT keyword.***
 
@@ -308,7 +308,7 @@ CREATE TABLE IF NOT EXISTS Student (
     WHERE row_num = 5;
     ```
 
-    ![alt text](23.png)
+    ![alt text](images/23.png)
 
 24. Write an SQL query to fetch the list of Students with the same GPA.
 
@@ -323,7 +323,7 @@ CREATE TABLE IF NOT EXISTS Student (
     ORDER BY s1.GPA;
     ```
 
-    ![alt text](24.png)
+    ![alt text](images/24.png)
 
 25. Write an SQL query to show the second highest GPA from a Student table using sub-query.
 
@@ -338,7 +338,7 @@ CREATE TABLE IF NOT EXISTS Student (
     SELECT * FROM Student ORDER BY GPA DESC LIMIT 1,1
     ```
 
-    ![alt text](25.png)
+    ![alt text](images/25.png)
 
 26. Write an SQL query to show one row twice in results from a table.
 
@@ -348,7 +348,7 @@ CREATE TABLE IF NOT EXISTS Student (
     SELECT* FROM Student ORDER BY STUDENT_ID;
     ```
 
-    ![alt text](26.png)
+    ![alt text](images/26.png)
 
 27. Write an SQL query to list STUDENT_ID who does not get Scholarship.
 
@@ -357,7 +357,7 @@ CREATE TABLE IF NOT EXISTS Student (
     (SELECT STUDENT_REF_ID FROM Scholarship)
     ```
 
-    ![alt text](27.png)
+    ![alt text](images/27.png)
 
 28. Write an SQL query to fetch the first 50% records from a table.
 
@@ -371,7 +371,7 @@ CREATE TABLE IF NOT EXISTS Student (
     WHERE pct_rank <= 0.5;
     ```
 
-    ![alt text](28.png)
+    ![alt text](images/28.png)
 
 30. Write an SQL query to show all MAJOR subject along with the number of people in there.
 
@@ -379,7 +379,7 @@ CREATE TABLE IF NOT EXISTS Student (
     SELECT MAJOR, count(MAJOR) as total  FROM Student group by MAJOR ORDER by total DESC
     ```
 
-    ![alt text](30.png)
+    ![alt text](images/30.png)
 
 31. Write an SQL query to show the last record from a table.
 
@@ -387,7 +387,7 @@ CREATE TABLE IF NOT EXISTS Student (
     SELECT * FROM Student WHERE STUDENT_ID = (select max(STUDENT_ID) from student )
     ```
 
-    ![alt text](31.png)
+    ![alt text](images/31.png)
 
 32. Write an SQL query to fetch the first row of a table.
 
@@ -397,7 +397,7 @@ CREATE TABLE IF NOT EXISTS Student (
     SELECT * FROM Student WHERE STUDENT_ID = (SELECT MIN(STUDENT_ID) FROM Student);
     ```
 
-    ![alt text](32.png)
+    ![alt text](images/32.png)
 
 33. Write an SQL query to fetch the last five records from a table.
 
@@ -413,7 +413,7 @@ CREATE TABLE IF NOT EXISTS Student (
     ORDER BY STUDENT_ID;
     ```
 
-    ![alt text](33.png)
+    ![alt text](images/33.png)
 
 34. Write an SQL query to fetch three max GPA from a table using co-related subquery.
 
@@ -424,7 +424,7 @@ CREATE TABLE IF NOT EXISTS Student (
     ORDER BY S1.GPA DESC;
     ```
 
-    ![alt text](34.png)
+    ![alt text](images/34.png)
 
 35. Write an SQL query to fetch three min GPA from a table using co-related subquery.
 
@@ -434,7 +434,7 @@ CREATE TABLE IF NOT EXISTS Student (
     ORDER BY S1.GPA;
     ```
 
-    ![alt text](35.png)
+    ![alt text](images/35.png)
 
 36. Write an SQL query to fetch nth max GPA from a table.
 
@@ -445,7 +445,7 @@ CREATE TABLE IF NOT EXISTS Student (
     WHERE n >= (SELECT COUNT(DISTINCT GPA) FROM Student S2 WHERE S1.GPA <= S2.GPA) ORDER BY S1.GPA DESC;
     ```
 
-    ![alt text](36.png)
+    ![alt text](images/36.png)
 
 37. Write an SQL query to fetch MAJOR subjects along with the max GPA in each of these MAJOR subjects.
 
@@ -455,7 +455,7 @@ CREATE TABLE IF NOT EXISTS Student (
     SELECT MAJOR, MAX(GPA) as MAXGPA FROM Student GROUP BY MAJOR;
     ```
 
-    ![alt text](37.png)
+    ![alt text](images/37.png)
 
 38. Write an SQL query to fetch the names of Students who has highest GPA.
 
@@ -465,7 +465,7 @@ CREATE TABLE IF NOT EXISTS Student (
     SELECT FIRST_NAME,GPA FROM Student WHERE GPA =(SELECT MAX(GPA) FROM Student)
     ```
 
-    ![alt text](38.png)
+    ![alt text](images/38.png)
 
 39. Write an SQL query to show the current date and time.
 
@@ -475,7 +475,7 @@ CREATE TABLE IF NOT EXISTS Student (
     SELECT CURRENT_DATE AS CurrentDateTime;
     ```
 
-    ![alt text](39.png)
+    ![alt text](images/39.png)
 
 40. Write a query to create a new table which consists of data and structure copied from the other table (say Student) or clone the table named Student.
 
@@ -483,7 +483,7 @@ CREATE TABLE IF NOT EXISTS Student (
     CREATE TABLE clone AS SELECT * FROM Student
     ```
 
-    ![alt text](40.png)
+    ![alt text](images/40.png)
 
 41. Write an SQL query to update the GPA of all the students in ‘Computer Science’ MAJOR subject to 7.5.
 
@@ -491,7 +491,7 @@ CREATE TABLE IF NOT EXISTS Student (
     UPDATE Student SET GPA = 7.5 WHERE MAJOR = "Computer Science"
     ```
 
-    ![alt text](41.png)
+    ![alt text](images/41.png)
 
 42. Write an SQL query to find the average GPA for each major.
 
@@ -499,7 +499,7 @@ CREATE TABLE IF NOT EXISTS Student (
     SELECT MAJOR,avg(GPA) FROM Student GROUP BY MAJOR
     ```
 
-    ![alt text](42.png)
+    ![alt text](images/42.png)
 
 43. Write an SQL query to show the top 3 students with the highest GPA.
 
@@ -513,7 +513,7 @@ CREATE TABLE IF NOT EXISTS Student (
     SELECT MAJOR,count(GPA) AS HIGEST_GPA FROM Student WHERE GPA > 7.5 GROUP BY MAJOR
     ```
 
-    ![alt text](44.png)
+    ![alt text](images/44.png);
 
 45. Write an SQL query to find the students who have the same GPA as ‘Shivansh Mahajan’.
 
@@ -527,4 +527,4 @@ CREATE TABLE IF NOT EXISTS Student (
     AND LAST_NAME = 'Mahajan');
     ```
 
-    ![alt text](45.png)
+    ![alt text](images/45.png)

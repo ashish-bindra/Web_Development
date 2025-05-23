@@ -1,3 +1,5 @@
+# subquery
+
 ## if you want to fetch multiple datatypes of data from multiple tables we can write join queries
 
 - unnecessarily don't write any join query it will degrate your database performanceor it will decrease your query level performance

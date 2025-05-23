@@ -74,29 +74,32 @@ If we executedthe queries n thime the it will hit n times
 
 ### connect to db as a DBA
 
-![alt text](conn.png)
+![conn](images/conn.png)
 `conn`
 
 ### Take permision(Grant permintion)
 
 `grant create view to dinesh;`
 
-![alt text](grant.png)
+![alt text](images/grant.png)
 
 ### connect to user
 
 `conn dinesh`
-![alt text](connect.png)
+![alt text](images/connect.png)
 
 ## Simple View
 
 ### Create a view
 
-`create view vw_salesman`<br>
-`as`<br>
-`select * from emp where job='SALESMAN`<br>
-`order by sal;`<br>
-![alt text](<create view.png>)
+```sql
+create view vw_salesman
+as
+select * from emp where job='SALESMAN'
+order by sal;
+```
+
+![alt text](<images/create view.png>)
 
 ####
 
@@ -110,31 +113,36 @@ insted of selecting data from table once you crate a view you can directly selec
 
 - all salesman's names and salaries
     `select ename,sal from vw_salesman;`
-![alt text](select.png)
+![alt text](images/select.png)
 - Any new sales man information inserted into table that is reflected into view
 
 ## decc
 
 `desc emp`
 
-![alt text](desc.png)
+![alt text](images/desc.png)
 
 ## Insert one record into the table
 
 - Salesman record we are inserting into table EMP
 - if he is salesman then only it will be  revelected to view onther job should not be reflected
 
-![alt text](insert.png)
+![alt text](images/insert.png)
 
-- `insert into emp values`<br>
-   `(1234,'honey','SALESMAN',null,'23-oct-24',2300,100,30);`
+```sql
+insert into emp values
+(1234,'honey','SALESMAN',null,'23-oct-24',2300,100,30);
+```
 
-####
+-----
 
-- `select ename,sal,job from emp where job= 'SALESMAN';`
-![alt text](<select saleman.png>)
+```sql
+select ename,sal,job from emp where job= 'SALESMAN';
+```
 
-![alt text](<select view selamen.png>)
+![alt text](<images/select saleman.png>)
+
+![alt text](<images/select view selamen.png>)
 
 - We didnot make the insert opration on the view
 - we make the operation on table
@@ -150,23 +158,23 @@ insted of selecting data from table once you crate a view you can directly selec
 - if we update view i.e reflected into table.
 -
 
-![alt text](update.png)
+![alt text](images/update.png)
 
 ## delete record from view
 
 if i delete a row it reflected in the table. from the tabel also it will be deleted
 
-![alt text](delete.png)
+![alt text](images/delete.png)
 
 - this is the simple view which is also called as updateable view
 - updateable view means on the view you are appling update,delete,insert command as a result table is affected
 - if you did somthing in the table the respected data will be reflected into view also automatically beacuse view maintains dynamic data
 
-![alt text](tab.png)
+![alt text](images/tab.png)
 
 ## Composit view
 
 ### Q what is composite view how can i create
 
-![alt text](<view cust.png>)
-![alt text](<view full cust.png>)
+![alt text](<images/view cust.png>)
+![alt text](<images/view full cust.png>)
