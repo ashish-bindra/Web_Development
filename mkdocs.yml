@@ -76,7 +76,7 @@ nav:
     - Overview: database/index.md 
     - View: database/view.md
     - index: database/indexes.md
-    - Equi-join: database/Equi.md
+    - Equi-join: database/equi.md
     - self-join: database/self_join.md
     - sub-query: database/subqueries.md
     - FAQ SQL: database/sql faq.md
