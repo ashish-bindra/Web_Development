@@ -80,6 +80,7 @@ nav:
     - self-join: database/self_join.md
     - sub-query: database/subqueries.md
     - FAQ SQL: database/sql faq.md
+    - DA SQL Grouping: database/DA_SQL_Sorting_Grouping.md
     - query: database/query.md
     - practice: database/practice.md
     - interview: database/interview.md
