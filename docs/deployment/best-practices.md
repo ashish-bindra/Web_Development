@@ -250,3 +250,77 @@ Let's assume your application stack consists of a two web servers and a database
 
 You can write the `CMD` and `ENTRYPOINT` commands in your Dockerfiles in both array (exec) or string (shell) formats:
 
+```
+# array (exec)
+CMD ["gunicorn", "-w", "4", "-k", "uvicorn.workers.UvicornWorker", "main:app"]
+
+# string (shell)
+CMD "gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app"
+```
+
+Both are correct and achieve nearly the same thing; however, you should use the exec format whenever possible
+
+- Make sure you're using the exec form of CMD and ENTRYPOINT in your Dockerfile.
+For example use ["program", "arg1", "arg2"] not "program arg1 arg2". Using the string form causes Docker to run your process using bash, which doesn't handle signals properly.
+- Compose always uses the JSON form, so don't worry if you override the command or entrypoint in your Compose file.
+
+So, since most shells don't process signals to child processes, if you use the shell format, CTRL-C (which generates a SIGTERM) may not stop a child process.
+
+```
+FROM ubuntu:24.04
+
+# BAD: shell format
+ENTRYPOINT top -d
+
+# GOOD: exec format
+ENTRYPOINT ["top", "-d"]
+```
+
+Try both of these. Take note that with the shell format flavor, CTRL-C won't kill the process. Instead, you'll see ^C^C^C^C^C^C^C^C^C^C^C.
+
+Another caveat is that the shell format carries the PID of the shell, not the process itself.
+
+```
+# array format
+root@18d8fd3fd4d2:/app# ps ax
+  PID TTY      STAT   TIME COMMAND
+    1 ?        Ss     0:00 python manage.py runserver 0.0.0.0:8000
+    7 ?        Sl     0:02 /usr/local/bin/python manage.py runserver 0.0.0.0:8000
+   25 pts/0    Ss     0:00 bash
+  356 pts/0    R+     0:00 ps ax
+
+
+# string format
+root@ede24a5ef536:/app# ps ax
+  PID TTY      STAT   TIME COMMAND
+    1 ?        Ss     0:00 /bin/sh -c python manage.py runserver 0.0.0.0:8000
+    8 ?        S      0:00 python manage.py runserver 0.0.0.0:8000
+    9 ?        Sl     0:01 /usr/local/bin/python manage.py runserver 0.0.0.0:8000
+   13 pts/0    Ss     0:00 bash
+  342 pts/0    R+     0:00 ps ax
+```
+
+## Understand the Difference Between ENTRYPOINT and CMD
+
+Should I use ENTRYPOINT or CMD to run container processes?
+
+There are two ways to run commands in a container:
+
+```
+CMD ["gunicorn", "config.wsgi", "-b", "0.0.0.0:8000"]
+
+# and
+
+ENTRYPOINT ["gunicorn", "config.wsgi", "-b", "0.0.0.0:8000"]
+```
+
+- CMD is easily overridden. If you run docker run <image_name> uvicorn config.asgi, the above CMD gets replaced by the new arguments -- i.e., uvicorn config.asgi.
+
+- to override the ENTRYPOINT command, one must specify the --entrypoint option:
+
+```
+docker run --entrypoint uvicorn config.asgi <image_name>
+
+```
+
+it's recommended to use ENTRYPOINT over CMD to prevent accidentally overriding the command.

@@ -91,7 +91,10 @@ nav:
     - Overview: js/durgajs.md
     - DOM: js/dom.md
     - JQuery: js/jQuery.md
-
+  - Fastapi:
+    - Overview: Fastapi/index.md
+    - celery: Fastapi/celery.md
+    - Async_api: Fastapi/asynchronous_api.md
       
 copyright: |
   &copy; 2024 <a href="https://github.com/ashishbindra2"  target="_blank" rel="noopener">Ashish Bindra</a>
