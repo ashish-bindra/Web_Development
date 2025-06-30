@@ -95,6 +95,8 @@ nav:
     - Overview: FastApi/index.md
     - celery: FastApi/celery.md
     - Async_api: FastApi/asynchronous_api.md
-      
+  - Pydantic: pydantic.md    
+  - imp: important.md
+  - revision: revision.md
 copyright: |
   &copy; 2024 <a href="https://github.com/ashishbindra2"  target="_blank" rel="noopener">Ashish Bindra</a>
