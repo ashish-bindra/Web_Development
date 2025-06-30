@@ -1,0 +1,5 @@
+title: Django
+collapse: true
+order:
+  - index.md
+  - Django.md
