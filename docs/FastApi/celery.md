@@ -98,8 +98,6 @@ pip install redis
 ### Example Docker Compose snippet for Redis
 
 ```yaml
-version: '3'
-
 services:
   redis:
     image: redis:latest
@@ -346,7 +344,7 @@ task.result
 
 config.py
 
-```
+```py
 import os
 import pathlib
 from functools import lru_cache
