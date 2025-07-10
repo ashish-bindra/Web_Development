@@ -8,7 +8,7 @@ Their main difference is in the operating system.
 
 While containers uses the host's operating system, each virtual machine has its own guest operating system on top of the host's operating system.
 
-![alt text](vm_vs_docker.png)
+![alt text](img/vm_vs_docker.png)
 
  if you have an application that needs to run on different operating systems, a virtual machine is the way to go.
 
@@ -60,7 +60,7 @@ Docker Desktop is an integrated development environment for Docker containers
 
 A Dockerfile is used to create a Docker image, which is then used to create (multiple) Docker containers.
 
-![alt text](docker-architecture.webp)
+![alt text](img/docker-architecture.webp)
 
 ## Dockerfile
 
@@ -510,6 +510,7 @@ Using a Dockerfile as a blueprint, you build an image. Images can then be used t
 
 
 imortant link
+
 https://docs.docker.com/get-started/docker-overview/
 https://docs.docker.com/engine/storage/
 https://docs.docker.com/compose/
