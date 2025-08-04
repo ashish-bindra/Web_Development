@@ -496,7 +496,6 @@ def create_celery():
 ```py
 from celery import shared_task
 
-
 @shared_task
 def divide(x, y):
     import time

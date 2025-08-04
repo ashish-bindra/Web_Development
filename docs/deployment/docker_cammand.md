@@ -156,3 +156,45 @@ docker-compose build <service-name>
 ### Down and remove images
 
 `docker-compose down --rmi <all|local>`
+
+1. Check Docker Disk Usage
+Before taking action, check how much space Docker is actually using by running:
+
+```
+docker system df
+```
+
+2. Remove Unused Containers
+Stopped containers take up space even if they’re not running. Remove them with:
+
+```
+docker container prune
+```
+
+3. Delete Unused Images
+Docker images pile up over time. To remove unused images:
+
+```
+docker image prune -a
+```
+
+4. Remove Unused Volumes
+If volumes are not actively being used, they still consume space. Clean them up with:
+
+```
+If volumes are not actively being used, they still consume space. Clean them up with:
+```
+
+5. Clear Docker Build Cache
+If you frequently build Docker images, old build caches may be taking up space:
+
+```
+docker builder prune
+```
+
+✅ Monitor Docker Disk Usage
+Check storage usage once a month with:
+
+```
+docker system df
+```

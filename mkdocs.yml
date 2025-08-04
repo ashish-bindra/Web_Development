@@ -95,6 +95,8 @@ nav:
     - Overview: FastApi/index.md
     - celery: FastApi/celery.md
     - Async_api: FastApi/asynchronous_api.md
+  - tools:
+    - poetry: tools/poetry.md
   - Pydantic: pydantic.md    
   - imp: important.md
   - revision: revision.md
