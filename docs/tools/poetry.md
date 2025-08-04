@@ -145,7 +145,14 @@ poetry install
 poetry install -no-root
 ```
 
+## enviroment
+
+```sh
+poetry env list 
+poetry env use "py -3.13"
+
 > `poetry shell` to cmd to go that virtal env or activate virtual env
+```
 
 ## Handle version
 
