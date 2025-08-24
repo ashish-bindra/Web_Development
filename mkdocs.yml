@@ -85,6 +85,7 @@ nav:
     - practice: database/practice.md
     - interview praticale: database/interview_pratical.md
     - interview theory: database/interview_theory.md
+    - radis: database/radis.md
   - Django:
     - Overview: Django/index.md  
     - Django: Django/Django.md
