@@ -83,7 +83,8 @@ nav:
     - DA SQL Grouping: database/DA_SQL_Sorting_Grouping.md
     - query: database/query.md
     - practice: database/practice.md
-    - interview: database/interview.md
+    - interview praticale: database/interview_pratical.md
+    - interview theory: database/interview_theory.md
   - Django:
     - Overview: Django/index.md  
     - Django: Django/Django.md

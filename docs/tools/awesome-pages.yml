@@ -3,3 +3,4 @@ collapse: true
 order:
   - index.md
   - poetry.md
+  - uv.md

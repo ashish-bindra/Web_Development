@@ -140,3 +140,5 @@ whenver we need to access a recource we need to call db everytime to validate
 - we sould avoid  i/o operation less
 
 <https://freeapi.app>
+
+https://devchecklists.com/celery-tasks-checklist/
