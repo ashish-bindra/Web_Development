@@ -8,7 +8,7 @@
 - Built in replication(Master-slave server)
 
 **Radis:** Data ia not an ordeing database
-we are sing radis as cache as a streming engine and more
+we are uing radis as cache, as a message broker as a streming engine and more
 
 Q1. whiat is Radis?
 Q2. Why use Radis?
@@ -18,8 +18,18 @@ Deep driven radis
 pic
 
 Q1. What is Radis
-Radis is in memory database which mean it store data in Random Access(RAM). By doing that its read and write speed is faster
+Radis is in-memory database which mean it store data in Random Access(RAM).
+By doing that its read and write speed is faster
 
+Tradistional DB like MySQL, MongoDB for read and write purpose they are using computer disk
+
+Modren ssp took zoom to read data but when we using Ram it took zons that why radis se RAM as perimary storage thats why we
+can able to access data very fast.
+
+- It has disk persistance it an distional feature for durability behind the scan radis  store shape short of data in ssd/hdd so when server restart we wont loss our data
+
+- Thsi adavantage you have seen in preformance we are using cashing system  as radis
+so in  see your can access deler by application by doing so user experce is else impoved and primary database load also reduces
 
 ## Data types that radis supports
 
