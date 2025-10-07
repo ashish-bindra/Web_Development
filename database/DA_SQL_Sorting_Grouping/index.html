@@ -1,0 +1,3677 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../sql%20faq/">
+      
+      
+        <link rel="next" href="../query/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>DA SQL Grouping - Web Development Tutorials</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#grouping-filtring" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Web Development Tutorials" class="md-header__button md-logo" aria-label="Web Development Tutorials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Web Development Tutorials
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              DA SQL Grouping
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  database
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Django/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Django
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../js/durgajs/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  js
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../FastApi/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Fastapi
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tools/poetry/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  tools
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../pydantic/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Pydantic
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../important/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  imp
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../revision/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  revision
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Web Development Tutorials" class="md-nav__button md-logo" aria-label="Web Development Tutorials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Web Development Tutorials
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    database
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            database
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../view/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    View
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../indexes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../equi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Equi-join
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../self_join/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    self-join
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../subqueries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    sub-query
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sql%20faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ SQL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    DA SQL Grouping
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    DA SQL Grouping
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#now-assume-that-you-want-to-identify-the-employees-who-were-born-during-the-70s-the-query-above-can-be-modified-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      Now assume that you want to identify the employees who were born during the 70s. The query above can be modified to
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#let-us-retrieve-all-employee-records-in-department-5-where-salary-is-between-60000-and-70000-the-query-that-will-be-used-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      Let us retrieve all employee records in department 5 where salary is between 60000 and 70000. The query that will be used is
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sorting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sorting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-records-should-be-ordered-in-descending-alphabetical-order-by-last-name-for-descending-order-you-can-make-use-of-the-desc-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      the records should be ordered in descending alphabetical order by last name. For descending order, you can make use of the DESC clause
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grouping
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Grouping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-the-number-of-employees-in-the-department-and-the-average-employee-salary-in-the-department" class="md-nav__link">
+    <span class="md-ellipsis">
+      retrieve the number of employees in the department and the average employee salary in the department
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#label-the-computed-columns-in-the-result-set-of-the-last-problem-as-num_employees-and-avg_salary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Label the computed columns in the result set of the last problem as NUM_EMPLOYEES and AVG_SALARY
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-can-sort-the-result-of-the-previous-query-by-average-salary" class="md-nav__link">
+    <span class="md-ellipsis">
+      e can sort the result of the previous query by average salary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#we-wish-to-limit-the-result-to-departments-with-fewer-than-4-employees" class="md-nav__link">
+    <span class="md-ellipsis">
+      we wish to limit the result to departments with fewer than 4 employees
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practice Questions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practice Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1retrieve-the-list-of-all-employees-first-and-last-names-whose-first-names-start-with-s" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.Retrieve the list of all employees, first and last names, whose first names start with ‘S’
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-arrange-all-the-records-of-the-employees-table-in-ascending-order-of-the-date-of-birth" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Arrange all the records of the EMPLOYEES table in ascending order of the date of birth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-group-the-records-in-terms-of-the-department-ids-and-filter-them-of-ones-that-have-average-salary-more-than-or-equal-to-60000-display-the-department-id-and-the-average-salary" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Group the records in terms of the department IDs and filter them of ones that have average salary more than or equal to 60000. Display the department ID and the average salary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-the-problem-above-sort-the-results-for-each-group-in-descending-order-of-average-salary" class="md-nav__link">
+    <span class="md-ellipsis">
+      For the problem above, sort the results for each group in descending order of average salary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-1-string-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise 1: String Patterns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-retrieve-all-employees-whose-address-is-in-elginil" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Retrieve all employees whose address is in Elgin,IL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-retrieve-all-employees-who-were-born-during-the-1970s" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Retrieve all employees who were born during the 1970’s
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-retrieve-all-employees-in-department-5-whose-salary-is-between-60000-and-70000" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Retrieve all employees in department 5 whose salary is between 60000 and 70000
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-2-sorting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise 2: Sorting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-a-list-of-employees-ordered-by-department-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieve a list of employees ordered by department ID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-retrieve-a-list-of-employees-ordered-by-department-name-and-within-each-department-ordered-alphabetically-in-descending-order-by-last-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Retrieve a list of employees ordered by department name, and within each department ordered alphabetically in descending order by last name
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-3-grouping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise 3: Grouping
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 3: Grouping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-for-each-department-id-retrieve-the-number-of-employees-in-the-department" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. For each department ID retrieve the number of employees in the department
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-each-department-retrieve-the-number-of-employees-in-the-department-and-the-average-employee-salary-in-the-department" class="md-nav__link">
+    <span class="md-ellipsis">
+      For each department retrieve the number of employees in the department, and the average employee salary in the department
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-label-the-computed-columns-in-the-result-set-of-sql-problem-2-exercise-3-problem-2-as-num_employees-and-avg_salary" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Label the computed columns in the result set of SQL problem 2 (Exercise 3 Problem 2) as NUM_EMPLOYEES and AVG_SALARY
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-sql-problem-3-exercise-3-problem-3-order-the-result-set-by-average-salary" class="md-nav__link">
+    <span class="md-ellipsis">
+      In SQL problem 3 (Exercise 3 Problem 3), order the result set by Average Salary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-sql-problem-4-exercise-3-problem-4-limit-the-result-to-departments-with-fewer-than-4-employees" class="md-nav__link">
+    <span class="md-ellipsis">
+      In SQL problem 4 (Exercise 3 Problem 4), limit the result to departments with fewer than 4 employees
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#you-want-to-select-the-authors-lastname-from-a-table-but-you-only-remember-that-it-starts-with-the-letter-j-which-of-the-following-queries-uses-the-correct-string-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      You want to select the author's lastname from a table, but you only remember that it starts with the letter J. Which of the following queries uses the correct string pattern?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-2-in-sql-which-of-the-following-will-be-the-correct-way-to-sort-a-result-set-in-descending-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 2 In SQL, which of the following will be the correct way to sort a result set in descending order?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-4-which-of-the-choices-best-describe-the-function-of-the-following-sql-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 4 Which of the choices best describe the function of the following SQL query?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-5-which-of-the-following-sql-statements-lists-the-number-of-customers-in-each-country-showing-only-the-countries-with-more-than-five-customers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 5 Which of the following SQL statements lists the number of customers in each country, showing only the countries with more than five customers?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../query/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    query
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    practice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interview_pratical/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    interview praticale
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interview_theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    interview theory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../radis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    radis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Django/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Django
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Django
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Django/Django/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Django
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    js
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            js
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../js/durgajs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../js/dom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DOM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../js/jQuery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JQuery
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../FastApi/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Fastapi
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Fastapi
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FastApi/celery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    celery
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FastApi/asynchronous_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Async_api
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/poetry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    poetry
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pydantic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pydantic
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../important/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    imp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../revision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    revision
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#now-assume-that-you-want-to-identify-the-employees-who-were-born-during-the-70s-the-query-above-can-be-modified-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      Now assume that you want to identify the employees who were born during the 70s. The query above can be modified to
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#let-us-retrieve-all-employee-records-in-department-5-where-salary-is-between-60000-and-70000-the-query-that-will-be-used-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      Let us retrieve all employee records in department 5 where salary is between 60000 and 70000. The query that will be used is
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sorting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sorting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-records-should-be-ordered-in-descending-alphabetical-order-by-last-name-for-descending-order-you-can-make-use-of-the-desc-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      the records should be ordered in descending alphabetical order by last name. For descending order, you can make use of the DESC clause
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grouping
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Grouping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-the-number-of-employees-in-the-department-and-the-average-employee-salary-in-the-department" class="md-nav__link">
+    <span class="md-ellipsis">
+      retrieve the number of employees in the department and the average employee salary in the department
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#label-the-computed-columns-in-the-result-set-of-the-last-problem-as-num_employees-and-avg_salary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Label the computed columns in the result set of the last problem as NUM_EMPLOYEES and AVG_SALARY
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-can-sort-the-result-of-the-previous-query-by-average-salary" class="md-nav__link">
+    <span class="md-ellipsis">
+      e can sort the result of the previous query by average salary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#we-wish-to-limit-the-result-to-departments-with-fewer-than-4-employees" class="md-nav__link">
+    <span class="md-ellipsis">
+      we wish to limit the result to departments with fewer than 4 employees
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practice Questions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practice Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1retrieve-the-list-of-all-employees-first-and-last-names-whose-first-names-start-with-s" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.Retrieve the list of all employees, first and last names, whose first names start with ‘S’
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-arrange-all-the-records-of-the-employees-table-in-ascending-order-of-the-date-of-birth" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Arrange all the records of the EMPLOYEES table in ascending order of the date of birth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-group-the-records-in-terms-of-the-department-ids-and-filter-them-of-ones-that-have-average-salary-more-than-or-equal-to-60000-display-the-department-id-and-the-average-salary" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Group the records in terms of the department IDs and filter them of ones that have average salary more than or equal to 60000. Display the department ID and the average salary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-the-problem-above-sort-the-results-for-each-group-in-descending-order-of-average-salary" class="md-nav__link">
+    <span class="md-ellipsis">
+      For the problem above, sort the results for each group in descending order of average salary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-1-string-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise 1: String Patterns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-retrieve-all-employees-whose-address-is-in-elginil" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Retrieve all employees whose address is in Elgin,IL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-retrieve-all-employees-who-were-born-during-the-1970s" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Retrieve all employees who were born during the 1970’s
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-retrieve-all-employees-in-department-5-whose-salary-is-between-60000-and-70000" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Retrieve all employees in department 5 whose salary is between 60000 and 70000
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-2-sorting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise 2: Sorting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-a-list-of-employees-ordered-by-department-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieve a list of employees ordered by department ID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-retrieve-a-list-of-employees-ordered-by-department-name-and-within-each-department-ordered-alphabetically-in-descending-order-by-last-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Retrieve a list of employees ordered by department name, and within each department ordered alphabetically in descending order by last name
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-3-grouping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise 3: Grouping
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 3: Grouping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-for-each-department-id-retrieve-the-number-of-employees-in-the-department" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. For each department ID retrieve the number of employees in the department
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-each-department-retrieve-the-number-of-employees-in-the-department-and-the-average-employee-salary-in-the-department" class="md-nav__link">
+    <span class="md-ellipsis">
+      For each department retrieve the number of employees in the department, and the average employee salary in the department
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-label-the-computed-columns-in-the-result-set-of-sql-problem-2-exercise-3-problem-2-as-num_employees-and-avg_salary" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Label the computed columns in the result set of SQL problem 2 (Exercise 3 Problem 2) as NUM_EMPLOYEES and AVG_SALARY
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-sql-problem-3-exercise-3-problem-3-order-the-result-set-by-average-salary" class="md-nav__link">
+    <span class="md-ellipsis">
+      In SQL problem 3 (Exercise 3 Problem 3), order the result set by Average Salary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-sql-problem-4-exercise-3-problem-4-limit-the-result-to-departments-with-fewer-than-4-employees" class="md-nav__link">
+    <span class="md-ellipsis">
+      In SQL problem 4 (Exercise 3 Problem 4), limit the result to departments with fewer than 4 employees
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#you-want-to-select-the-authors-lastname-from-a-table-but-you-only-remember-that-it-starts-with-the-letter-j-which-of-the-following-queries-uses-the-correct-string-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      You want to select the author's lastname from a table, but you only remember that it starts with the letter J. Which of the following queries uses the correct string pattern?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-2-in-sql-which-of-the-following-will-be-the-correct-way-to-sort-a-result-set-in-descending-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 2 In SQL, which of the following will be the correct way to sort a result set in descending order?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-4-which-of-the-choices-best-describe-the-function-of-the-following-sql-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 4 Which of the choices best describe the function of the following SQL query?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-5-which-of-the-following-sql-statements-lists-the-number-of-customers-in-each-country-showing-only-the-countries-with-more-than-five-customers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 5 Which of the following SQL statements lists the number of customers in each country, showing only the countries with more than five customers?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="grouping-filtring">Grouping (Filtring)<a class="headerlink" href="#grouping-filtring" title="Permanent link">&para;</a></h1>
+<h2 id="objectives">Objectives<a class="headerlink" href="#objectives" title="Permanent link">&para;</a></h2>
+<p>After completing this lab, you will be able to:</p>
+<ol>
+<li>Filter the output of a SELECT query by using string patterns, ranges, or sets of values.</li>
+<li>Sort the result set in either ascending or descending order in accordance with a pre-determined column.</li>
+<li>Group the outcomes of a query based on a selected parameter to further refine the response.</li>
+</ol>
+<p>%load_ext sql
+%sql sqlite:///HR.db</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">EMPLOYEES</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">                            </span><span class="n">EMP_ID</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w"> </span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">                            </span><span class="n">F_NAME</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">                            </span><span class="n">L_NAME</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">                            </span><span class="n">SSN</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">                            </span><span class="n">B_DATE</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">                            </span><span class="n">SEX</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">,</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">                            </span><span class="n">ADDRESS</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">                            </span><span class="n">JOB_ID</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">                            </span><span class="n">SALARY</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">                            </span><span class="n">MANAGER_ID</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">                            </span><span class="n">DEP_ID</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">                            </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">EMP_ID</span><span class="p">));</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">JOB_HISTORY</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">                            </span><span class="n">EMPL_ID</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w"> </span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">                            </span><span class="n">START_DATE</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">                            </span><span class="n">JOBS_ID</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">                            </span><span class="n">DEPT_ID</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">                            </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">EMPL_ID</span><span class="p">,</span><span class="n">JOBS_ID</span><span class="p">));</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w"> </span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">JOBS</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">                            </span><span class="n">JOB_IDENT</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w"> </span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">                            </span><span class="n">JOB_TITLE</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">                            </span><span class="n">MIN_SALARY</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">                            </span><span class="n">MAX_SALARY</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">                            </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">JOB_IDENT</span><span class="p">));</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">DEPARTMENTS</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">                            </span><span class="n">DEPT_ID_DEP</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w"> </span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">                            </span><span class="n">DEP_NAME</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span><span class="w"> </span><span class="p">,</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">                            </span><span class="n">MANAGER_ID</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">                            </span><span class="n">LOC_ID</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">                            </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">DEPT_ID_DEP</span><span class="p">));</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">LOCATIONS</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">                            </span><span class="n">LOCT_ID</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">                            </span><span class="n">DEP_ID_LOC</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">                            </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">LOCT_ID</span><span class="p">,</span><span class="n">DEP_ID_LOC</span><span class="p">));</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">Insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">JOB_HISTORY</span><span class="w"> </span><span class="p">(</span><span class="n">EMPL_ID</span><span class="p">,</span><span class="w"> </span><span class="n">START_DATE</span><span class="p">,</span><span class="w"> </span><span class="n">JOBS_ID</span><span class="p">,</span><span class="w"> </span><span class="n">DEPT_ID</span><span class="p">)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">VALUES</span><span class="w"> </span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">(</span><span class="ss">&quot;E1001&quot;</span><span class="p">,</span><span class="mi">2000</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">(</span><span class="ss">&quot;E1002&quot;</span><span class="p">,</span><span class="mi">2001</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">(</span><span class="ss">&quot;E1003&quot;</span><span class="p">,</span><span class="mi">2001</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">(</span><span class="ss">&quot;E1004&quot;</span><span class="p">,</span><span class="mi">2000</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">(</span><span class="ss">&quot;E1005&quot;</span><span class="p">,</span><span class="mi">2000</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">(</span><span class="ss">&quot;E1006&quot;</span><span class="p">,</span><span class="mi">2001</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span><span class="p">,</span><span class="mi">600</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">(</span><span class="ss">&quot;E1007&quot;</span><span class="p">,</span><span class="mi">2002</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span><span class="mi">650</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="p">(</span><span class="ss">&quot;E1008&quot;</span><span class="p">,</span><span class="mi">2010</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">06</span><span class="p">,</span><span class="mi">660</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="p">(</span><span class="ss">&quot;E1009&quot;</span><span class="p">,</span><span class="mi">2016</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span><span class="p">,</span><span class="mi">234</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">(</span><span class="ss">&quot;E1010&quot;</span><span class="p">,</span><span class="mi">2016</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span><span class="p">,</span><span class="mi">220</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="k">Insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">LOCATIONS</span><span class="w"> </span><span class="p">(</span><span class="n">LOCT_ID</span><span class="p">,</span><span class="w"> </span><span class="n">DEP_ID_LOC</span><span class="p">)</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="k">VALUES</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="p">(</span><span class="s1">&#39;L0001&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="p">(</span><span class="s1">&#39;L0002&#39;</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="p">(</span><span class="s1">&#39;L0003&#39;</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="k">Insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">EMPLOYEES</span><span class="w"> </span><span class="p">(</span><span class="n">EMP_ID</span><span class="p">,</span><span class="w"> </span><span class="n">F_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">L_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">SSN</span><span class="p">,</span><span class="w"> </span><span class="n">B_DATE</span><span class="p">,</span><span class="w"> </span><span class="n">SEX</span><span class="p">,</span><span class="w"> </span><span class="n">ADDRESS</span><span class="p">,</span><span class="w"> </span><span class="n">JOB_ID</span><span class="p">,</span><span class="w"> </span><span class="n">SALARY</span><span class="p">,</span><span class="n">MANAGER_ID</span><span class="p">,</span><span class="n">DEP_ID</span><span class="p">)</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="k">VALUES</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="p">(</span><span class="ss">&quot;E1001&quot;</span><span class="p">,</span><span class="ss">&quot;John&quot;</span><span class="p">,</span><span class="ss">&quot;Thomas&quot;</span><span class="p">,</span><span class="mi">123456</span><span class="p">,</span><span class="mi">1976</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="ss">&quot;M&quot;</span><span class="p">,</span><span class="ss">&quot;5631 Rice, OakPark,IL&quot;</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100000</span><span class="p">,</span><span class="mi">30001</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="p">(</span><span class="ss">&quot;E1002&quot;</span><span class="p">,</span><span class="ss">&quot;Alice&quot;</span><span class="p">,</span><span class="ss">&quot;James&quot;</span><span class="p">,</span><span class="mi">123457</span><span class="p">,</span><span class="mi">1972</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">31</span><span class="p">,</span><span class="ss">&quot;F&quot;</span><span class="p">,</span><span class="ss">&quot;980 Berry ln, Elgin,IL&quot;</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">80000</span><span class="p">,</span><span class="mi">30002</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="p">(</span><span class="ss">&quot;E1003&quot;</span><span class="p">,</span><span class="ss">&quot;Steve&quot;</span><span class="p">,</span><span class="ss">&quot;Wells&quot;</span><span class="p">,</span><span class="mi">123458</span><span class="p">,</span><span class="mi">1980</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">08</span><span class="p">,</span><span class="ss">&quot;M&quot;</span><span class="p">,</span><span class="ss">&quot;291 Springs, Gary,IL&quot;</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">50000</span><span class="p">,</span><span class="mi">30002</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="p">(</span><span class="ss">&quot;E1004&quot;</span><span class="p">,</span><span class="ss">&quot;Santosh&quot;</span><span class="p">,</span><span class="ss">&quot;Kumar&quot;</span><span class="p">,</span><span class="mi">123459</span><span class="p">,</span><span class="mi">1985</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="ss">&quot;M&quot;</span><span class="p">,</span><span class="ss">&quot;511 Aurora Av, Aurora,IL&quot;</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="mi">60000</span><span class="p">,</span><span class="mi">30002</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="p">(</span><span class="ss">&quot;E1005&quot;</span><span class="p">,</span><span class="ss">&quot;Ahmed&quot;</span><span class="p">,</span><span class="ss">&quot;Hussain&quot;</span><span class="p">,</span><span class="mi">123410</span><span class="p">,</span><span class="mi">1981</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="ss">&quot;M&quot;</span><span class="p">,</span><span class="ss">&quot;216 Oak Tree, Geneva,IL&quot;</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">70000</span><span class="p">,</span><span class="mi">30001</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="p">(</span><span class="ss">&quot;E1006&quot;</span><span class="p">,</span><span class="ss">&quot;Nancy&quot;</span><span class="p">,</span><span class="ss">&quot;Allen&quot;</span><span class="p">,</span><span class="mi">123411</span><span class="p">,</span><span class="mi">1978</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">02</span><span class="p">,</span><span class="ss">&quot;F&quot;</span><span class="p">,</span><span class="ss">&quot;111 Green Pl, Elgin,IL&quot;</span><span class="p">,</span><span class="mi">600</span><span class="p">,</span><span class="mi">90000</span><span class="p">,</span><span class="mi">30001</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="p">(</span><span class="ss">&quot;E1007&quot;</span><span class="p">,</span><span class="ss">&quot;Mary&quot;</span><span class="p">,</span><span class="ss">&quot;Thomas&quot;</span><span class="p">,</span><span class="mi">123412</span><span class="p">,</span><span class="mi">1975</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">05</span><span class="p">,</span><span class="ss">&quot;F&quot;</span><span class="p">,</span><span class="ss">&quot;100 Rose Pl, Gary,IL&quot;</span><span class="p">,</span><span class="mi">650</span><span class="p">,</span><span class="mi">65000</span><span class="p">,</span><span class="mi">30003</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="p">(</span><span class="ss">&quot;E1008&quot;</span><span class="p">,</span><span class="ss">&quot;Bharath&quot;</span><span class="p">,</span><span class="ss">&quot;Gupta&quot;</span><span class="p">,</span><span class="mi">123413</span><span class="p">,</span><span class="mi">1985</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">05</span><span class="p">,</span><span class="ss">&quot;M&quot;</span><span class="p">,</span><span class="ss">&quot;145 Berry Ln, Naperville,IL&quot;</span><span class="p">,</span><span class="mi">660</span><span class="p">,</span><span class="mi">65000</span><span class="p">,</span><span class="mi">30003</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="p">(</span><span class="ss">&quot;E1009&quot;</span><span class="p">,</span><span class="ss">&quot;Andrea&quot;</span><span class="p">,</span><span class="ss">&quot;Jones&quot;</span><span class="p">,</span><span class="mi">123414</span><span class="p">,</span><span class="mi">1990</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">07</span><span class="p">,</span><span class="ss">&quot;F&quot;</span><span class="p">,</span><span class="ss">&quot;120 Fall Creek, Gary,IL&quot;</span><span class="p">,</span><span class="mi">234</span><span class="p">,</span><span class="mi">70000</span><span class="p">,</span><span class="mi">30003</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="p">(</span><span class="ss">&quot;E1010&quot;</span><span class="p">,</span><span class="ss">&quot;Ann&quot;</span><span class="p">,</span><span class="ss">&quot;Jacob&quot;</span><span class="p">,</span><span class="mi">123415</span><span class="p">,</span><span class="mi">1982</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span><span class="ss">&quot;F&quot;</span><span class="p">,</span><span class="ss">&quot;111 Britany Springs,Elgin,IL&quot;</span><span class="p">,</span><span class="mi">220</span><span class="p">,</span><span class="mi">70000</span><span class="p">,</span><span class="mi">30002</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="k">Insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">DEPARTMENTS</span><span class="w"> </span><span class="p">(</span><span class="n">DEPT_ID_DEP</span><span class="p">,</span><span class="w"> </span><span class="n">DEP_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">MANAGER_ID</span><span class="p">,</span><span class="w"> </span><span class="n">LOC_ID</span><span class="p">)</span>
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="k">VALUES</span>
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="ss">&quot;Architect Group&quot;</span><span class="p">,</span><span class="mi">30001</span><span class="p">,</span><span class="ss">&quot;L0001&quot;</span><span class="p">),</span>
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="ss">&quot;Software Group&quot;</span><span class="p">,</span><span class="mi">30002</span><span class="p">,</span><span class="ss">&quot;L0002&quot;</span><span class="p">),</span>
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="ss">&quot;Design Team&quot;</span><span class="p">,</span><span class="mi">30003</span><span class="p">,</span><span class="ss">&quot;L0003&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="k">Insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">JOBS</span><span class="w"> </span><span class="p">(</span><span class="n">JOB_IDENT</span><span class="p">,</span><span class="w"> </span><span class="n">JOB_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">MIN_SALARY</span><span class="p">,</span><span class="w"> </span><span class="n">MAX_SALARY</span><span class="p">)</span>
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="k">VALUES</span>
+<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="ss">&quot;Sr. Architect&quot;</span><span class="p">,</span><span class="mi">60000</span><span class="p">,</span><span class="mi">100000</span><span class="p">),</span>
+<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="ss">&quot;Sr. Software Developer&quot;</span><span class="p">,</span><span class="mi">60000</span><span class="p">,</span><span class="mi">80000</span><span class="p">),</span>
+<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="ss">&quot;Jr.Software Developer&quot;</span><span class="p">,</span><span class="mi">40000</span><span class="p">,</span><span class="mi">60000</span><span class="p">),</span>
+<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a><span class="p">(</span><span class="mi">400</span><span class="p">,</span><span class="ss">&quot;Jr.Software Developer&quot;</span><span class="p">,</span><span class="mi">40000</span><span class="p">,</span><span class="mi">60000</span><span class="p">),</span>
+<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="ss">&quot;Jr. Architect&quot;</span><span class="p">,</span><span class="mi">50000</span><span class="p">,</span><span class="mi">70000</span><span class="p">),</span>
+<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a><span class="p">(</span><span class="mi">600</span><span class="p">,</span><span class="ss">&quot;Lead Architect&quot;</span><span class="p">,</span><span class="mi">70000</span><span class="p">,</span><span class="mi">100000</span><span class="p">),</span>
+<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a><span class="p">(</span><span class="mi">650</span><span class="p">,</span><span class="ss">&quot;Jr. Designer&quot;</span><span class="p">,</span><span class="mi">60000</span><span class="p">,</span><span class="mi">70000</span><span class="p">),</span>
+<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a><span class="p">(</span><span class="mi">660</span><span class="p">,</span><span class="ss">&quot;Jr. Designer&quot;</span><span class="p">,</span><span class="mi">60000</span><span class="p">,</span><span class="mi">70000</span><span class="p">),</span>
+<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a><span class="p">(</span><span class="mi">234</span><span class="p">,</span><span class="ss">&quot;Sr. Designer&quot;</span><span class="p">,</span><span class="mi">70000</span><span class="p">,</span><span class="mi">90000</span><span class="p">),</span>
+<a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a><span class="p">(</span><span class="mi">220</span><span class="p">,</span><span class="ss">&quot;Sr. Designer&quot;</span><span class="p">,</span><span class="mi">70000</span><span class="p">,</span><span class="mi">90000</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">F_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">L_NAME</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">FROM</span><span class="w"> </span><span class="n">EMPLOYEES</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">ADDRESS</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%Elgin,IL%&#39;</span><span class="p">;</span>
+</code></pre></div>
+<table>
+    <thead>
+        <tr>
+            <th>F_NAME</th>
+            <th>L_NAME</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Alice</td>
+            <td>James</td>
+        </tr>
+        <tr>
+            <td>Nancy</td>
+            <td>Allen</td>
+        </tr>
+        <tr>
+            <td>Ann</td>
+            <td>Jacob</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="now-assume-that-you-want-to-identify-the-employees-who-were-born-during-the-70s-the-query-above-can-be-modified-to">Now assume that you want to identify the employees who were born during the 70s. The query above can be modified to<a class="headerlink" href="#now-assume-that-you-want-to-identify-the-employees-who-were-born-during-the-70s-the-query-above-can-be-modified-to" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">F_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">L_NAME</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">FROM</span><span class="w"> </span><span class="n">EMPLOYEES</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">B_DATE</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;197%&#39;</span><span class="p">;</span>
+</code></pre></div>
+<table>
+    <thead>
+        <tr>
+            <th>F_NAME</th>
+            <th>L_NAME</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Ahmed</td>
+            <td>Hussain</td>
+        </tr>
+        <tr>
+            <td>Nancy</td>
+            <td>Allen</td>
+        </tr>
+        <tr>
+            <td>Bharath</td>
+            <td>Gupta</td>
+        </tr>
+        <tr>
+            <td>Andrea</td>
+            <td>Jones</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="let-us-retrieve-all-employee-records-in-department-5-where-salary-is-between-60000-and-70000-the-query-that-will-be-used-is">Let us retrieve all employee records in department 5 where salary is between 60000 and 70000. The query that will be used is<a class="headerlink" href="#let-us-retrieve-all-employee-records-in-department-5-where-salary-is-between-60000-and-70000-the-query-that-will-be-used-is" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">FROM</span><span class="w"> </span><span class="n">EMPLOYEES</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">WHERE</span><span class="w"> </span><span class="p">(</span><span class="n">SALARY</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="mi">60000</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="mi">70000</span><span class="p">)</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">DEP_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</code></pre></div>
+<table>
+    <thead>
+        <tr>
+            <th>EMP_ID</th>
+            <th>F_NAME</th>
+            <th>L_NAME</th>
+            <th>SSN</th>
+            <th>B_DATE</th>
+            <th>SEX</th>
+            <th>ADDRESS</th>
+            <th>JOB_ID</th>
+            <th>SALARY</th>
+            <th>MANAGER_ID</th>
+            <th>DEP_ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>E1004</td>
+            <td>Santosh</td>
+            <td>Kumar</td>
+            <td>123459</td>
+            <td>1958</td>
+            <td>M</td>
+            <td>511 Aurora Av, Aurora,IL</td>
+            <td>400</td>
+            <td>60000</td>
+            <td>30002</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>E1010</td>
+            <td>Ann</td>
+            <td>Jacob</td>
+            <td>123415</td>
+            <td>1949</td>
+            <td>F</td>
+            <td>111 Britany Springs,Elgin,IL</td>
+            <td>220</td>
+            <td>70000</td>
+            <td>30002</td>
+            <td>5</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="sorting">Sorting<a class="headerlink" href="#sorting" title="Permanent link">&para;</a></h2>
+<p>retrieve a list of employees ordered by department ID.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">F_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">L_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">DEP_ID</span><span class="w"> </span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">FROM</span><span class="w"> </span><span class="n">EMPLOYEES</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">DEP_ID</span><span class="p">;</span>
+</code></pre></div>
+<table>
+    <thead>
+        <tr>
+            <th>F_NAME</th>
+            <th>L_NAME</th>
+            <th>DEP_ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>John</td>
+            <td>Thomas</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>Ahmed</td>
+            <td>Hussain</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>Nancy</td>
+            <td>Allen</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>Alice</td>
+            <td>James</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Steve</td>
+            <td>Wells</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Santosh</td>
+            <td>Kumar</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Ann</td>
+            <td>Jacob</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Mary</td>
+            <td>Thomas</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>Bharath</td>
+            <td>Gupta</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>Andrea</td>
+            <td>Jones</td>
+            <td>7</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="the-records-should-be-ordered-in-descending-alphabetical-order-by-last-name-for-descending-order-you-can-make-use-of-the-desc-clause">the records should be ordered in descending alphabetical order by last name. For descending order, you can make use of the DESC clause<a class="headerlink" href="#the-records-should-be-ordered-in-descending-alphabetical-order-by-last-name-for-descending-order-you-can-make-use-of-the-desc-clause" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">F_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">L_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">DEP_ID</span><span class="w"> </span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="k">FROM</span><span class="w"> </span><span class="n">EMPLOYEES</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">DEP_ID</span><span class="w"> </span><span class="k">DESC</span><span class="p">,</span><span class="w"> </span><span class="n">L_NAME</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
+</code></pre></div>
+<table>
+    <thead>
+        <tr>
+            <th>F_NAME</th>
+            <th>L_NAME</th>
+            <th>DEP_ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Mary</td>
+            <td>Thomas</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>Andrea</td>
+            <td>Jones</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>Bharath</td>
+            <td>Gupta</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>Steve</td>
+            <td>Wells</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Santosh</td>
+            <td>Kumar</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Alice</td>
+            <td>James</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Ann</td>
+            <td>Jacob</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>Thomas</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>Ahmed</td>
+            <td>Hussain</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>Nancy</td>
+            <td>Allen</td>
+            <td>2</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="grouping">Grouping<a class="headerlink" href="#grouping" title="Permanent link">&para;</a></h2>
+<p>AVG is a function that can be used to calculate the Average or Mean of all values of a specified column in the result set.</p>
+<ul>
+<li>A good example of grouping would be if For each department ID, we wish to retrieve the number of employees in the department.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">DEP_ID</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="k">FROM</span><span class="w"> </span><span class="n">EMPLOYEES</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">DEP_ID</span><span class="p">;</span>
+</code></pre></div>
+<table>
+    <thead>
+        <tr>
+            <th>DEP_ID</th>
+            <th>COUNT(*)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>3</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="retrieve-the-number-of-employees-in-the-department-and-the-average-employee-salary-in-the-department">retrieve the number of employees in the department and the average employee salary in the department<a class="headerlink" href="#retrieve-the-number-of-employees-in-the-department-and-the-average-employee-salary-in-the-department" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">DEP_ID</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">SALARY</span><span class="p">)</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">FROM</span><span class="w"> </span><span class="n">EMPLOYEES</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">DEP_ID</span><span class="p">;</span>
+</code></pre></div>
+<table>
+    <thead>
+        <tr>
+            <th>DEP_ID</th>
+            <th>COUNT(*)</th>
+            <th>AVG(SALARY)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2</td>
+            <td>3</td>
+            <td>86666.66666666667</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>4</td>
+            <td>65000.0</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>3</td>
+            <td>66666.66666666667</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="label-the-computed-columns-in-the-result-set-of-the-last-problem-as-num_employees-and-avg_salary">Label the computed columns in the result set of the last problem as NUM_EMPLOYEES and AVG_SALARY<a class="headerlink" href="#label-the-computed-columns-in-the-result-set-of-the-last-problem-as-num_employees-and-avg_salary" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">DEP_ID</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="ss">&quot;NUM_EMPLOYEES&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">SALARY</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="ss">&quot;AVG_SALARY&quot;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="k">FROM</span><span class="w"> </span><span class="n">EMPLOYEES</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">DEP_ID</span><span class="p">;</span>
+</code></pre></div>
+<table>
+    <thead>
+        <tr>
+            <th>DEP_ID</th>
+            <th>NUM_EMPLOYEES</th>
+            <th>AVG_SALARY</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2</td>
+            <td>3</td>
+            <td>86666.66666666667</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>4</td>
+            <td>65000.0</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>3</td>
+            <td>66666.66666666667</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="e-can-sort-the-result-of-the-previous-query-by-average-salary">e can sort the result of the previous query by average salary<a class="headerlink" href="#e-can-sort-the-result-of-the-previous-query-by-average-salary" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">DEP_ID</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="ss">&quot;NUM_EMPLOYEES&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">SALARY</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="ss">&quot;AVG_SALARY&quot;</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="k">FROM</span><span class="w"> </span><span class="n">EMPLOYEES</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">DEP_ID</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">AVG_SALARY</span><span class="p">;</span>
+</code></pre></div>
+<table>
+    <thead>
+        <tr>
+            <th>DEP_ID</th>
+            <th>NUM_EMPLOYEES</th>
+            <th>AVG_SALARY</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>5</td>
+            <td>4</td>
+            <td>65000.0</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>3</td>
+            <td>66666.66666666667</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>3</td>
+            <td>86666.66666666667</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="we-wish-to-limit-the-result-to-departments-with-fewer-than-4-employees">we wish to limit the result to departments with fewer than 4 employees<a class="headerlink" href="#we-wish-to-limit-the-result-to-departments-with-fewer-than-4-employees" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">DEP_ID</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="ss">&quot;NUM_EMPLOYEES&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">SALARY</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="ss">&quot;AVG_SALARY&quot;</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="k">FROM</span><span class="w"> </span><span class="n">EMPLOYEES</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">DEP_ID</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="k">HAVING</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">4</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">AVG_SALARY</span><span class="p">;</span>
+</code></pre></div>
+<table>
+    <thead>
+        <tr>
+            <th>DEP_ID</th>
+            <th>NUM_EMPLOYEES</th>
+            <th>AVG_SALARY</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>7</td>
+            <td>3</td>
+            <td>66666.66666666667</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>3</td>
+            <td>86666.66666666667</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="practice-questions">Practice Questions<a class="headerlink" href="#practice-questions" title="Permanent link">&para;</a></h2>
+<h3 id="1retrieve-the-list-of-all-employees-first-and-last-names-whose-first-names-start-with-s">1.Retrieve the list of all employees, first and last names, whose first names start with ‘S’<a class="headerlink" href="#1retrieve-the-list-of-all-employees-first-and-last-names-whose-first-names-start-with-s" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">F_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">L_NAME</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="k">FROM</span><span class="w"> </span><span class="n">EMPLOYEES</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="k">where</span><span class="w"> </span><span class="n">F_NAME</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">&#39;S%&#39;</span><span class="p">;</span>
+</code></pre></div>
+<table>
+    <thead>
+        <tr>
+            <th>F_NAME</th>
+            <th>L_NAME</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Steve</td>
+            <td>Wells</td>
+        </tr>
+        <tr>
+            <td>Santosh</td>
+            <td>Kumar</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="2-arrange-all-the-records-of-the-employees-table-in-ascending-order-of-the-date-of-birth">2. Arrange all the records of the EMPLOYEES table in ascending order of the date of birth<a class="headerlink" href="#2-arrange-all-the-records-of-the-employees-table-in-ascending-order-of-the-date-of-birth" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="k">SELECT</span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">EMPLOYEES</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">B_DATE</span>
+</code></pre></div>
+<table>
+    <thead>
+        <tr>
+            <th>EMP_ID</th>
+            <th>F_NAME</th>
+            <th>L_NAME</th>
+            <th>SSN</th>
+            <th>B_DATE</th>
+            <th>SEX</th>
+            <th>ADDRESS</th>
+            <th>JOB_ID</th>
+            <th>SALARY</th>
+            <th>MANAGER_ID</th>
+            <th>DEP_ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>E1002</td>
+            <td>Alice</td>
+            <td>James</td>
+            <td>123457</td>
+            <td>1934</td>
+            <td>F</td>
+            <td>980 Berry ln, Elgin,IL</td>
+            <td>200</td>
+            <td>80000</td>
+            <td>30002</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>E1010</td>
+            <td>Ann</td>
+            <td>Jacob</td>
+            <td>123415</td>
+            <td>1949</td>
+            <td>F</td>
+            <td>111 Britany Springs,Elgin,IL</td>
+            <td>220</td>
+            <td>70000</td>
+            <td>30002</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>E1004</td>
+            <td>Santosh</td>
+            <td>Kumar</td>
+            <td>123459</td>
+            <td>1958</td>
+            <td>M</td>
+            <td>511 Aurora Av, Aurora,IL</td>
+            <td>400</td>
+            <td>60000</td>
+            <td>30002</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>E1003</td>
+            <td>Steve</td>
+            <td>Wells</td>
+            <td>123458</td>
+            <td>1962</td>
+            <td>M</td>
+            <td>291 Springs, Gary,IL</td>
+            <td>300</td>
+            <td>50000</td>
+            <td>30002</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>E1007</td>
+            <td>Mary</td>
+            <td>Thomas</td>
+            <td>123412</td>
+            <td>1965</td>
+            <td>F</td>
+            <td>100 Rose Pl, Gary,IL</td>
+            <td>650</td>
+            <td>65000</td>
+            <td>30003</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>E1001</td>
+            <td>John</td>
+            <td>Thomas</td>
+            <td>123456</td>
+            <td>1966</td>
+            <td>M</td>
+            <td>5631 Rice, OakPark,IL</td>
+            <td>100</td>
+            <td>100000</td>
+            <td>30001</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>E1006</td>
+            <td>Nancy</td>
+            <td>Allen</td>
+            <td>123411</td>
+            <td>1970</td>
+            <td>F</td>
+            <td>111 Green Pl, Elgin,IL</td>
+            <td>600</td>
+            <td>90000</td>
+            <td>30001</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>E1008</td>
+            <td>Bharath</td>
+            <td>Gupta</td>
+            <td>123413</td>
+            <td>1974</td>
+            <td>M</td>
+            <td>145 Berry Ln, Naperville,IL</td>
+            <td>660</td>
+            <td>65000</td>
+            <td>30003</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>E1009</td>
+            <td>Andrea</td>
+            <td>Jones</td>
+            <td>123414</td>
+            <td>1974</td>
+            <td>F</td>
+            <td>120 Fall Creek, Gary,IL</td>
+            <td>234</td>
+            <td>70000</td>
+            <td>30003</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>E1005</td>
+            <td>Ahmed</td>
+            <td>Hussain</td>
+            <td>123410</td>
+            <td>1976</td>
+            <td>M</td>
+            <td>216 Oak Tree, Geneva,IL</td>
+            <td>500</td>
+            <td>70000</td>
+            <td>30001</td>
+            <td>2</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="3-group-the-records-in-terms-of-the-department-ids-and-filter-them-of-ones-that-have-average-salary-more-than-or-equal-to-60000-display-the-department-id-and-the-average-salary">3. Group the records in terms of the department IDs and filter them of ones that have average salary more than or equal to 60000. Display the department ID and the average salary<a class="headerlink" href="#3-group-the-records-in-terms-of-the-department-ids-and-filter-them-of-ones-that-have-average-salary-more-than-or-equal-to-60000-display-the-department-id-and-the-average-salary" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">DEP_ID</span><span class="p">,</span><span class="k">AVG</span><span class="p">(</span><span class="n">SALARY</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">avg_salary</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">EMPLOYEES</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">DEP_ID</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="k">HAVING</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">SALARY</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">60000</span><span class="p">;</span>
+</code></pre></div>
+<table>
+    <thead>
+        <tr>
+            <th>DEP_ID</th>
+            <th>avg_salary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2</td>
+            <td>86666.66666666667</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>65000.0</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>66666.66666666667</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="for-the-problem-above-sort-the-results-for-each-group-in-descending-order-of-average-salary">For the problem above, sort the results for each group in descending order of average salary<a class="headerlink" href="#for-the-problem-above-sort-the-results-for-each-group-in-descending-order-of-average-salary" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">DEP_ID</span><span class="p">,</span><span class="k">AVG</span><span class="p">(</span><span class="n">SALARY</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">avg_salary</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">EMPLOYEES</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">DEP_ID</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="k">HAVING</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">SALARY</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">60000</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">SALARY</span><span class="p">)</span><span class="w"> </span><span class="k">desc</span>
+</code></pre></div>
+<table>
+    <thead>
+        <tr>
+            <th>DEP_ID</th>
+            <th>avg_salary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2</td>
+            <td>86666.66666666667</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>66666.66666666667</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>65000.0</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="exercise-1-string-patterns">Exercise 1: String Patterns<a class="headerlink" href="#exercise-1-string-patterns" title="Permanent link">&para;</a></h3>
+<h3 id="1-retrieve-all-employees-whose-address-is-in-elginil">1. Retrieve all employees whose address is in Elgin,IL<a class="headerlink" href="#1-retrieve-all-employees-whose-address-is-in-elginil" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">Employees</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="k">where</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="ss">&quot;%Elgin,IL%&quot;</span>
+</code></pre></div>
+<table>
+    <thead>
+        <tr>
+            <th>EMP_ID</th>
+            <th>F_NAME</th>
+            <th>L_NAME</th>
+            <th>SSN</th>
+            <th>B_DATE</th>
+            <th>SEX</th>
+            <th>ADDRESS</th>
+            <th>JOB_ID</th>
+            <th>SALARY</th>
+            <th>MANAGER_ID</th>
+            <th>DEP_ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>E1002</td>
+            <td>Alice</td>
+            <td>James</td>
+            <td>123457</td>
+            <td>1934</td>
+            <td>F</td>
+            <td>980 Berry ln, Elgin,IL</td>
+            <td>200</td>
+            <td>80000</td>
+            <td>30002</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>E1006</td>
+            <td>Nancy</td>
+            <td>Allen</td>
+            <td>123411</td>
+            <td>1970</td>
+            <td>F</td>
+            <td>111 Green Pl, Elgin,IL</td>
+            <td>600</td>
+            <td>90000</td>
+            <td>30001</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>E1010</td>
+            <td>Ann</td>
+            <td>Jacob</td>
+            <td>123415</td>
+            <td>1949</td>
+            <td>F</td>
+            <td>111 Britany Springs,Elgin,IL</td>
+            <td>220</td>
+            <td>70000</td>
+            <td>30002</td>
+            <td>5</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="2-retrieve-all-employees-who-were-born-during-the-1970s">2. Retrieve all employees who were born during the 1970’s<a class="headerlink" href="#2-retrieve-all-employees-who-were-born-during-the-1970s" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">Employees</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="k">where</span><span class="w"> </span><span class="n">B_DATE</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="ss">&quot;197%&quot;</span>
+</code></pre></div>
+<table>
+    <thead>
+        <tr>
+            <th>EMP_ID</th>
+            <th>F_NAME</th>
+            <th>L_NAME</th>
+            <th>SSN</th>
+            <th>B_DATE</th>
+            <th>SEX</th>
+            <th>ADDRESS</th>
+            <th>JOB_ID</th>
+            <th>SALARY</th>
+            <th>MANAGER_ID</th>
+            <th>DEP_ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>E1005</td>
+            <td>Ahmed</td>
+            <td>Hussain</td>
+            <td>123410</td>
+            <td>1976</td>
+            <td>M</td>
+            <td>216 Oak Tree, Geneva,IL</td>
+            <td>500</td>
+            <td>70000</td>
+            <td>30001</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>E1006</td>
+            <td>Nancy</td>
+            <td>Allen</td>
+            <td>123411</td>
+            <td>1970</td>
+            <td>F</td>
+            <td>111 Green Pl, Elgin,IL</td>
+            <td>600</td>
+            <td>90000</td>
+            <td>30001</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>E1008</td>
+            <td>Bharath</td>
+            <td>Gupta</td>
+            <td>123413</td>
+            <td>1974</td>
+            <td>M</td>
+            <td>145 Berry Ln, Naperville,IL</td>
+            <td>660</td>
+            <td>65000</td>
+            <td>30003</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>E1009</td>
+            <td>Andrea</td>
+            <td>Jones</td>
+            <td>123414</td>
+            <td>1974</td>
+            <td>F</td>
+            <td>120 Fall Creek, Gary,IL</td>
+            <td>234</td>
+            <td>70000</td>
+            <td>30003</td>
+            <td>7</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="3-retrieve-all-employees-in-department-5-whose-salary-is-between-60000-and-70000">3. Retrieve all employees in department 5 whose salary is between 60000 and 70000<a class="headerlink" href="#3-retrieve-all-employees-in-department-5-whose-salary-is-between-60000-and-70000" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">Employees</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="k">where</span><span class="w"> </span><span class="n">DEP_ID</span><span class="w"> </span><span class="o">=</span><span class="mi">5</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">between</span><span class="w"> </span><span class="mi">60000</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="mi">70000</span>
+</code></pre></div>
+<table>
+    <thead>
+        <tr>
+            <th>EMP_ID</th>
+            <th>F_NAME</th>
+            <th>L_NAME</th>
+            <th>SSN</th>
+            <th>B_DATE</th>
+            <th>SEX</th>
+            <th>ADDRESS</th>
+            <th>JOB_ID</th>
+            <th>SALARY</th>
+            <th>MANAGER_ID</th>
+            <th>DEP_ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>E1004</td>
+            <td>Santosh</td>
+            <td>Kumar</td>
+            <td>123459</td>
+            <td>1958</td>
+            <td>M</td>
+            <td>511 Aurora Av, Aurora,IL</td>
+            <td>400</td>
+            <td>60000</td>
+            <td>30002</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>E1010</td>
+            <td>Ann</td>
+            <td>Jacob</td>
+            <td>123415</td>
+            <td>1949</td>
+            <td>F</td>
+            <td>111 Britany Springs,Elgin,IL</td>
+            <td>220</td>
+            <td>70000</td>
+            <td>30002</td>
+            <td>5</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="exercise-2-sorting">Exercise 2: Sorting<a class="headerlink" href="#exercise-2-sorting" title="Permanent link">&para;</a></h3>
+<h3 id="retrieve-a-list-of-employees-ordered-by-department-id">Retrieve a list of employees ordered by department ID<a class="headerlink" href="#retrieve-a-list-of-employees-ordered-by-department-id" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="k">Order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">DEP_ID</span>
+</code></pre></div>
+<table>
+    <thead>
+        <tr>
+            <th>EMP_ID</th>
+            <th>F_NAME</th>
+            <th>L_NAME</th>
+            <th>SSN</th>
+            <th>B_DATE</th>
+            <th>SEX</th>
+            <th>ADDRESS</th>
+            <th>JOB_ID</th>
+            <th>SALARY</th>
+            <th>MANAGER_ID</th>
+            <th>DEP_ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>E1001</td>
+            <td>John</td>
+            <td>Thomas</td>
+            <td>123456</td>
+            <td>1966</td>
+            <td>M</td>
+            <td>5631 Rice, OakPark,IL</td>
+            <td>100</td>
+            <td>100000</td>
+            <td>30001</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>E1005</td>
+            <td>Ahmed</td>
+            <td>Hussain</td>
+            <td>123410</td>
+            <td>1976</td>
+            <td>M</td>
+            <td>216 Oak Tree, Geneva,IL</td>
+            <td>500</td>
+            <td>70000</td>
+            <td>30001</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>E1006</td>
+            <td>Nancy</td>
+            <td>Allen</td>
+            <td>123411</td>
+            <td>1970</td>
+            <td>F</td>
+            <td>111 Green Pl, Elgin,IL</td>
+            <td>600</td>
+            <td>90000</td>
+            <td>30001</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>E1002</td>
+            <td>Alice</td>
+            <td>James</td>
+            <td>123457</td>
+            <td>1934</td>
+            <td>F</td>
+            <td>980 Berry ln, Elgin,IL</td>
+            <td>200</td>
+            <td>80000</td>
+            <td>30002</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>E1003</td>
+            <td>Steve</td>
+            <td>Wells</td>
+            <td>123458</td>
+            <td>1962</td>
+            <td>M</td>
+            <td>291 Springs, Gary,IL</td>
+            <td>300</td>
+            <td>50000</td>
+            <td>30002</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>E1004</td>
+            <td>Santosh</td>
+            <td>Kumar</td>
+            <td>123459</td>
+            <td>1958</td>
+            <td>M</td>
+            <td>511 Aurora Av, Aurora,IL</td>
+            <td>400</td>
+            <td>60000</td>
+            <td>30002</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>E1010</td>
+            <td>Ann</td>
+            <td>Jacob</td>
+            <td>123415</td>
+            <td>1949</td>
+            <td>F</td>
+            <td>111 Britany Springs,Elgin,IL</td>
+            <td>220</td>
+            <td>70000</td>
+            <td>30002</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>E1007</td>
+            <td>Mary</td>
+            <td>Thomas</td>
+            <td>123412</td>
+            <td>1965</td>
+            <td>F</td>
+            <td>100 Rose Pl, Gary,IL</td>
+            <td>650</td>
+            <td>65000</td>
+            <td>30003</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>E1008</td>
+            <td>Bharath</td>
+            <td>Gupta</td>
+            <td>123413</td>
+            <td>1974</td>
+            <td>M</td>
+            <td>145 Berry Ln, Naperville,IL</td>
+            <td>660</td>
+            <td>65000</td>
+            <td>30003</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>E1009</td>
+            <td>Andrea</td>
+            <td>Jones</td>
+            <td>123414</td>
+            <td>1974</td>
+            <td>F</td>
+            <td>120 Fall Creek, Gary,IL</td>
+            <td>234</td>
+            <td>70000</td>
+            <td>30003</td>
+            <td>7</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="2-retrieve-a-list-of-employees-ordered-by-department-name-and-within-each-department-ordered-alphabetically-in-descending-order-by-last-name">2. Retrieve a list of employees ordered by department name, and within each department ordered alphabetically in descending order by last name<a class="headerlink" href="#2-retrieve-a-list-of-employees-ordered-by-department-name-and-within-each-department-ordered-alphabetically-in-descending-order-by-last-name" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">departments</span><span class="p">,</span><span class="n">employees</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">DEP_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DEPT_ID_DEP</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="k">Order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">DEP_NAME</span><span class="p">,</span><span class="n">L_NAME</span><span class="w">   </span><span class="k">desc</span>
+</code></pre></div>
+<table>
+    <thead>
+        <tr>
+            <th>DEPT_ID_DEP</th>
+            <th>DEP_NAME</th>
+            <th>MANAGER_ID</th>
+            <th>LOC_ID</th>
+            <th>EMP_ID</th>
+            <th>F_NAME</th>
+            <th>L_NAME</th>
+            <th>SSN</th>
+            <th>B_DATE</th>
+            <th>SEX</th>
+            <th>ADDRESS</th>
+            <th>JOB_ID</th>
+            <th>SALARY</th>
+            <th>MANAGER_ID_1</th>
+            <th>DEP_ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2</td>
+            <td>Architect Group</td>
+            <td>30001</td>
+            <td>L0001</td>
+            <td>E1001</td>
+            <td>John</td>
+            <td>Thomas</td>
+            <td>123456</td>
+            <td>1966</td>
+            <td>M</td>
+            <td>5631 Rice, OakPark,IL</td>
+            <td>100</td>
+            <td>100000</td>
+            <td>30001</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Architect Group</td>
+            <td>30001</td>
+            <td>L0001</td>
+            <td>E1005</td>
+            <td>Ahmed</td>
+            <td>Hussain</td>
+            <td>123410</td>
+            <td>1976</td>
+            <td>M</td>
+            <td>216 Oak Tree, Geneva,IL</td>
+            <td>500</td>
+            <td>70000</td>
+            <td>30001</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Architect Group</td>
+            <td>30001</td>
+            <td>L0001</td>
+            <td>E1006</td>
+            <td>Nancy</td>
+            <td>Allen</td>
+            <td>123411</td>
+            <td>1970</td>
+            <td>F</td>
+            <td>111 Green Pl, Elgin,IL</td>
+            <td>600</td>
+            <td>90000</td>
+            <td>30001</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Design Team</td>
+            <td>30003</td>
+            <td>L0003</td>
+            <td>E1007</td>
+            <td>Mary</td>
+            <td>Thomas</td>
+            <td>123412</td>
+            <td>1965</td>
+            <td>F</td>
+            <td>100 Rose Pl, Gary,IL</td>
+            <td>650</td>
+            <td>65000</td>
+            <td>30003</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Design Team</td>
+            <td>30003</td>
+            <td>L0003</td>
+            <td>E1009</td>
+            <td>Andrea</td>
+            <td>Jones</td>
+            <td>123414</td>
+            <td>1974</td>
+            <td>F</td>
+            <td>120 Fall Creek, Gary,IL</td>
+            <td>234</td>
+            <td>70000</td>
+            <td>30003</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Design Team</td>
+            <td>30003</td>
+            <td>L0003</td>
+            <td>E1008</td>
+            <td>Bharath</td>
+            <td>Gupta</td>
+            <td>123413</td>
+            <td>1974</td>
+            <td>M</td>
+            <td>145 Berry Ln, Naperville,IL</td>
+            <td>660</td>
+            <td>65000</td>
+            <td>30003</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Software Group</td>
+            <td>30002</td>
+            <td>L0002</td>
+            <td>E1003</td>
+            <td>Steve</td>
+            <td>Wells</td>
+            <td>123458</td>
+            <td>1962</td>
+            <td>M</td>
+            <td>291 Springs, Gary,IL</td>
+            <td>300</td>
+            <td>50000</td>
+            <td>30002</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Software Group</td>
+            <td>30002</td>
+            <td>L0002</td>
+            <td>E1004</td>
+            <td>Santosh</td>
+            <td>Kumar</td>
+            <td>123459</td>
+            <td>1958</td>
+            <td>M</td>
+            <td>511 Aurora Av, Aurora,IL</td>
+            <td>400</td>
+            <td>60000</td>
+            <td>30002</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Software Group</td>
+            <td>30002</td>
+            <td>L0002</td>
+            <td>E1002</td>
+            <td>Alice</td>
+            <td>James</td>
+            <td>123457</td>
+            <td>1934</td>
+            <td>F</td>
+            <td>980 Berry ln, Elgin,IL</td>
+            <td>200</td>
+            <td>80000</td>
+            <td>30002</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Software Group</td>
+            <td>30002</td>
+            <td>L0002</td>
+            <td>E1010</td>
+            <td>Ann</td>
+            <td>Jacob</td>
+            <td>123415</td>
+            <td>1949</td>
+            <td>F</td>
+            <td>111 Britany Springs,Elgin,IL</td>
+            <td>220</td>
+            <td>70000</td>
+            <td>30002</td>
+            <td>5</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">D</span><span class="p">.</span><span class="n">DEP_NAME</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">E</span><span class="p">.</span><span class="n">F_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">E</span><span class="p">.</span><span class="n">L_NAME</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="k">FROM</span><span class="w"> </span><span class="n">EMPLOYEES</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">E</span><span class="p">,</span><span class="w"> </span><span class="n">DEPARTMENTS</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">D</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">E</span><span class="p">.</span><span class="n">DEP_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">D</span><span class="p">.</span><span class="n">DEPT_ID_DEP</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">D</span><span class="p">.</span><span class="n">DEP_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">E</span><span class="p">.</span><span class="n">L_NAME</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
+</code></pre></div>
+<table>
+    <thead>
+        <tr>
+            <th>DEP_NAME</th>
+            <th>F_NAME</th>
+            <th>L_NAME</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Architect Group</td>
+            <td>John</td>
+            <td>Thomas</td>
+        </tr>
+        <tr>
+            <td>Architect Group</td>
+            <td>Ahmed</td>
+            <td>Hussain</td>
+        </tr>
+        <tr>
+            <td>Architect Group</td>
+            <td>Nancy</td>
+            <td>Allen</td>
+        </tr>
+        <tr>
+            <td>Design Team</td>
+            <td>Mary</td>
+            <td>Thomas</td>
+        </tr>
+        <tr>
+            <td>Design Team</td>
+            <td>Andrea</td>
+            <td>Jones</td>
+        </tr>
+        <tr>
+            <td>Design Team</td>
+            <td>Bharath</td>
+            <td>Gupta</td>
+        </tr>
+        <tr>
+            <td>Software Group</td>
+            <td>Steve</td>
+            <td>Wells</td>
+        </tr>
+        <tr>
+            <td>Software Group</td>
+            <td>Santosh</td>
+            <td>Kumar</td>
+        </tr>
+        <tr>
+            <td>Software Group</td>
+            <td>Alice</td>
+            <td>James</td>
+        </tr>
+        <tr>
+            <td>Software Group</td>
+            <td>Ann</td>
+            <td>Jacob</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="exercise-3-grouping">Exercise 3: Grouping<a class="headerlink" href="#exercise-3-grouping" title="Permanent link">&para;</a></h2>
+<h3 id="1-for-each-department-id-retrieve-the-number-of-employees-in-the-department">1. For each department ID retrieve the number of employees in the department<a class="headerlink" href="#1-for-each-department-id-retrieve-the-number-of-employees-in-the-department" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="k">select</span><span class="w"> </span><span class="n">DEP_ID</span><span class="p">,</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">num_of_emp</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="k">Group</span><span class="w"> </span><span class="k">By</span><span class="w"> </span><span class="n">DEP_ID</span>
+</code></pre></div>
+<table>
+    <thead>
+        <tr>
+            <th>DEP_ID</th>
+            <th>num_of_emp</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>3</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="for-each-department-retrieve-the-number-of-employees-in-the-department-and-the-average-employee-salary-in-the-department">For each department retrieve the number of employees in the department, and the average employee salary in the department<a class="headerlink" href="#for-each-department-retrieve-the-number-of-employees-in-the-department-and-the-average-employee-salary-in-the-department" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="k">select</span><span class="w"> </span><span class="n">DEP_ID</span><span class="p">,</span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">num_of_emp</span><span class="p">,</span><span class="k">AVG</span><span class="p">(</span><span class="n">SALARY</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="k">Group</span><span class="w"> </span><span class="k">By</span><span class="w"> </span><span class="n">DEP_ID</span><span class="p">;</span>
+</code></pre></div>
+<table>
+    <thead>
+        <tr>
+            <th>DEP_ID</th>
+            <th>num_of_emp</th>
+            <th>AVG(SALARY)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2</td>
+            <td>3</td>
+            <td>86666.66666666667</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>4</td>
+            <td>65000.0</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>3</td>
+            <td>66666.66666666667</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="3-label-the-computed-columns-in-the-result-set-of-sql-problem-2-exercise-3-problem-2-as-num_employees-and-avg_salary">3. Label the computed columns in the result set of SQL problem 2 (Exercise 3 Problem 2) as NUM_EMPLOYEES and AVG_SALARY<a class="headerlink" href="#3-label-the-computed-columns-in-the-result-set-of-sql-problem-2-exercise-3-problem-2-as-num_employees-and-avg_salary" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">DEP_ID</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="ss">&quot;NUM_EMPLOYEES&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">SALARY</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="ss">&quot;AVG_SALARY&quot;</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="k">FROM</span><span class="w"> </span><span class="n">EMPLOYEES</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">DEP_ID</span><span class="p">;</span>
+</code></pre></div>
+<table>
+    <thead>
+        <tr>
+            <th>DEP_ID</th>
+            <th>NUM_EMPLOYEES</th>
+            <th>AVG_SALARY</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2</td>
+            <td>3</td>
+            <td>86666.66666666667</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>4</td>
+            <td>65000.0</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>3</td>
+            <td>66666.66666666667</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="in-sql-problem-3-exercise-3-problem-3-order-the-result-set-by-average-salary">In SQL problem 3 (Exercise 3 Problem 3), order the result set by Average Salary<a class="headerlink" href="#in-sql-problem-3-exercise-3-problem-3-order-the-result-set-by-average-salary" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">DEP_ID</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="ss">&quot;NUM_EMPLOYEES&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">SALARY</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="ss">&quot;AVG_SALARY&quot;</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="k">FROM</span><span class="w"> </span><span class="n">EMPLOYEES</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">DEP_ID</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">AVG_SALARY</span><span class="p">;</span>
+</code></pre></div>
+<table>
+    <thead>
+        <tr>
+            <th>DEP_ID</th>
+            <th>NUM_EMPLOYEES</th>
+            <th>AVG_SALARY</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>5</td>
+            <td>4</td>
+            <td>65000.0</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>3</td>
+            <td>66666.66666666667</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>3</td>
+            <td>86666.66666666667</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="in-sql-problem-4-exercise-3-problem-4-limit-the-result-to-departments-with-fewer-than-4-employees">In SQL problem 4 (Exercise 3 Problem 4), limit the result to departments with fewer than 4 employees<a class="headerlink" href="#in-sql-problem-4-exercise-3-problem-4-limit-the-result-to-departments-with-fewer-than-4-employees" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="o">%%</span><span class="k">sql</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">DEP_ID</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="ss">&quot;NUM_EMPLOYEES&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">SALARY</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="ss">&quot;AVG_SALARY&quot;</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="k">FROM</span><span class="w"> </span><span class="n">EMPLOYEES</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">DEP_ID</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="k">HAVING</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">4</span>
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">AVG_SALARY</span><span class="p">;</span>
+</code></pre></div>
+<table>
+    <thead>
+        <tr>
+            <th>DEP_ID</th>
+            <th>NUM_EMPLOYEES</th>
+            <th>AVG_SALARY</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>7</td>
+            <td>3</td>
+            <td>66666.66666666667</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>3</td>
+            <td>86666.66666666667</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="you-want-to-select-the-authors-lastname-from-a-table-but-you-only-remember-that-it-starts-with-the-letter-j-which-of-the-following-queries-uses-the-correct-string-pattern">You want to select the author's lastname from a table, but you only remember that it starts with the letter J. Which of the following queries uses the correct string pattern?<a class="headerlink" href="#you-want-to-select-the-authors-lastname-from-a-table-but-you-only-remember-that-it-starts-with-the-letter-j-which-of-the-following-queries-uses-the-correct-string-pattern" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">lastname</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">author</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">lastname</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="err">‘</span><span class="n">J</span><span class="o">%</span><span class="err">’</span><span class="w"> </span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">lastname</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">author</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">lastname</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="err">‘</span><span class="n">J</span><span class="o">*</span><span class="err">’</span><span class="w"> </span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">lastname</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">author</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">lastname</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="err">‘</span><span class="n">J$</span><span class="err">’</span><span class="w"> </span>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">lastname</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">author</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">lastname</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="err">‘</span><span class="n">J</span><span class="o">#</span><span class="err">’</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="question-2-in-sql-which-of-the-following-will-be-the-correct-way-to-sort-a-result-set-in-descending-order">Question 2 In SQL, which of the following will be the correct way to sort a result set in descending order?<a class="headerlink" href="#question-2-in-sql-which-of-the-following-will-be-the-correct-way-to-sort-a-result-set-in-descending-order" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">TABLE_NAME</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="k">DESC</span><span class="w"> </span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">TABLE_NAME</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="k">DESC</span><span class="w"> </span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">TABLE_NAME</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span>
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">TABLE_NAME</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span>
+</code></pre></div>
+<p>What is the role of HAVING clause in SQL queries in MySQL?</p>
+<p>Acts as an alternative to WHERE clause in SQL queries.
+ It may not necessarily organize the result set in a specific order.
+Check whether data records meet the specified condition is met or not.
+Restricts the result set for a query using GROUP BY clause.</p>
+<h3 id="question-4-which-of-the-choices-best-describe-the-function-of-the-following-sql-query">Question 4 Which of the choices best describe the function of the following SQL query?<a class="headerlink" href="#question-4-which-of-the-choices-best-describe-the-function-of-the-following-sql-query" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">emp_name</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span>
+</code></pre></div>
+<p>Retrieves all the columns of the top 5 rows of the table, sorted alphabetically based on emp_names</p>
+<p>Retrieves all the columns of the top 5 rows of the table, sorted reverse alphabetically based on emp_names</p>
+<p>Retrieves the entire contents of the table, sorted alphabetically based on emp_names</p>
+<p>Retrieves the top 5 emp_names ordered alphabetically.</p>
+<h3 id="question-5-which-of-the-following-sql-statements-lists-the-number-of-customers-in-each-country-showing-only-the-countries-with-more-than-five-customers">Question 5 Which of the following SQL statements lists the number of customers in each country, showing only the countries with more than five customers?<a class="headerlink" href="#question-5-which-of-the-following-sql-statements-lists-the-number-of-customers-in-each-country-showing-only-the-countries-with-more-than-five-customers" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">CustomerID</span><span class="p">),</span><span class="w"> </span><span class="n">Country</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Customers</span><span class="w"> </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">Country</span><span class="w"> </span><span class="k">HAVING</span><span class="w"> </span><span class="n">CustomerID</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">CustomerID</span><span class="p">),</span><span class="w"> </span><span class="n">Country</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Customers</span><span class="w"> </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">Country</span><span class="w"> </span><span class="k">HAVING</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">CustomerID</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">CustomerID</span><span class="p">),</span><span class="w"> </span><span class="n">Country</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Customers</span><span class="w"> </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">Country</span><span class="w"> </span><span class="k">HAVING</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">CustomerID</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>
+<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">CustomerID</span><span class="p">),</span><span class="w"> </span><span class="n">Country</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Customers</span><span class="w"> </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">Country</span><span class="w"> </span><span class="k">HAVING</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">Customers</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2024 <a href="https://github.com/ashishbindra2"  target="_blank" rel="noopener">Ashish Bindra</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ashishbindra2" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M202.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M496 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://in.linkedin.com/in/ashishbindra2/" target="_blank" rel="noopener" title="in.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link", "content.code.annotation", "content.code.copy", "navigation.sections", "navigation.indexes", "navigation.instant", "navigation.tabs", "navigation.top", "navigation.tracking", "search.suggest", "search.highlight", "toc.follow"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

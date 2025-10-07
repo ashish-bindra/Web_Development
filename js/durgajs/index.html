@@ -1,0 +1,3895 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../Django/Django/">
+      
+      
+        <link rel="next" href="../dom/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>Overview - Web Development Tutorials</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#javascript" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Web Development Tutorials" class="md-header__button md-logo" aria-label="Web Development Tutorials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Web Development Tutorials
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../database/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  database
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Django/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Django
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  js
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../FastApi/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Fastapi
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tools/poetry/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  tools
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../pydantic/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Pydantic
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../important/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  imp
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../revision/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  revision
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Web Development Tutorials" class="md-nav__button md-logo" aria-label="Web Development Tutorials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Web Development Tutorials
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../database/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    database
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            database
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/view/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    View
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/indexes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/equi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Equi-join
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/self_join/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    self-join
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/subqueries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    sub-query
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/sql%20faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ SQL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/DA_SQL_Sorting_Grouping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DA SQL Grouping
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/query/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    query
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    practice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/interview_pratical/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    interview praticale
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/interview_theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    interview theory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/radis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    radis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Django/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Django
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Django
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Django/Django/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Django
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    js
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            js
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-javascript-developers-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. JavaScript Developer's Console
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. JavaScript Developer&#39;s Console">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-launch-javascript-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Launch JavaScript Console:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-5-basic-javascript-primitive-data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. The 5 Basic JavaScript Primitive Data Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The 5 Basic JavaScript Primitive Data Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q-how-to-find-the-number-of-characters-present-in-the-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q. How to find the number of characters present in the string?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-how-to-access-characters-of-the-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q. How to access characters of the String?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#javascript-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      JavaScript Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-most-commonly-used-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 most commonly used functions:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-write-javascript-to-a-seperate-file-and-connect-to-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to write JavaScript to a seperate File and connect to HTML:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demo-application-age-and-death-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Demo Application: Age and Death Calculator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operators:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operators:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#difference-between-and" class="md-nav__link">
+    <span class="md-ellipsis">
+      Difference between == and ===:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-any-x-value-including-nan" class="md-nav__link">
+    <span class="md-ellipsis">
+      for any x value including NaN
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logical-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logical operators:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-the-logical-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      In the logical operator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#condtional-statement-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Condtional statement / Selection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Condtional statement / Selection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#to-read-number-from-end-user-prompt-is-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      To read number from end user prompt is required
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="To read number from end user prompt is required">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read-age-from-the-end-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read age from the end user
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iterative-statement-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterative statement / loops:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Iterative statement / loops:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loops-in-js" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loops in js:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#while" class="md-nav__link">
+    <span class="md-ellipsis">
+      while:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="while:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      for loop
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#while-vs-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      while vs for
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secreat-agent-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secreat Agent Application:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#to-delar-a-fuction" class="md-nav__link">
+    <span class="md-ellipsis">
+      to delar a fuction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions-with-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      functions with arguments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-with-return-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function with return values
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Function with return values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#write-js-finction-to-take-number-as-argument-and-return-its-square-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Write js finction to take number as argument and return its square value
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-as-argument-and-return-capitilized-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      String as argument and return Capitilized String
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to-find-factorial-of-given-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      To find factorial of given number
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to-convert-from-snakecase-to-kebabcase" class="md-nav__link">
+    <span class="md-ellipsis">
+      To convert from SnakeCase to KebabCase
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#java-script-scopes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Java Script Scopes:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#higer-order-function-decorator-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Higer Order Function (decorator in python)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anonymous-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anonymous Function:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array-same-as-list-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Array (same as list in python)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Array (same as list in python)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-access-array-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to access array elements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-update-array-elemnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to update array elemnts:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is-it-possible-to-add-new-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Is it possible to add new elements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-new-elemnt-to-the-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding new elemnt to the array
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-empty-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      create empty array
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-find-length-of-an-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to find length of an array
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is-allow-to-hetrogenous-element" class="md-nav__link">
+    <span class="md-ellipsis">
+      is allow to hetrogenous element
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-methods-related-to-javascript-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important methods related to JavaScript arrays:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Important methods related to JavaScript arrays:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. push()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-pop" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. pop()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-unshift" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. unshift()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-shift" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. shift()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-indexof" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. indexOf()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-slice" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. slice()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-splice" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. splice()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nested-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nested Array
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nested Array">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-of" class="md-nav__link">
+    <span class="md-ellipsis">
+      for of
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#foreach-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      forEach() method:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-delete-array-elements-based-on-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to delete array elements based on index:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q1-write-a-js-function-to-take-an-array-as-argument-and-print-its-elements-in-reverse-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q1. Write a JS function to take an array as argument and print its elements in reverse order
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q2-write-a-js-function-to-take-an-array-as-argument-and-check-wheather-all-elements-are-identical-or-not-same-or-not" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q2. Write a JS function to take an array as argument and check wheather all elements are identical or not (same or not)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q3-maximum-value-of-given-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q3. Maximum value of given array?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q4-sum-of-elements-present-in-the-given-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q4. Sum of elements present in the given array?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#book-management-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Book Management Application:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object-mapdict" class="md-nav__link">
+    <span class="md-ellipsis">
+      object // (map,dict)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-access-values-from-the-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to access values from the object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-create-an-insilize-empty-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to create an insilize empty object
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iterating-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterating Objects:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrays-vs-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arrays vs Objects
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arrays vs Objects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nesting-of-arrays-and-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nesting of Arrays and Objects
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrays-of-ojects" class="md-nav__link">
+    <span class="md-ellipsis">
+      arrays of ojects:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ojects-of-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      ojects of arrays
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object Methods:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Object Methods:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#this-keyword" class="md-nav__link">
+    <span class="md-ellipsis">
+      this keyword
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#it-is-possible-to-refer-already-existing-function-as-object-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      It is possible to refer already existing function as object method.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mini-pro" class="md-nav__link">
+    <span class="md-ellipsis">
+      mini - pro
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DOM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jQuery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JQuery
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../FastApi/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Fastapi
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Fastapi
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FastApi/celery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    celery
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FastApi/asynchronous_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Async_api
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/poetry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    poetry
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pydantic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pydantic
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../important/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    imp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../revision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    revision
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-javascript-developers-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. JavaScript Developer's Console
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. JavaScript Developer&#39;s Console">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-launch-javascript-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Launch JavaScript Console:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-5-basic-javascript-primitive-data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. The 5 Basic JavaScript Primitive Data Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The 5 Basic JavaScript Primitive Data Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q-how-to-find-the-number-of-characters-present-in-the-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q. How to find the number of characters present in the string?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-how-to-access-characters-of-the-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q. How to access characters of the String?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#javascript-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      JavaScript Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-most-commonly-used-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 most commonly used functions:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-write-javascript-to-a-seperate-file-and-connect-to-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to write JavaScript to a seperate File and connect to HTML:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demo-application-age-and-death-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Demo Application: Age and Death Calculator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operators:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operators:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#difference-between-and" class="md-nav__link">
+    <span class="md-ellipsis">
+      Difference between == and ===:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-any-x-value-including-nan" class="md-nav__link">
+    <span class="md-ellipsis">
+      for any x value including NaN
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logical-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logical operators:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-the-logical-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      In the logical operator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#condtional-statement-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Condtional statement / Selection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Condtional statement / Selection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#to-read-number-from-end-user-prompt-is-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      To read number from end user prompt is required
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="To read number from end user prompt is required">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read-age-from-the-end-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read age from the end user
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iterative-statement-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterative statement / loops:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Iterative statement / loops:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loops-in-js" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loops in js:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#while" class="md-nav__link">
+    <span class="md-ellipsis">
+      while:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="while:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      for loop
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#while-vs-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      while vs for
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secreat-agent-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secreat Agent Application:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#to-delar-a-fuction" class="md-nav__link">
+    <span class="md-ellipsis">
+      to delar a fuction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions-with-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      functions with arguments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-with-return-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function with return values
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Function with return values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#write-js-finction-to-take-number-as-argument-and-return-its-square-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Write js finction to take number as argument and return its square value
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-as-argument-and-return-capitilized-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      String as argument and return Capitilized String
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to-find-factorial-of-given-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      To find factorial of given number
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to-convert-from-snakecase-to-kebabcase" class="md-nav__link">
+    <span class="md-ellipsis">
+      To convert from SnakeCase to KebabCase
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#java-script-scopes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Java Script Scopes:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#higer-order-function-decorator-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Higer Order Function (decorator in python)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anonymous-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anonymous Function:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array-same-as-list-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Array (same as list in python)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Array (same as list in python)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-access-array-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to access array elements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-update-array-elemnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to update array elemnts:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is-it-possible-to-add-new-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Is it possible to add new elements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-new-elemnt-to-the-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding new elemnt to the array
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-empty-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      create empty array
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-find-length-of-an-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to find length of an array
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is-allow-to-hetrogenous-element" class="md-nav__link">
+    <span class="md-ellipsis">
+      is allow to hetrogenous element
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-methods-related-to-javascript-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important methods related to JavaScript arrays:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Important methods related to JavaScript arrays:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. push()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-pop" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. pop()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-unshift" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. unshift()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-shift" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. shift()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-indexof" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. indexOf()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-slice" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. slice()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-splice" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. splice()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nested-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nested Array
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nested Array">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-of" class="md-nav__link">
+    <span class="md-ellipsis">
+      for of
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#foreach-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      forEach() method:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-delete-array-elements-based-on-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to delete array elements based on index:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q1-write-a-js-function-to-take-an-array-as-argument-and-print-its-elements-in-reverse-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q1. Write a JS function to take an array as argument and print its elements in reverse order
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q2-write-a-js-function-to-take-an-array-as-argument-and-check-wheather-all-elements-are-identical-or-not-same-or-not" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q2. Write a JS function to take an array as argument and check wheather all elements are identical or not (same or not)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q3-maximum-value-of-given-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q3. Maximum value of given array?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q4-sum-of-elements-present-in-the-given-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q4. Sum of elements present in the given array?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#book-management-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Book Management Application:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object-mapdict" class="md-nav__link">
+    <span class="md-ellipsis">
+      object // (map,dict)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-access-values-from-the-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to access values from the object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-create-an-insilize-empty-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to create an insilize empty object
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iterating-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterating Objects:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrays-vs-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arrays vs Objects
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arrays vs Objects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nesting-of-arrays-and-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nesting of Arrays and Objects
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrays-of-ojects" class="md-nav__link">
+    <span class="md-ellipsis">
+      arrays of ojects:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ojects-of-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      ojects of arrays
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object Methods:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Object Methods:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#this-keyword" class="md-nav__link">
+    <span class="md-ellipsis">
+      this keyword
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#it-is-possible-to-refer-already-existing-function-as-object-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      It is possible to refer already existing function as object method.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mini-pro" class="md-nav__link">
+    <span class="md-ellipsis">
+      mini - pro
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="javascript">JavaScript<a class="headerlink" href="#javascript" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Java Script is Full pledged Programming Language. </li>
+<li>The main purpose of java script is to add functionality (actions) to the HTML.</li>
+<li>Usually we can Java Script in the Front-end and we can use Node JS for Back-end.</li>
+</ul>
+<h2 id="1-javascript-developers-console">1. JavaScript Developer's Console<a class="headerlink" href="#1-javascript-developers-console" title="Permanent link">&para;</a></h2>
+<p>We can use this developer's console to test our java script coding snippets. 
+- This is just for testing purpose only and usaully not recommended for main coding.</p>
+<h3 id="how-to-launch-javascript-console">How to Launch JavaScript Console:<a class="headerlink" href="#how-to-launch-javascript-console" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Browser =&gt; Right Click =&gt; Inspect =&gt;  Console </li>
+<li>Short-cut: Ctrl+Shift+j</li>
+</ul>
+<p><strong>Note:</strong>
+1. To clear console we have to use clear() function. 
+2. ; at end of statement is not mandatory in newer versions.</p>
+<h2 id="2-the-5-basic-javascript-primitive-data-types">2. The 5 Basic JavaScript Primitive Data Types<a class="headerlink" href="#2-the-5-basic-javascript-primitive-data-types" title="Permanent link">&para;</a></h2>
+<p>Java Script defines the following 5 primitive data types</p>
+<ol>
+<li>Numbers</li>
+<li>string</li>
+<li>boolean</li>
+<li>null </li>
+<li>
+<p>undefined</p>
+</li>
+<li>
+<p>Numbers:
+All these are of "number" type 10 , -10 , 10.5
+-  Java Script never cares whether it is integral or float-point or signed and unsigned.
+- General Mathematical operators are applicable for numbers</p>
+<ul>
+<li>10+20 </li>
+<li>10-20 </li>
+<li>10/20 </li>
+<li>10*20 </li>
+<li>10%3 </li>
+<li>10**2</li>
+</ul>
+</li>
+</ol>
+<p>Note: We can check the type of variable by using typeof keyword typeof x;</p>
+<ol start="2">
+<li>
+<p>string:
+Any sequence of characters within either single quotes or double quotes is treated as string.</p>
+<ul>
+<li>'ashish'</li>
+<li>"ashish"</li>
+<li>We can apply + operator for Strings also and it acts as concatenation operator.</li>
+<li>Rule: If both arguments are number type then + operator acts as arithmetic addition operator. </li>
+<li>If atleast one argument is of string type then + operator acts as concatenation operator.</li>
+<li>10+20 =&gt;30 </li>
+<li>'ashish'+10 =&gt; ashish10 </li>
+<li>'ashish'+true =&gt; ashishtrue</li>
+<li>We can use esacape characters also in the string.</li>
+<li>'durga\nsoft' </li>
+<li>'durga\tsoft' </li>
+<li>'This is \' symbol' </li>
+<li>'This is \" symbol' </li>
+<li>'This is \ symbol'</li>
+</ul>
+</li>
+</ol>
+<h3 id="q-how-to-find-the-number-of-characters-present-in-the-string">Q. How to find the number of characters present in the string?<a class="headerlink" href="#q-how-to-find-the-number-of-characters-present-in-the-string" title="Permanent link">&para;</a></h3>
+<p>We can find by using length variable
+- Eg:'durgasoft'.length</p>
+<h3 id="q-how-to-access-characters-of-the-string">Q. How to access characters of the String?<a class="headerlink" href="#q-how-to-access-characters-of-the-string" title="Permanent link">&para;</a></h3>
+<ul>
+<li>By using index </li>
+<li>index of first character is zero<div class="highlight"><pre><span></span><code>&#39;durga&#39;[2] // r 
+&#39;durga&#39;[200] // undefined but no error 
+&#39;durga&#39;[-1] // undefined
+</code></pre></div>
+</li>
+</ul>
+<blockquote>
+<p>Note: If we are trying to access string elements with out of range index or negative index then we will get undefined value and we won't get any Error.</p>
+</blockquote>
+<ol start="3">
+<li><strong><em>boolean:</em></strong>
+The only allowed values are: true and false (case sensitive)</li>
+</ol>
+<h2 id="javascript-variables">JavaScript Variables<a class="headerlink" href="#javascript-variables" title="Permanent link">&para;</a></h2>
+<p>Variables are containers to store values.
+- Syntax: var variableName=variableValue 
+- Eg: </p>
+<div class="highlight"><pre><span></span><code>    var name = &quot;durga&quot; 
+    var age = 60 
+    var isMarried = false
+</code></pre></div>
+<blockquote>
+<p>Note: JavaScript variables follow CamelCase Convention </p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>- studentMobileNumber =&gt; Camel case(Java,JavaScript etc) 
+- student_mobile_number =&gt; Snake Case(Python ) 
+- student-mobile-number =&gt; Kebab Case(Lisp)
+</code></pre></div>
+<p>Based on provided value automatically type will be considered for variables.</p>
+<div class="highlight"><pre><span></span><code>Eg: var x = 10 
+typeof x =&gt; number 
+x = false typeof x =&gt; boolean
+</code></pre></div>
+<p>Hence Java Script is dynamically Typed Programming Language like Python</p>
+<ol start="4">
+<li><strong><em>null and undefined:</em></strong>
+Variables that are declared but not initialized, are considered as undefined<ul>
+<li>Eg:
+ ```js
+ var x; </li>
+<li>typeof x // undefined
+```</li>
+<li>null value means nothing. </li>
+<li>If the value of a variable null means that variable not pointing to any object.</li>
+<li>var currentplayer = 'durga' </li>
+<li>currentplayer = null //game over</li>
+</ul>
+</li>
+</ol>
+<h2 id="methods">methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<h3 id="3-most-commonly-used-functions">3 most commonly used functions:<a class="headerlink" href="#3-most-commonly-used-functions" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>alert()</code></li>
+<li><code>prompr()</code></li>
+<li>
+<p><code>console.log()</code></p>
+</li>
+<li>
+<p>***alert():**
+To display alerts to the end user
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Hello there&#39;</span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nx">alert</span><span class="p">(</span><span class="mf">100000</span><span class="p">)</span><span class="w"> </span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nx">alert</span><span class="p">(</span><span class="mf">10.5</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>console.log(): 
+To print messages to the developer's console 
+    Eg: console.log('Hello there') 
+    console.log(10*20) </li>
+</ol>
+<p>These console message not meant for end user.</p>
+<ol start="3">
+<li>prompt(): 
+- To get input from the end user <ul>
+<li><code>prompt('What is Your Name:')</code></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>
+<p>Here we are not saving the value for the future purpose. But we can save as follows </p>
+<ul>
+<li><code>var name= prompt('What is Your Name:')</code></li>
+</ul>
+</li>
+<li>
+<p>Based on our requirement we can use this name </p>
+<ul>
+<li><code>console.log('Hello '+name+' Good Evening')</code></li>
+<li><code>alert('Hello '+name+' Good Evening')</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="how-to-write-javascript-to-a-seperate-file-and-connect-to-html">How to write JavaScript to a seperate File and connect to HTML:<a class="headerlink" href="#how-to-write-javascript-to-a-seperate-file-and-connect-to-html" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>demo.js: 
+ <code>alert('Hello everyone good evening')</code></p>
+</li>
+<li>
+<p>html: </p>
+</li>
+<li>We can link javascript file to html by using the following <script> tag. </li>
+<li><script type="text/javascript" src="demo.js"></script> </li>
+<li>We can take this script tag either inside head tag or body tag. If we are taking inside head tag then javascript code will be exeucted before processing body. </li>
+<li>If we are taking inside body tag then javascript code will be executed as the part of body execution.</li>
+</ul>
+<!-- <script type="text/javascript" src="domo.js"></script> -->
+<p>we can take this on body as well as head part also</p>
+<ul>
+<li>if we take in head part first js will executed after then body will be consider</li>
+<li>if we take in body then first body will execueted after that js will execute</li>
+</ul>
+<h3 id="demo-application-age-and-death-calculator">Demo Application: Age and Death Calculator<a class="headerlink" href="#demo-application-age-and-death-calculator" title="Permanent link">&para;</a></h3>
+<p>demo.js:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">name</span><span class="o">=</span><span class="nx">prompt</span><span class="p">(</span><span class="s1">&#39;Enter Your Name:&#39;</span><span class="p">);</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">age</span><span class="o">=</span><span class="nx">prompt</span><span class="p">(</span><span class="s1">&#39;Enter Your Age:&#39;</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nx">agedays</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">age</span><span class="o">*</span><span class="mf">365.25</span><span class="w"> </span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nx">remainingdays</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mf">60</span><span class="o">-</span><span class="nx">age</span><span class="p">)</span><span class="o">*</span><span class="mf">365.25</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Hello &quot;</span><span class="o">+</span><span class="nx">name</span><span class="o">+</span><span class="s2">&quot;...\nYour Current Age:&quot;</span><span class="o">+</span><span class="nx">agedays</span><span class="o">+</span><span class="s2">&quot; days\nYou will be there on the earth only &quot;</span><span class="o">+</span><span class="nx">remainingdays</span><span class="o">+</span><span class="s2">&quot; days. No one can change including God also&quot;</span><span class="p">);</span>
+</code></pre></div></p>
+<h2 id="operators">Operators:<a class="headerlink" href="#operators" title="Permanent link">&para;</a></h2>
+<hr />
+<ol>
+<li>
+<p>Airthmetic:
++-<em>/%*</em></p>
+</li>
+<li>
+<p>comparison:
+&lt;,&gt;&lt;<mark>, &gt;</mark>, == !=</p>
+</li>
+</ol>
+<h3 id="difference-between-and">Difference between == and ===:<a class="headerlink" href="#difference-between-and" title="Permanent link">&para;</a></h3>
+<hr />
+<ul>
+<li>In the case of == operator internally type coersion will be performed. Hence if arguments are different types first both arguments will be converted to same type and then comparison will be performed. Hence both arguments need not be same type.
+    Eg:
+    10 == "10" // true 
+    10 == 10  //true</li>
+<li>Here only values are important but not types.</li>
+<li>But in the case === operator, type coersion won't be performed. Hence argument types must be same, otherwise we will get false.<ul>
+<li>10 === 10 // true </li>
+<li>10 === "10" // false
+Note: </li>
+</ul>
+</li>
+<li>== =&gt; Normal equality operator where types are not important but values must be same </li>
+<li>=== =&gt; Strict equality operator where both types and values must be same</li>
+</ul>
+<p>It is recommended to use === operator because it is more safer and more specific.</p>
+<p>== only content will compare but int the case of === equal in addition to content types also be consider thats why === equal is strickt equality</p>
+<p>10 == "10" # true
+one is number other one is string the answer is true
+it never going to check type</p>
+<p>10 === "10" # false</p>
+<p>null == undefined # true
+Nan ==&gt; 0/0</p>
+<h3 id="for-any-x-value-including-nan">for any x value including NaN<a class="headerlink" href="#for-any-x-value-including-nan" title="Permanent link">&para;</a></h3>
+<p>If the result is undefined then we will get NaN 
+Eg: 0/0 // NaN</p>
+<ul>
+<li>For any x value including NaN the following expressions returns false<ul>
+<li>x &lt; NaN</li>
+<li>x &lt;= NaN</li>
+<li>x &gt;  NaN</li>
+<li>x &gt;= NaN</li>
+<li>x == NaN
+For any x value including NaN the following expression returns true x != NaN
+always returns false</li>
+</ul>
+</li>
+</ul>
+<p>x !=  NaN</p>
+<p>It return true
+- X &amp;&amp; Y =&gt; If both arguments are true then only result is true. i.e if atleast one argument is false then the result is always false
+- X || Y =&gt; If atleast one argument is true then the result is true. i.e if both arguments are false then only result is false.</p>
+<h2 id="logical-operators">Logical operators:<a class="headerlink" href="#logical-operators" title="Permanent link">&para;</a></h2>
+<hr />
+<p>&amp;&amp; ===&gt; AND if both arguments are true
+||  ===&gt; OR if ateast one arument is true
+! ==&gt; complement</p>
+<p>true &amp;&amp; false
+true || false
+!false</p>
+<h2 id="in-the-logical-operator">In the logical operator<a class="headerlink" href="#in-the-logical-operator" title="Permanent link">&para;</a></h2>
+<hr />
+<ol>
+<li>0 value is always treated as false</li>
+<li>non-zero value is always treated as true</li>
+<li>'' string  treated as false</li>
+<li>null, undefined, NaN are treated as false only.</li>
+</ol>
+<h2 id="condtional-statement-selection">Condtional statement / Selection<a class="headerlink" href="#condtional-statement-selection" title="Permanent link">&para;</a></h2>
+<hr />
+<p>if
+if-else</p>
+<p>if(b){
+    action if b is true
+}
+else{
+    action if b is false
+}</p>
+<ol>
+<li>Write a JS code to check whether the given number is even or not.</li>
+</ol>
+<h3 id="to-read-number-from-end-user-prompt-is-required">To read number from end user prompt is required<a class="headerlink" href="#to-read-number-from-end-user-prompt-is-required" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Enter any number to check: &quot;</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nx">alert</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">num</span><span class="p">)</span><span class="w"> </span><span class="c1">// string</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">num</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0</span><span class="p">){</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Given Number is Even!!!&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">}</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">else</span><span class="p">{</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Given Number is not Even&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Number type</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Enter any number to check: &quot;</span><span class="p">))</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nx">alert</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">num</span><span class="p">)</span><span class="w"> </span><span class="c1">// Number type</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">num</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0</span><span class="p">){</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Given Number is Even!!!&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">}</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">else</span><span class="p">{</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Given Number is not Even&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="p">}</span>
+</code></pre></div>
+<h4 id="read-age-from-the-end-user">Read age from the end user<a class="headerlink" href="#read-age-from-the-end-user" title="Permanent link">&para;</a></h4>
+<p>age &lt; 18
+age &gt; 60
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Enter Your Age: &quot;</span><span class="p">))</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">if</span><span class="p">(</span><span class="nx">age</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">60</span><span class="p">){</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Plz wait some more time definetly you will get best match!!! &quot;</span><span class="p">)</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">}</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">age</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">18</span><span class="p">){</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Ypor age is alredy crossed marriage age...No chance of getting marriage!!!&#39;</span><span class="p">)</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">}</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="k">else</span><span class="p">{</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Thnaks for registration you will get match details by email!!!&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="p">}</span>
+</code></pre></div></p>
+<h2 id="iterative-statement-loops">Iterative statement / loops:<a class="headerlink" href="#iterative-statement-loops" title="Permanent link">&para;</a></h2>
+<hr />
+<p>If want to execute a group of statemnt for multiple types</p>
+<p>DRY principle: Font Repeat Yourself</p>
+<p>console.log("Hello")
+console.log("Hello")
+console.log("Hello")
+console.log("Hello")
+console.log("Hello")
+console.log("Hello")
+console.log("Hello")</p>
+<p>for(59){
+    console.log("Hello")
+}
+It reducre length of code, and readbilty increase</p>
+<h3 id="loops-in-js">Loops in js:<a class="headerlink" href="#loops-in-js" title="Permanent link">&para;</a></h3>
+<ol>
+<li>while</li>
+<li>for </li>
+<li>for-of</li>
+<li>for-in</li>
+<li>for-each</li>
+</ol>
+<h3 id="while">while:<a class="headerlink" href="#while" title="Permanent link">&para;</a></h3>
+<p>As loon as some condition is true keep on executing the code</p>
+<p>while(condition)
+{
+    body
+}</p>
+<ol>
+<li>To print Hello 10 times
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">while</span><span class="p">(</span><span class="nx">count</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">10</span><span class="p">){</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">count</span><span class="p">);</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nx">count</span><span class="o">++</span><span class="w"> </span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">}</span>
+</code></pre></div></li>
+<li>To print each charcter present inside a string:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Enter some word: &quot;</span><span class="p">)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="k">while</span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">){</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="nx">i</span><span class="o">++</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">}</span>
+</code></pre></div></li>
+</ol>
+<h4 id="for-loop">for loop<a class="headerlink" href="#for-loop" title="Permanent link">&para;</a></h4>
+<ol>
+<li>General for loop</li>
+<li>forEach() (array)</li>
+<li>for-of loop (array)</li>
+<li>
+<p>for-in loop (object)</p>
+</li>
+<li>
+<p>General for loop</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="mf">10</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="while-vs-for">while vs for<a class="headerlink" href="#while-vs-for" title="Permanent link">&para;</a></h2>
+<ul>
+<li>If we know number of iteration in advance ==&gt; for loop</li>
+<li>If we dont know number of iterations in advance and as long as some condition is true then execute loop body....</li>
+</ul>
+<h2 id="secreat-agent-application">Secreat Agent Application:<a class="headerlink" href="#secreat-agent-application" title="Permanent link">&para;</a></h2>
+<p>Rules:
+1. The first character of the name should be 'd'
+2. The last character of FAvourite Actor should be 'r'
+3. the lucky number should be 7
+4. the length of dish should be &gt;= 6</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Enter Your Name: &quot;</span><span class="p">)</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">actor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Enter Your Favourite Actor:&quot;</span><span class="p">)</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="kd">var</span><span class="w"> </span><span class="nx">lucky</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Enter Your Lucky Number:&quot;</span><span class="p">)</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="kd">var</span><span class="w"> </span><span class="nx">dish</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Enter Your Favorite Dish:&quot;</span><span class="p">)</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="kd">var</span><span class="w"> </span><span class="nx">nameCondition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="kd">var</span><span class="w"> </span><span class="nx">actorCondition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="kd">var</span><span class="w"> </span><span class="nx">luckyCondition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="kd">var</span><span class="w"> </span><span class="nx">dishCondtion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">name</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="s1">&#39;d&#39;</span><span class="p">){</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">    </span><span class="nx">nameCondition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="p">}</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="k">if</span><span class="p">(</span><span class="nx">actor</span><span class="p">[</span><span class="nx">actor</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mf">1</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;r&#39;</span><span class="p">){</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">    </span><span class="nx">actorCondition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="p">}</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="k">if</span><span class="p">(</span><span class="nx">lucky</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">7</span><span class="p">){</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="w">    </span><span class="nx">luckyCondition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="p">}</span>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="k">if</span><span class="p">(</span><span class="nx">dish</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">6</span><span class="p">){</span>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="w">    </span><span class="nx">dishCondtion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="p">}</span>
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Hello: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;\n Thanks for providing information&quot;</span><span class="p">)</span>
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="k">if</span><span class="p">(</span><span class="nx">nameCondition</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">actorCondition</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">luckyCondition</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">dishCondtion</span><span class="p">){</span>
+<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Helllo Secreate Agent .. Next Operation is&quot;</span><span class="p">);</span>
+<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;We have to kill atleast 10 sleeping students in the class room b&#39;z these are burden to the country!&quot;</span><span class="p">);</span>
+<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="function">Function<a class="headerlink" href="#function" title="Permanent link">&para;</a></h2>
+<p>If code is repetedly required neer recommended to write such type of code we have to write inside a fuction</p>
+<h2 id="to-delar-a-fuction">to delar a fuction<a class="headerlink" href="#to-delar-a-fuction" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>    function functionName(arguments){
+        body ...
+        retuen value;
+    }
+</code></pre></div>
+<ul>
+<li>types of parater is optional becouse js is dynamic type</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">greeting</span><span class="p">(){</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello Good Evining!!!&quot;</span><span class="p">);</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p">}</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nx">greeting</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="functions-with-arguments">functions with arguments<a class="headerlink" href="#functions-with-arguments" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">greeting</span><span class="p">(</span><span class="nx">name</span><span class="p">){</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Hello &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; Good Evning&quot;</span><span class="p">);</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="p">}</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="kd">var</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Enter Your Name &quot;</span><span class="p">)</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="nx">greeting</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
+</code></pre></div>
+<p>if we dont pass name if will show undefined</p>
+<p>to solve this proble we use default argument
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">greeting</span><span class="p">(</span><span class="nx">name</span><span class="o">=</span><span class="s2">&quot;Guest&quot;</span><span class="p">){</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Hello &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; Good Evning&quot;</span><span class="p">);</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="p">}</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="kd">var</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Enter Your Name &quot;</span><span class="p">)</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="nx">greeting</span><span class="p">()</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="nx">greeting</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
+</code></pre></div></p>
+<h2 id="function-with-return-values">Function with return values<a class="headerlink" href="#function-with-return-values" title="Permanent link">&para;</a></h2>
+<p>it will only return one value </p>
+<h3 id="write-js-finction-to-take-number-as-argument-and-return-its-square-value">Write js finction to take number as argument and return its square value<a class="headerlink" href="#write-js-finction-to-take-number-as-argument-and-return-its-square-value" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">squareIt</span><span class="p">(</span><span class="nx">number</span><span class="p">){</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">number</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">number</span><span class="p">;</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="p">}</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="kd">var</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">squareIt</span><span class="p">(</span><span class="mf">4</span><span class="p">)</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;The square of 4 is &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">result</span><span class="p">);</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;The square of 5 is &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">squareIt</span><span class="p">(</span><span class="mf">5</span><span class="p">));</span>
+</code></pre></div>
+<h3 id="string-as-argument-and-return-capitilized-string">String as argument and return Capitilized String<a class="headerlink" href="#string-as-argument-and-return-capitilized-string" title="Permanent link">&para;</a></h3>
+<p>sunny
+Sunny</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">captalize</span><span class="p">(</span><span class="nx">str</span><span class="p">){</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">str</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">toUpperCase</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">str</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="p">}</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">captalize</span><span class="p">(</span><span class="s2">&quot;ashish&quot;</span><span class="p">));</span>
+</code></pre></div>
+<h3 id="to-find-factorial-of-given-number">To find factorial of given number<a class="headerlink" href="#to-find-factorial-of-given-number" title="Permanent link">&para;</a></h3>
+<h3 id="to-convert-from-snakecase-to-kebabcase">To convert from SnakeCase to KebabCase<a class="headerlink" href="#to-convert-from-snakecase-to-kebabcase" title="Permanent link">&para;</a></h3>
+<p>Snake case: total_number =&gt; words seprate with <code>_</code> symbols
+Kebab case: total-numer =&gt; words seprate with <code>-</code> symbols</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">snakeToKebob</span><span class="p">(</span><span class="nx">str</span><span class="p">){</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">newStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-&quot;</span><span class="p">);</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">newStr</span><span class="p">;</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="p">}</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">snakeToKebob</span><span class="p">(</span><span class="s2">&quot;total_number&quot;</span><span class="p">))</span>
+</code></pre></div>
+<ul>
+<li>Only first ocurence will be replace</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">snakeToKebob</span><span class="p">(</span><span class="nx">str</span><span class="p">){</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">newStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">str</span><span class="p">.</span><span class="nx">replaceAll</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-&quot;</span><span class="p">);</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">newStr</span><span class="p">;</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="p">}</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">snakeToKebob</span><span class="p">(</span><span class="s2">&quot;total_number_asd&quot;</span><span class="p">))</span>
+</code></pre></div>
+<h2 id="java-script-scopes">Java Script Scopes:<a class="headerlink" href="#java-script-scopes" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Global Scope : The variables which desclar outside of function</li>
+<li>Local Scope</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="c1">//global</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">f1</span><span class="p">(){</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="mf">20</span><span class="p">;</span><span class="w"> </span><span class="c1">// local variable</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">y</span><span class="p">)</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="p">}</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="nx">f1</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="c1">//global</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">f1</span><span class="p">(){</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="mf">20</span><span class="p">;</span><span class="w"> </span><span class="c1">// local variable</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="c1">//20</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="p">}</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="nx">f1</span><span class="p">()</span>
+</code></pre></div></p>
+<h2 id="higer-order-function-decorator-in-python">Higer Order Function (decorator in python)<a class="headerlink" href="#higer-order-function-decorator-in-python" title="Permanent link">&para;</a></h2>
+<p>A Function can return another function also</p>
+<p>setInterval(functionName, 3000) // this function will be executed for every 3000 milisec, it will continpous infintly</p>
+<ul>
+<li>setInterval() return some value to stop this we pass that value to that function</li>
+<li>claarInterval(1)</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">singASong</span><span class="p">(){</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Rangamman...Mangamma...&quot;</span><span class="p">)</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Jil..Jil ...Jigel...Rani...&quot;</span><span class="p">)</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="p">}</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="nx">setInterval</span><span class="p">(</span><span class="nx">singASong</span><span class="p">,</span><span class="mf">3000</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="anonymous-function">Anonymous Function:<a class="headerlink" href="#anonymous-function" title="Permanent link">&para;</a></h2>
+<p>We can delacrea function without a name, such type of nameless function is called anonymous
+- Just for one time use
+- just for instance use</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Anonymous Functions&quot;</span><span class="p">)},</span><span class="w"> </span><span class="mf">2000</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="array-same-as-list-in-python">Array (same as list in python)<a class="headerlink" href="#array-same-as-list-in-python" title="Permanent link">&para;</a></h2>
+<p>An indexed collection of elemnts</p>
+<p>var n1 = 10;
+var n2 = 20;
+var n3 = 30;</p>
+<p>var numbers = [10,20,30,40]</p>
+<h3 id="how-to-access-array-elements">How to access array elements<a class="headerlink" href="#how-to-access-array-elements" title="Permanent link">&para;</a></h3>
+<p>index =&gt; acces by using index
+numbers[1]</p>
+<h3 id="how-to-update-array-elemnts">How to update array elemnts:<a class="headerlink" href="#how-to-update-array-elemnts" title="Permanent link">&para;</a></h3>
+<p>numbers[2] = 22;</p>
+<h3 id="is-it-possible-to-add-new-elements">Is it possible to add new elements<a class="headerlink" href="#is-it-possible-to-add-new-elements" title="Permanent link">&para;</a></h3>
+<p>No, </p>
+<h3 id="adding-new-elemnt-to-the-array">Adding new elemnt to the array<a class="headerlink" href="#adding-new-elemnt-to-the-array" title="Permanent link">&para;</a></h3>
+<p>numbers[4] = 50</p>
+<p>Is it valid or Is it Invalid ?
+100% this one is</p>
+<p>retrieve
+update
+add</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">friends</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;ashish&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;sunny&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;bunny&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;chinny&quot;</span><span class="p">];</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">friends</span><span class="p">)</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="nx">friends</span><span class="p">[</span><span class="mf">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;katrina&quot;</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="nx">friends</span><span class="p">[</span><span class="mf">20</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;kreena&quot;</span><span class="w"> </span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">friends</span><span class="p">)</span><span class="w"> </span><span class="c1">// (21) [&#39;ashish&#39;, &#39;sunny&#39;, &#39;bunny&#39;, &#39;chinny&#39;, &#39;katrina&#39;, empty × 15, &#39;kreena&#39;]</span>
+</code></pre></div>
+<h3 id="create-empty-array">create empty array<a class="headerlink" href="#create-empty-array" title="Permanent link">&para;</a></h3>
+<ol>
+<li>var nums = []</li>
+<li>var numbers = new Array();</li>
+</ol>
+<h3 id="how-to-find-length-of-an-array">How to find length of an array<a class="headerlink" href="#how-to-find-length-of-an-array" title="Permanent link">&para;</a></h3>
+<p>legth varable</p>
+<blockquote>
+<p>nums.length
+friends.length</p>
+</blockquote>
+<h3 id="is-allow-to-hetrogenous-element">is allow to hetrogenous element<a class="headerlink" href="#is-allow-to-hetrogenous-element" title="Permanent link">&para;</a></h3>
+<p>yes, </p>
+<div class="highlight"><pre><span></span><code>var random_collection = [&quot;as&quot;, 12, true, null];
+</code></pre></div>
+<h3 id="important-methods-related-to-javascript-arrays">Important methods related to JavaScript arrays:<a class="headerlink" href="#important-methods-related-to-javascript-arrays" title="Permanent link">&para;</a></h3>
+<ol>
+<li>push()</li>
+<li>pop()</li>
+<li>unshift()</li>
+<li>shift()</li>
+<li>indexOf()</li>
+<li>slice()</li>
+<li>splice()</li>
+</ol>
+<h4 id="1-push">1. push()<a class="headerlink" href="#1-push" title="Permanent link">&para;</a></h4>
+<p>To add an element at last postion</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="mf">20</span><span class="p">,</span><span class="mf">30</span><span class="p">,</span><span class="mf">40</span><span class="p">]</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">)</span><span class="w"> </span><span class="c1">// (4) [10, 20, 30, 40]</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="nx">numbers</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mf">50</span><span class="p">)</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">)</span><span class="w"> </span><span class="c1">//(5) [10, 20, 30, 40, 50]</span>
+</code></pre></div>
+<h4 id="2-pop">2. pop()<a class="headerlink" href="#2-pop" title="Permanent link">&para;</a></h4>
+<p>To remove and return last element
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">)</span><span class="w"> </span><span class="c1">// (4) [10, 20, 30, 40]</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">pop</span><span class="p">())</span><span class="w"> </span><span class="c1">// 40</span>
+</code></pre></div></p>
+<h4 id="3-unshift">3. unshift()<a class="headerlink" href="#3-unshift" title="Permanent link">&para;</a></h4>
+<p>Is like pus() except that it will add in first place
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nx">numbers</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="mf">777</span><span class="p">)</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">)</span><span class="w"> </span><span class="c1">// (4) [777, 10, 20, 30]</span>
+</code></pre></div></p>
+<h4 id="4-shift">4. shift()<a class="headerlink" href="#4-shift" title="Permanent link">&para;</a></h4>
+<p>is like pop()</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nx">numbers</span><span class="p">.</span><span class="nx">shift</span><span class="p">()</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">)</span><span class="w">  </span><span class="c1">// (3) [10, 20, 30]</span>
+</code></pre></div>
+<h4 id="5-indexof">5. indexOf()<a class="headerlink" href="#5-indexof" title="Permanent link">&para;</a></h4>
+<p>return first orccurence, if specifed elemnt not avaliable then return -1
+<code>console.log(numbers.indexOf(10))</code></p>
+<h4 id="6-slice">6. slice()<a class="headerlink" href="#6-slice" title="Permanent link">&para;</a></h4>
+<p>returns from begin index to end-1  index
+<code>console.log(numbers.slice(2,5))</code></p>
+<p>for clone purpose 
+<code>numbers.slice()</code></p>
+<h4 id="7-splice">7. splice()<a class="headerlink" href="#7-splice" title="Permanent link">&para;</a></h4>
+<p>Removes elements from an array and, if necessary, inserts new elements in their place, returning the deleted elements.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">]</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="nx">arr</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="c1">// [3, 4, 5]</span>
+</code></pre></div></p>
+<h3 id="nested-array">Nested Array<a class="headerlink" href="#nested-array" title="Permanent link">&para;</a></h3>
+<p>array of array concept (zagged array)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">nums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">    </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="mf">20</span><span class="p">,</span><span class="mf">30</span><span class="p">],</span><span class="w"> </span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">    </span><span class="p">[</span><span class="mf">40</span><span class="p">,</span><span class="mf">50</span><span class="p">,</span><span class="mf">60</span><span class="p">],</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w">    </span><span class="p">[</span><span class="mf">70</span><span class="p">,</span><span class="mf">80</span><span class="p">,</span><span class="mf">90</span><span class="p">]</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="p">]</span>
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nums</span><span class="p">[</span><span class="mf">0</span><span class="p">][</span><span class="mf">0</span><span class="p">])</span>
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nums</span><span class="p">[</span><span class="mf">0</span><span class="p">][</span><span class="mf">1</span><span class="p">])</span>
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nums</span><span class="p">[</span><span class="mf">1</span><span class="p">][</span><span class="mf">0</span><span class="p">])</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">program to add list of books collection</span><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">var</span> <span class="n">books</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="n">var</span> <span class="nb">input</span> <span class="o">=</span> <span class="n">prompt</span><span class="p">(</span><span class="s2">&quot;WHich operation you want to perform [add | view | exit]:&quot;</span><span class="p">)</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="k">while</span><span class="p">(</span><span class="nb">input</span> <span class="o">!=</span> <span class="s2">&quot;exit&quot;</span><span class="p">){</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>    <span class="k">if</span><span class="p">(</span><span class="nb">input</span> <span class="o">==</span> <span class="s2">&quot;add&quot;</span><span class="p">){</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>        <span class="n">var</span> <span class="n">newBook</span> <span class="o">=</span> <span class="n">prompt</span><span class="p">(</span><span class="s2">&quot;Enter Name of the Book to add:&quot;</span><span class="p">);</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>        <span class="n">books</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">newBook</span><span class="p">);</span>
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a>    <span class="p">}</span>
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nb">input</span> <span class="o">==</span> <span class="s2">&quot;view&quot;</span><span class="p">){</span>
+<a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a>        <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s2">&quot;List of Avaliable Book&quot;</span><span class="p">)</span>
+<a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a>        <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">books</span><span class="p">)</span>
+<a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a>    <span class="p">}</span>
+<a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a>    <span class="k">else</span><span class="p">{</span>
+<a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a>        <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s2">&quot;Choose valid Operation&quot;</span><span class="p">);</span>
+<a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a>
+<a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a>    <span class="p">}</span>
+<a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a>    <span class="nb">input</span> <span class="o">=</span> <span class="n">prompt</span><span class="p">(</span><span class="s2">&quot;Which operation You want to perform [add | view | exit]:&quot;</span><span class="p">)</span>
+<a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a><span class="p">}</span>
+<a id="__codelineno-27-19" name="__codelineno-27-19" href="#__codelineno-27-19"></a><span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s2">&quot;Thanks for using our application&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">while</span><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span><span class="w"> </span><span class="mf">40</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">]</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="k">while</span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">numbers</span><span class="p">.</span><span class="nx">length</span><span class="p">){</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="w">    </span><span class="nx">i</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">for</span><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span><span class="w"> </span><span class="mf">40</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">]</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="k">for</span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">numbers</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="nx">numbers</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="p">}</span><span class="w"> </span>
+</code></pre></div>
+<h4 id="for-of">for of<a class="headerlink" href="#for-of" title="Permanent link">&para;</a></h4>
+<div class="highlight"><span class="filename">for of</span><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span><span class="w"> </span><span class="mf">40</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">]</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">numbers</span><span class="p">){</span>
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="p">}</span>
+</code></pre></div>
+<h4 id="foreach-method">forEach() method:<a class="headerlink" href="#foreach-method" title="Permanent link">&para;</a></h4>
+<p>arratobject.forEach(function)</p>
+<p>for each element present in array apply specified function
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span><span class="w"> </span><span class="mf">40</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">]</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="nx">numbers</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="nx">alert</span><span class="p">(</span><span class="nx">x</span><span class="p">);})</span>
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">heroines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;sunny&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;malika&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;veena&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;kartrina&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;karena&quot;</span><span class="p">]</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="nx">heroines</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">alert</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="how-to-delete-array-elements-based-on-index">How to delete array elements based on index:<a class="headerlink" href="#how-to-delete-array-elements-based-on-index" title="Permanent link">&para;</a></h3>
+<ul>
+<li>pop(), shift(), slice()</li>
+</ul>
+<p><code>heroines.slice(3,6)</code></p>
+<ul>
+<li>array is mutable</li>
+<li>string is immutable</li>
+<li>Once we create string object we cannot perform any changes to that object.</li>
+<li>
+<p>If we are trying to perform any chages then with those changes a new object will ber created.</p>
+</li>
+<li>
+<p>array mutable eg
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">heroines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;sunny&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;malika&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;veena&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;kartrina&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;karena&quot;</span><span class="p">]</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="nx">heroines</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;money&quot;</span>
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroines</span><span class="p">)</span><span class="w"> </span><span class="c1">// // var heroines = [&quot;sunny&quot;, &quot;malika&quot;, &quot;veena&quot;, &quot;kartrina&quot;, &quot;karena&quot;]</span>
+</code></pre></div></p>
+</li>
+<li>string immutable eg
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Sunny&quot;</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="nx">name</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;B&#39;</span>
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="c1">// Sunny</span>
+</code></pre></div></li>
+</ul>
+<h3 id="q1-write-a-js-function-to-take-an-array-as-argument-and-print-its-elements-in-reverse-order">Q1. Write a JS function to take an array as argument and print its elements in reverse order<a class="headerlink" href="#q1-write-a-js-function-to-take-an-array-as-argument-and-print-its-elements-in-reverse-order" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="nx">nums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">]</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">rev</span><span class="p">(</span><span class="nx">arr</span><span class="p">){</span>
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">reverse</span><span class="p">();</span>
+<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="p">}</span>
+<a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rev</span><span class="p">(</span><span class="nx">nums</span><span class="p">))</span>
+</code></pre></div>
+<h3 id="q2-write-a-js-function-to-take-an-array-as-argument-and-check-wheather-all-elements-are-identical-or-not-same-or-not">Q2. Write a JS function to take an array as argument and check wheather all elements are identical or not (same or not)<a class="headerlink" href="#q2-write-a-js-function-to-take-an-array-as-argument-and-check-wheather-all-elements-are-identical-or-not-same-or-not" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="nx">nums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">1</span><span class="p">,</span><span class="mf">1</span><span class="p">,</span><span class="mf">1</span><span class="p">,</span><span class="mf">1</span><span class="p">]</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>
+<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">iden</span><span class="p">(</span><span class="nx">arr</span><span class="p">){</span>
+<a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arr</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span>
+<a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="nx">v</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">arr</span><span class="p">){</span>
+<a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="nx">i</span><span class="o">!=</span><span class="nx">v</span><span class="p">){</span>
+<a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a><span class="w">            </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Not identical&quot;</span><span class="p">);</span>
+<a id="__codelineno-36-8" name="__codelineno-36-8" href="#__codelineno-36-8"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-36-9" name="__codelineno-36-9" href="#__codelineno-36-9"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-36-10" name="__codelineno-36-10" href="#__codelineno-36-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-36-11" name="__codelineno-36-11" href="#__codelineno-36-11"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-36-12" name="__codelineno-36-12" href="#__codelineno-36-12"></a><span class="p">}</span>
+<a id="__codelineno-36-13" name="__codelineno-36-13" href="#__codelineno-36-13"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iden</span><span class="p">(</span><span class="nx">nums</span><span class="p">))</span>
+</code></pre></div>
+<h3 id="q3-maximum-value-of-given-array">Q3. Maximum value of given array?<a class="headerlink" href="#q3-maximum-value-of-given-array" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="nx">nums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">]</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="kd">function</span><span class="w"> </span><span class="nx">max</span><span class="p">(</span><span class="nx">arr</span><span class="p">){</span>
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="w">    </span><span class="nx">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arr</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span>
+<a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="nx">v</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">arr</span><span class="p">){</span>
+<a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="nx">max</span><span class="o">&lt;</span><span class="nx">v</span><span class="p">){</span>
+<a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a><span class="w">            </span><span class="nx">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">v</span><span class="p">;</span>
+<a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">max</span>
+<a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a><span class="p">}</span>
+<a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">max</span><span class="p">(</span><span class="nx">nums</span><span class="p">))</span>
+</code></pre></div>
+<h3 id="q4-sum-of-elements-present-in-the-given-array">Q4. Sum of elements present in the given array?<a class="headerlink" href="#q4-sum-of-elements-present-in-the-given-array" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="nx">nums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">]</span>
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>
+<a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">sumarr</span><span class="p">(</span><span class="nx">arr</span><span class="p">){</span>
+<a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span>
+<a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="nx">v</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">arr</span><span class="p">){</span>
+<a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a><span class="w">        </span><span class="nx">n</span><span class="o">+=</span><span class="nx">v</span><span class="p">;</span>
+<a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-38-8" name="__codelineno-38-8" href="#__codelineno-38-8"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span>
+<a id="__codelineno-38-9" name="__codelineno-38-9" href="#__codelineno-38-9"></a><span class="p">}</span>
+<a id="__codelineno-38-10" name="__codelineno-38-10" href="#__codelineno-38-10"></a><span class="nx">sumarr</span><span class="p">(</span><span class="nx">nums</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="book-management-application">Book Management Application:<a class="headerlink" href="#book-management-application" title="Permanent link">&para;</a></h3>
+<hr />
+<p>add, list, exit, delete</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">books</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Which operation you want to perform [add | view | delete | exit]:&quot;</span><span class="p">)</span>
+<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>
+<a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="k">while</span><span class="p">(</span><span class="nx">input</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">&quot;exit&quot;</span><span class="p">){</span>
+<a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="nx">input</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;add&quot;</span><span class="p">){</span>
+<a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a><span class="w">        </span><span class="nx">addBook</span><span class="p">();</span>
+<a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="nx">input</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;view&quot;</span><span class="p">){</span>
+<a id="__codelineno-39-9" name="__codelineno-39-9" href="#__codelineno-39-9"></a><span class="w">        </span><span class="nx">viewBook</span><span class="p">();</span>
+<a id="__codelineno-39-10" name="__codelineno-39-10" href="#__codelineno-39-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-39-11" name="__codelineno-39-11" href="#__codelineno-39-11"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="nx">input</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;delete&quot;</span><span class="p">){</span>
+<a id="__codelineno-39-12" name="__codelineno-39-12" href="#__codelineno-39-12"></a><span class="w">        </span><span class="nx">deleteBook</span><span class="p">();</span>
+<a id="__codelineno-39-13" name="__codelineno-39-13" href="#__codelineno-39-13"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-39-14" name="__codelineno-39-14" href="#__codelineno-39-14"></a><span class="w">    </span><span class="k">else</span><span class="p">{</span>
+<a id="__codelineno-39-15" name="__codelineno-39-15" href="#__codelineno-39-15"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Please choose valid option&quot;</span><span class="p">);</span>
+<a id="__codelineno-39-16" name="__codelineno-39-16" href="#__codelineno-39-16"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-39-17" name="__codelineno-39-17" href="#__codelineno-39-17"></a><span class="w">    </span><span class="nx">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Which operation you want to perform [add | view | delete | exit]:&quot;</span><span class="p">)</span>
+<a id="__codelineno-39-18" name="__codelineno-39-18" href="#__codelineno-39-18"></a><span class="p">}</span>
+<a id="__codelineno-39-19" name="__codelineno-39-19" href="#__codelineno-39-19"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Thanks for using our application!!&quot;</span><span class="p">)</span>
+<a id="__codelineno-39-20" name="__codelineno-39-20" href="#__codelineno-39-20"></a>
+<a id="__codelineno-39-21" name="__codelineno-39-21" href="#__codelineno-39-21"></a><span class="kd">function</span><span class="w"> </span><span class="nx">addBook</span><span class="p">(){</span>
+<a id="__codelineno-39-22" name="__codelineno-39-22" href="#__codelineno-39-22"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">newBook</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Enter Book name to add:&quot;</span><span class="p">)</span>
+<a id="__codelineno-39-23" name="__codelineno-39-23" href="#__codelineno-39-23"></a><span class="w">    </span><span class="nx">books</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">newBook</span><span class="p">)</span>
+<a id="__codelineno-39-24" name="__codelineno-39-24" href="#__codelineno-39-24"></a><span class="p">}</span>
+<a id="__codelineno-39-25" name="__codelineno-39-25" href="#__codelineno-39-25"></a>
+<a id="__codelineno-39-26" name="__codelineno-39-26" href="#__codelineno-39-26"></a><span class="kd">function</span><span class="w"> </span><span class="nx">viewBook</span><span class="p">(){</span>
+<a id="__codelineno-39-27" name="__codelineno-39-27" href="#__codelineno-39-27"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;List of avaliable Boos:&quot;</span><span class="p">)</span>
+<a id="__codelineno-39-28" name="__codelineno-39-28" href="#__codelineno-39-28"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="nx">book</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">books</span><span class="p">){</span>
+<a id="__codelineno-39-29" name="__codelineno-39-29" href="#__codelineno-39-29"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">book</span><span class="p">);</span>
+<a id="__codelineno-39-30" name="__codelineno-39-30" href="#__codelineno-39-30"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-39-31" name="__codelineno-39-31" href="#__codelineno-39-31"></a><span class="p">}</span>
+<a id="__codelineno-39-32" name="__codelineno-39-32" href="#__codelineno-39-32"></a>
+<a id="__codelineno-39-33" name="__codelineno-39-33" href="#__codelineno-39-33"></a><span class="kd">function</span><span class="w"> </span><span class="nx">deleteBook</span><span class="p">(){</span>
+<a id="__codelineno-39-34" name="__codelineno-39-34" href="#__codelineno-39-34"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Enter Name oof the book to delete:&quot;</span><span class="p">)</span>
+<a id="__codelineno-39-35" name="__codelineno-39-35" href="#__codelineno-39-35"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">books</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
+<a id="__codelineno-39-36" name="__codelineno-39-36" href="#__codelineno-39-36"></a>
+<a id="__codelineno-39-37" name="__codelineno-39-37" href="#__codelineno-39-37"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">index</span><span class="w"> </span><span class="o">==-</span><span class="mf">1</span><span class="p">){</span>
+<a id="__codelineno-39-38" name="__codelineno-39-38" href="#__codelineno-39-38"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Specified book not Avaliable&quot;</span><span class="p">)</span><span class="w"> </span>
+<a id="__codelineno-39-39" name="__codelineno-39-39" href="#__codelineno-39-39"></a><span class="w">    </span><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<a id="__codelineno-39-40" name="__codelineno-39-40" href="#__codelineno-39-40"></a><span class="w">        </span><span class="nx">books</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span><span class="mf">1</span><span class="p">)</span>
+<a id="__codelineno-39-41" name="__codelineno-39-41" href="#__codelineno-39-41"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;specified Book Deleted&quot;</span><span class="p">);</span>
+<a id="__codelineno-39-42" name="__codelineno-39-42" href="#__codelineno-39-42"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-39-43" name="__codelineno-39-43" href="#__codelineno-39-43"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="object-mapdict">object // (map,dict)<a class="headerlink" href="#object-mapdict" title="Permanent link">&para;</a></h3>
+<hr />
+<p>want to repres jey-value pairs </p>
+<p>var variablename = {key1: value1......}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">movie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Bahubali&quot;</span><span class="p">,</span>
+<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="w">    </span><span class="nx">year</span><span class="o">:</span><span class="w"> </span><span class="mf">2016</span><span class="p">,</span>
+<a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="w">    </span><span class="nx">hero</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Prabhas&quot;</span>
+<a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a><span class="p">}</span>
+</code></pre></div></p>
+<h3 id="how-to-access-values-from-the-object">How to access values from the object<a class="headerlink" href="#how-to-access-values-from-the-object" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Order is not applivcable and hence index not applicable.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">movie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Bahubali&quot;</span><span class="p">,</span>
+<a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="w">    </span><span class="nx">year</span><span class="o">:</span><span class="w"> </span><span class="mf">2016</span><span class="p">,</span>
+<a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a><span class="w">    </span><span class="nx">hero</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Prabhas&quot;</span>
+<a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a><span class="p">}</span>
+<a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a>
+<a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">movie</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+<a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">movie</span><span class="p">[</span><span class="s2">&quot;hero&quot;</span><span class="p">]);</span>
+</code></pre></div>
+<h3 id="how-to-create-an-insilize-empty-object">How to create an insilize empty object<a class="headerlink" href="#how-to-create-an-insilize-empty-object" title="Permanent link">&para;</a></h3>
+<p>var nums = {}</p>
+<p>var nums = new Object()</p>
+<p>nums["fno] = 100</p>
+<p>nums.sno = 200</p>
+<h2 id="iterating-objects">Iterating Objects:<a class="headerlink" href="#iterating-objects" title="Permanent link">&para;</a></h2>
+<hr />
+<p>Recommended to use for-in loop
+; =&gt; in newer version it is optional</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">nums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">fno</span><span class="o">:</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="nx">sno</span><span class="o">:</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="nx">tno</span><span class="o">:</span><span class="w"> </span><span class="mf">300</span><span class="p">}</span>
+<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>
+<a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="k">for</span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">nums</span><span class="p">){</span><span class="w">   </span>
+<a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a><span class="w">    </span><span class="c1">// console.log(key)</span>
+<a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a><span class="w">    </span><span class="c1">// console.log(nums[key])</span>
+<a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;: &quot;</span><span class="o">+</span><span class="w"> </span><span class="nx">nums</span><span class="p">[</span><span class="nx">key</span><span class="p">])</span><span class="w"> </span><span class="c1">// recomended</span>
+<a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a><span class="w">    </span><span class="c1">// console.log(key + &quot;: &quot;+ nums.key) Not working</span>
+<a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="arrays-vs-objects">Arrays vs Objects<a class="headerlink" href="#arrays-vs-objects" title="Permanent link">&para;</a></h2>
+<p>array:
+1. individual object
+2. order will be maintained
+3. By using index we can access and update data</p>
+<p>Objects:
+1. ket-value pairs
+2. order wont maintained
+3. By using key </p>
+<h3 id="nesting-of-arrays-and-objects">Nesting of Arrays and Objects<a class="headerlink" href="#nesting-of-arrays-and-objects" title="Permanent link">&para;</a></h3>
+<h2 id="arrays-of-ojects">arrays of ojects:<a class="headerlink" href="#arrays-of-ojects" title="Permanent link">&para;</a></h2>
+<p>var moviews = [ { name:"b", yeay:1111,hero:"pra},
+                { name:"b", yeay:1111,hero:"pra},
+                { name:"b", yeay:1111,hero:"pra}]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">movies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="w">    </span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Sanju&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">year</span><span class="o">:</span><span class="w"> </span><span class="mf">2016</span><span class="p">,</span><span class="w"> </span><span class="nx">hero</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Prabhas&quot;</span><span class="p">},</span>
+<a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a><span class="w">    </span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Bahubali&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">year</span><span class="o">:</span><span class="w"> </span><span class="mf">2018</span><span class="p">,</span><span class="w"> </span><span class="nx">hero</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Ranbir&quot;</span><span class="p">},</span>
+<a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a><span class="w">    </span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;spider&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">year</span><span class="o">:</span><span class="w"> </span><span class="mf">2017</span><span class="p">,</span><span class="w"> </span><span class="nx">hero</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Mahes&quot;</span><span class="p">},</span>
+<a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a><span class="p">]</span>
+<a id="__codelineno-43-6" name="__codelineno-43-6" href="#__codelineno-43-6"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">movies</span><span class="p">)</span>
+<a id="__codelineno-43-7" name="__codelineno-43-7" href="#__codelineno-43-7"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">movies</span><span class="p">[</span><span class="mf">1</span><span class="p">])</span>
+<a id="__codelineno-43-8" name="__codelineno-43-8" href="#__codelineno-43-8"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">movies</span><span class="p">[</span><span class="mf">0</span><span class="p">][</span><span class="s2">&quot;hero&quot;</span><span class="p">])</span>
+</code></pre></div></p>
+<h2 id="ojects-of-arrays">ojects of arrays<a class="headerlink" href="#ojects-of-arrays" title="Permanent link">&para;</a></h2>
+<p>var numbergroups = {
+    fg: [10, 20,30],
+    sg: [1,2,3],
+    tg: [22,33,44],
+}</p>
+<h2 id="object-methods">Object Methods:<a class="headerlink" href="#object-methods" title="Permanent link">&para;</a></h2>
+<p>method as a member
+javaScript objects can conatin methods also</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">myobj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="w">    </span><span class="nx">a</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;apple&quot;</span><span class="p">,</span>
+<a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a><span class="w">    </span><span class="nx">b</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;banana&quot;</span><span class="p">,</span>
+<a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a><span class="w">    </span><span class="nx">m1</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">(){</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Object Method&quot;</span><span class="p">);}</span>
+<a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a><span class="p">}</span>
+<a id="__codelineno-44-6" name="__codelineno-44-6" href="#__codelineno-44-6"></a>
+<a id="__codelineno-44-7" name="__codelineno-44-7" href="#__codelineno-44-7"></a><span class="nx">myobj</span><span class="p">.</span><span class="nx">m1</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="this-keyword">this keyword<a class="headerlink" href="#this-keyword" title="Permanent link">&para;</a></h3>
+<p><code>this</code> =&gt; current object</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">movie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Bahubali&quot;</span><span class="p">,</span>
+<a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a><span class="w">    </span><span class="nx">year</span><span class="o">:</span><span class="w"> </span><span class="mf">2016</span><span class="p">,</span>
+<a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a><span class="w">    </span><span class="nx">hero</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Prabhas&quot;</span><span class="p">,</span>
+<a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a>
+<a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a><span class="w">    </span><span class="nx">getInfo</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">(){</span>
+<a id="__codelineno-45-7" name="__codelineno-45-7" href="#__codelineno-45-7"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Moview Name: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+<a id="__codelineno-45-8" name="__codelineno-45-8" href="#__codelineno-45-8"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Released Year: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">year</span><span class="p">);</span>
+<a id="__codelineno-45-9" name="__codelineno-45-9" href="#__codelineno-45-9"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hero Name: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">hero</span><span class="p">);</span>
+<a id="__codelineno-45-10" name="__codelineno-45-10" href="#__codelineno-45-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-45-11" name="__codelineno-45-11" href="#__codelineno-45-11"></a><span class="p">}</span>
+<a id="__codelineno-45-12" name="__codelineno-45-12" href="#__codelineno-45-12"></a>
+<a id="__codelineno-45-13" name="__codelineno-45-13" href="#__codelineno-45-13"></a><span class="nx">movie</span><span class="p">.</span><span class="nx">getInfo</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="it-is-possible-to-refer-already-existing-function-as-object-method">It is possible to refer already existing function as object method.<a class="headerlink" href="#it-is-possible-to-refer-already-existing-function-as-object-method" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">demo</span><span class="p">(){</span>
+<a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Name of fun is &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+<a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a><span class="p">}</span>
+<a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a>
+<a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a><span class="kd">var</span><span class="w"> </span><span class="nx">movie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-46-6" name="__codelineno-46-6" href="#__codelineno-46-6"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Bahubali&quot;</span><span class="p">,</span>
+<a id="__codelineno-46-7" name="__codelineno-46-7" href="#__codelineno-46-7"></a><span class="w">    </span><span class="nx">year</span><span class="o">:</span><span class="w"> </span><span class="mf">2016</span><span class="p">,</span>
+<a id="__codelineno-46-8" name="__codelineno-46-8" href="#__codelineno-46-8"></a><span class="w">    </span><span class="nx">hero</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Prabhas&quot;</span><span class="p">,</span>
+<a id="__codelineno-46-9" name="__codelineno-46-9" href="#__codelineno-46-9"></a>
+<a id="__codelineno-46-10" name="__codelineno-46-10" href="#__codelineno-46-10"></a><span class="w">    </span><span class="nx">getInfo</span><span class="o">:</span><span class="w"> </span><span class="nx">demo</span>
+<a id="__codelineno-46-11" name="__codelineno-46-11" href="#__codelineno-46-11"></a><span class="p">}</span>
+<a id="__codelineno-46-12" name="__codelineno-46-12" href="#__codelineno-46-12"></a><span class="nx">movie</span><span class="p">.</span><span class="nx">getInfo</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="mini-pro">mini - pro<a class="headerlink" href="#mini-pro" title="Permanent link">&para;</a></h3>
+<ul>
+<li>I watched Bahubali and Moview is Hit!!!</li>
+<li>I have not seen Sanju but Movie is Hit!!!</li>
+<li>I watched Spider and Moview is Flop!!!</li>
+</ul>
+<p>name
+iswatched
+isHit</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">movies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a><span class="w">    </span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Bahubali&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">isWatched</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;true&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">isHit</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;true&quot;</span><span class="p">},</span>
+<a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a><span class="w">    </span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Sanju&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">isWatched</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;flase&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">isHit</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;true&quot;</span><span class="p">},</span>
+<a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a><span class="w">    </span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Spider&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">isWatched</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;true&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">isHit</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;false&quot;</span><span class="p">},</span>
+<a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a><span class="p">]</span>
+<a id="__codelineno-47-6" name="__codelineno-47-6" href="#__codelineno-47-6"></a>
+<a id="__codelineno-47-7" name="__codelineno-47-7" href="#__codelineno-47-7"></a><span class="nx">movies</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">movie</span><span class="p">){</span>
+<a id="__codelineno-47-8" name="__codelineno-47-8" href="#__codelineno-47-8"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-47-9" name="__codelineno-47-9" href="#__codelineno-47-9"></a>
+<a id="__codelineno-47-10" name="__codelineno-47-10" href="#__codelineno-47-10"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="nx">movie</span><span class="p">.</span><span class="nx">isWatched</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="p">){</span>
+<a id="__codelineno-47-11" name="__codelineno-47-11" href="#__codelineno-47-11"></a><span class="w">        </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;I watched &quot;</span><span class="p">;</span>
+<a id="__codelineno-47-12" name="__codelineno-47-12" href="#__codelineno-47-12"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-47-13" name="__codelineno-47-13" href="#__codelineno-47-13"></a><span class="w">    </span><span class="k">else</span><span class="p">{</span>
+<a id="__codelineno-47-14" name="__codelineno-47-14" href="#__codelineno-47-14"></a><span class="w">        </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;I have not seen &quot;</span><span class="p">;</span>
+<a id="__codelineno-47-15" name="__codelineno-47-15" href="#__codelineno-47-15"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-47-16" name="__codelineno-47-16" href="#__codelineno-47-16"></a>
+<a id="__codelineno-47-17" name="__codelineno-47-17" href="#__codelineno-47-17"></a><span class="w">    </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">movie</span><span class="p">.</span><span class="nx">name</span>
+<a id="__codelineno-47-18" name="__codelineno-47-18" href="#__codelineno-47-18"></a>
+<a id="__codelineno-47-19" name="__codelineno-47-19" href="#__codelineno-47-19"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="nx">movie</span><span class="p">.</span><span class="nx">isHit</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="p">){</span>
+<a id="__codelineno-47-20" name="__codelineno-47-20" href="#__codelineno-47-20"></a><span class="w">        </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; and Movie is Hit!!!&quot;</span>
+<a id="__codelineno-47-21" name="__codelineno-47-21" href="#__codelineno-47-21"></a><span class="w">    </span><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<a id="__codelineno-47-22" name="__codelineno-47-22" href="#__codelineno-47-22"></a><span class="w">        </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; and Movie is Flop!!!&quot;</span>
+<a id="__codelineno-47-23" name="__codelineno-47-23" href="#__codelineno-47-23"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-47-24" name="__codelineno-47-24" href="#__codelineno-47-24"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<a id="__codelineno-47-25" name="__codelineno-47-25" href="#__codelineno-47-25"></a><span class="p">});</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2024 <a href="https://github.com/ashishbindra2"  target="_blank" rel="noopener">Ashish Bindra</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ashishbindra2" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M202.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M496 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://in.linkedin.com/in/ashishbindra2/" target="_blank" rel="noopener" title="in.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link", "content.code.annotation", "content.code.copy", "navigation.sections", "navigation.indexes", "navigation.instant", "navigation.tabs", "navigation.top", "navigation.tracking", "search.suggest", "search.highlight", "toc.follow"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
