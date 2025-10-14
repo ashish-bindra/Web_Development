@@ -124,6 +124,8 @@ for author in authors:
 
 “In Django, annotate() is a QuerySet method that allows you to add a calculated field to each object in the queryset. It’s commonly used with aggregate functions like Count, Sum, or Avg, and is very useful for reporting or summarizing related data.”
 
+## Blueprint in falsk
+
 ## What is a Model Manager in Django?
 
 A Model Manager in Django is a class that handles database query operations for a model. By default, every model has the objects manager. You can create custom managers to add reusable query methods, encapsulate filtering logic, and make querying easier and cleaner.
@@ -1650,5 +1652,51 @@ os.environ.setdefault('env1','env2') # 2nd approch
 ```
 
 ### How you securing you database credentials ?
+
 Using envroment variables and aws secreate manger
+
 - giving required permisions to aws lambda
+
+### How do you initialize a django app?
+
+use the startapp comand to create app
+
+`python manage.py startapp app_name`
+
+App Structure
+
+- apps.py: Configurations for the app
+- models.py: Define the database structure
+- views.py: Handle logic for user requests.
+- urls.py: (manually added) Define app-specificmURL routes.
+- migrations: Contains database migration files.
+- tests.py: Write test for the app
+- admin.py: Register models for Django's admin panel.
+
+Register the app in the project
+
+- Open setting.py in your project directory add your app to the INSTALLED_APPS list:
+
+```py
+INSTALLED_APP = [
+    'django.contrib.admin',
+
+
+    'app_name'
+]
+
+```
+
+### Explain the settings.py File in Django
+
+- The `setting.py` file configuration center of a Django project.
+- It defines all the global settings required for the project to run.
+
+Purpose of settings.py
+
+stores configurations like
+
+- installed app
+- Database connections
+- Middleware.
+- Static and media file managment
