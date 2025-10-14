@@ -1,0 +1,2174 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../DA_SQL_Sorting_Grouping/">
+      
+      
+        <link rel="next" href="../practice/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>query - Web Development Tutorials</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#practice-queries" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Web Development Tutorials" class="md-header__button md-logo" aria-label="Web Development Tutorials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Web Development Tutorials
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              query
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  database
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Django/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Django
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../js/durgajs/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  js
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../FastApi/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Fastapi
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tools/poetry/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  tools
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../pydantic/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Pydantic
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../important/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  imp
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../revision/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  revision
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Web Development Tutorials" class="md-nav__button md-logo" aria-label="Web Development Tutorials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Web Development Tutorials
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    database
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            database
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../view/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    View
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../indexes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../equi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Equi-join
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../self_join/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    self-join
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../subqueries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    sub-query
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sql%20faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ SQL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DA_SQL_Sorting_Grouping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DA SQL Grouping
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    query
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    query
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#q-1-find-total-count-of-customer-id-in-table-customer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q 1: FIND TOTAL COUNT OF CUSTOMER ID IN TABLE CUSTOMER?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-2find-total-customers-where-age-is-greator-than-23" class="md-nav__link">
+    <span class="md-ellipsis">
+      QUE 2:FIND TOTAL Customers WHERE AGE IS GREATOR THAN 23?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q3-count-list-of-record-where-country-nane-is-usa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q3: COUNT LIST OF RECORD WHERE COUNTRY nane IS USA?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q4-count-list-of-record-where-first-name-starts-with-j" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q4: COUNT LIST OF RECORD WHERE FIRST NAME STARTS WITH J?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q5-fetch-count-number-record-of-customers-where-age-limit-between-20-to-28" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q5: FETCH COUNT NUMBER RECORD OF CUSTOMERS WHERE AGE LIMIT BETWEEN 20 TO 28?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q5-fetch-count-number-record-of-customers-where-not-age-limit-between-20-to-28" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q5: FETCH COUNT NUMBER RECORD OF CUSTOMERS WHERE not AGE LIMIT BETWEEN 20 TO 28?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q6-find-hihgest-age-in-customer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q6: FIND HIHGEST AGE IN CUSTOMER?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q7-find-min-age-in-customer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q7: FIND MIN AGE IN CUSTOMER?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q8-find-second-highest-age-in-customer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q8: FIND SECOND HIGHEST AGE IN CUSTOMER?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q9-display-customer-details-who-customerid-is-4-and-show-the-details-for-all-the-customers-who-lives-in-same-country" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q9: Display customer details WHO CUSTOMERID IS 4 AND SHOW THE DETAILS FOR ALL THE CUSTOMERS WHO LIVES IN SAME COUNTRY?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q10-country-wise-highest-age-lowest-age" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q10: Country wise highest AGE , LOWEST AGE?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q11-counts-no-of-customers-in-each-country-or-counts-no-of-items-in-each-orderid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q11: Counts No of CUSTOMERS in each COUNTRY or counts no of ITEMS in Each OrderID
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q12-display-alternate-records135-or-246" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q12: Display Alternate Records(1,3,5 or 2,4,6) ?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q13-show-first_name-and-last_name-and-age-by-desc-order-of-age" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q13: SHOW FIRST_NAME AND LAST_NAME AND AGE BY DESC ORDER OF AGE
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q14-display-duplicate-name-of-a-column" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q14 : Display Duplicate name of a Column
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q15-select-first-4-row-from-tabel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q15: Select first 4 row from tabel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q16-joins-two-table-and-show-all-coulums-for-both-the-tables-and-print-last-three-lesser-amount" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q16: JOINS TWO TABLE AND SHOW ALL COULUMS FOR BOTH THE TABLES AND PRINT LAST THREE LESSER AMOUNT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q17-print-first_name-last_name-and-amount-who-brought-keyboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q17: Print FIRST_NAME , LAST_NAME AND AMOUNT WHO BROUGHT KEYBOARD
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q18-print-list-if-item-price-which-is-selling-in-usa-or-uk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q18: PRINT LIST IF ITEM , PRICE WHICH IS SELLING IN USA OR UK
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q-19-print-list-if-item-amountcountry-which-has-been-delivered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q 19: PRINT LIST IF ITEM , AMOUNT,COUNTRY WHICH HAS BEEN DELIVERED
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q20-union-vs-uninonall" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q20 : union vs uninonall
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#union-all" class="md-nav__link">
+    <span class="md-ellipsis">
+      UNION ALL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-21-inner-join-only-shows-common-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      QUE 21 : INNER JOIN - ONLY SHOWS COMMON DATA
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q-22-how-can-we-retrieve-the-names-of-customers-who-share-the-same-last-name-but-are-from-different-countries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q 22: How can we retrieve the names of customers who share the same last name but are from different countries?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q-23-how-can-we-find-all-customers-who-share-the-same-first-name-and-are-of-the-same-age-group-within-a-7-year-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q 23: How can we find all customers who share the same first name and are of the same age group (within a 7-year range)?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q-24-how-to-find-last-row" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q 24: HOW TO FIND LAST ROW
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-25-how-to-fetch-data-using-left-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      QUE 25 : HOW TO FETCH DATA USING LEFT JOIN
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    practice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interview_pratical/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    interview praticale
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interview_theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    interview theory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../radis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    radis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Django/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Django
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Django
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Django/Django/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Django
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    js
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            js
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../js/durgajs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../js/dom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DOM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../js/jQuery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JQuery
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../FastApi/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Fastapi
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Fastapi
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FastApi/celery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    celery
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FastApi/asynchronous_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Async_api
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/poetry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    poetry
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pydantic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pydantic
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../important/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    imp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../revision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    revision
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#q-1-find-total-count-of-customer-id-in-table-customer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q 1: FIND TOTAL COUNT OF CUSTOMER ID IN TABLE CUSTOMER?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-2find-total-customers-where-age-is-greator-than-23" class="md-nav__link">
+    <span class="md-ellipsis">
+      QUE 2:FIND TOTAL Customers WHERE AGE IS GREATOR THAN 23?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q3-count-list-of-record-where-country-nane-is-usa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q3: COUNT LIST OF RECORD WHERE COUNTRY nane IS USA?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q4-count-list-of-record-where-first-name-starts-with-j" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q4: COUNT LIST OF RECORD WHERE FIRST NAME STARTS WITH J?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q5-fetch-count-number-record-of-customers-where-age-limit-between-20-to-28" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q5: FETCH COUNT NUMBER RECORD OF CUSTOMERS WHERE AGE LIMIT BETWEEN 20 TO 28?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q5-fetch-count-number-record-of-customers-where-not-age-limit-between-20-to-28" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q5: FETCH COUNT NUMBER RECORD OF CUSTOMERS WHERE not AGE LIMIT BETWEEN 20 TO 28?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q6-find-hihgest-age-in-customer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q6: FIND HIHGEST AGE IN CUSTOMER?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q7-find-min-age-in-customer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q7: FIND MIN AGE IN CUSTOMER?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q8-find-second-highest-age-in-customer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q8: FIND SECOND HIGHEST AGE IN CUSTOMER?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q9-display-customer-details-who-customerid-is-4-and-show-the-details-for-all-the-customers-who-lives-in-same-country" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q9: Display customer details WHO CUSTOMERID IS 4 AND SHOW THE DETAILS FOR ALL THE CUSTOMERS WHO LIVES IN SAME COUNTRY?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q10-country-wise-highest-age-lowest-age" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q10: Country wise highest AGE , LOWEST AGE?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q11-counts-no-of-customers-in-each-country-or-counts-no-of-items-in-each-orderid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q11: Counts No of CUSTOMERS in each COUNTRY or counts no of ITEMS in Each OrderID
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q12-display-alternate-records135-or-246" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q12: Display Alternate Records(1,3,5 or 2,4,6) ?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q13-show-first_name-and-last_name-and-age-by-desc-order-of-age" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q13: SHOW FIRST_NAME AND LAST_NAME AND AGE BY DESC ORDER OF AGE
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q14-display-duplicate-name-of-a-column" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q14 : Display Duplicate name of a Column
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q15-select-first-4-row-from-tabel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q15: Select first 4 row from tabel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q16-joins-two-table-and-show-all-coulums-for-both-the-tables-and-print-last-three-lesser-amount" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q16: JOINS TWO TABLE AND SHOW ALL COULUMS FOR BOTH THE TABLES AND PRINT LAST THREE LESSER AMOUNT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q17-print-first_name-last_name-and-amount-who-brought-keyboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q17: Print FIRST_NAME , LAST_NAME AND AMOUNT WHO BROUGHT KEYBOARD
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q18-print-list-if-item-price-which-is-selling-in-usa-or-uk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q18: PRINT LIST IF ITEM , PRICE WHICH IS SELLING IN USA OR UK
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q-19-print-list-if-item-amountcountry-which-has-been-delivered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q 19: PRINT LIST IF ITEM , AMOUNT,COUNTRY WHICH HAS BEEN DELIVERED
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q20-union-vs-uninonall" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q20 : union vs uninonall
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#union-all" class="md-nav__link">
+    <span class="md-ellipsis">
+      UNION ALL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-21-inner-join-only-shows-common-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      QUE 21 : INNER JOIN - ONLY SHOWS COMMON DATA
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q-22-how-can-we-retrieve-the-names-of-customers-who-share-the-same-last-name-but-are-from-different-countries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q 22: How can we retrieve the names of customers who share the same last name but are from different countries?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q-23-how-can-we-find-all-customers-who-share-the-same-first-name-and-are-of-the-same-age-group-within-a-7-year-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q 23: How can we find all customers who share the same first name and are of the same age group (within a 7-year range)?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q-24-how-to-find-last-row" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q 24: HOW TO FIND LAST ROW
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-25-how-to-fetch-data-using-left-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      QUE 25 : HOW TO FETCH DATA USING LEFT JOIN
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="practice-queries">Practice queries<a class="headerlink" href="#practice-queries" title="Permanent link">&para;</a></h1>
+<p><a href="https://www.programiz.com/sql/online-compiler/">https://www.programiz.com/sql/online-compiler/</a></p>
+<p><img alt="alt text" src="../img/avalable%20tables.PNG" /></p>
+<h2 id="q-1-find-total-count-of-customer-id-in-table-customer">Q 1: FIND TOTAL COUNT OF CUSTOMER ID IN TABLE CUSTOMER?<a class="headerlink" href="#q-1-find-total-count-of-customer-id-in-table-customer" title="Permanent link">&para;</a></h2>
+<p>ANS: <code>SELECT COUNT (CUSTOMER_id) AS TOTAL_COUNT FROM CUSTOMERS</code></p>
+<p><img alt="1.PNG" src="../img/1.PNG" /></p>
+<h2 id="que-2find-total-customers-where-age-is-greator-than-23">QUE 2:FIND TOTAL Customers WHERE AGE IS GREATOR THAN 23?<a class="headerlink" href="#que-2find-total-customers-where-age-is-greator-than-23" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="w"> </span><span class="p">(</span><span class="n">CUSTOMER_id</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">TOTAL_COUNT</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">CUSTOMERS</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">AGE</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="s1">&#39;23&#39;</span>
+</code></pre></div>
+<p><img alt="2.PNG" src="../img/2.PNG" /></p>
+<h2 id="q3-count-list-of-record-where-country-nane-is-usa">Q3: COUNT LIST OF RECORD WHERE COUNTRY nane IS USA?<a class="headerlink" href="#q3-count-list-of-record-where-country-nane-is-usa" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="w"> </span><span class="p">(</span><span class="n">COUNTRY</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">TOTAL_RECORD</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">CUSTOMERS</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">COUNTRY</span><span class="o">=</span><span class="s1">&#39;USA&#39;</span>
+</code></pre></div>
+<p><img alt="3.PNG" src="../img/3.PNG" /></p>
+<h2 id="q4-count-list-of-record-where-first-name-starts-with-j">Q4: COUNT LIST OF RECORD WHERE FIRST NAME STARTS WITH J?<a class="headerlink" href="#q4-count-list-of-record-where-first-name-starts-with-j" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="w"> </span><span class="p">(</span><span class="n">FIRST_NAME</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">NAMES</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">CUSTOMERS</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">FIRST_NAME</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;J%&#39;</span>
+</code></pre></div>
+<p><img alt="4.PNG" src="../img/4.PNG" /></p>
+<h2 id="q5-fetch-count-number-record-of-customers-where-age-limit-between-20-to-28">Q5: FETCH COUNT NUMBER RECORD OF CUSTOMERS WHERE AGE LIMIT BETWEEN 20 TO 28?<a class="headerlink" href="#q5-fetch-count-number-record-of-customers-where-age-limit-between-20-to-28" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="w"> </span><span class="p">(</span><span class="n">customer_id</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">CUSTOMERS</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">AGE</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="s1">&#39;25&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="s1">&#39;28&#39;</span>
+</code></pre></div>
+<p><img alt="5.PNG" src="../img/5.PNG" /></p>
+<h2 id="q5-fetch-count-number-record-of-customers-where-not-age-limit-between-20-to-28">Q5: FETCH COUNT NUMBER RECORD OF CUSTOMERS WHERE  not AGE LIMIT BETWEEN 20 TO 28?<a class="headerlink" href="#q5-fetch-count-number-record-of-customers-where-not-age-limit-between-20-to-28" title="Permanent link">&para;</a></h2>
+<p><img alt="5.5.PNG" src="../img/5.5.PNG" /></p>
+<h2 id="q6-find-hihgest-age-in-customer">Q6: FIND HIHGEST AGE IN CUSTOMER?<a class="headerlink" href="#q6-find-hihgest-age-in-customer" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="w"> </span><span class="p">(</span><span class="n">AGE</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">HIGH_AGE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">CUSTOMERS</span>
+</code></pre></div>
+<p><img alt="6.PNG" src="../img/6.PNG" /></p>
+<h2 id="q7-find-min-age-in-customer">Q7: FIND MIN AGE IN CUSTOMER?<a class="headerlink" href="#q7-find-min-age-in-customer" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">MIN</span><span class="w"> </span><span class="p">(</span><span class="n">AGE</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">LOW_AGE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">CUSTOMERS</span>
+</code></pre></div>
+<p><img alt="7.PNG" src="../img/7.PNG" /></p>
+<h2 id="q8-find-second-highest-age-in-customer">Q8: FIND SECOND HIGHEST AGE IN CUSTOMER?<a class="headerlink" href="#q8-find-second-highest-age-in-customer" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">CUSTOMERS</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">AGE</span><span class="w"> </span><span class="k">DESC</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span>
+</code></pre></div>
+<p><strong><em>NOTE : IT WILL SKIP THE FIRST VALUE AND SHOW SECOND VALUE LIKE ..AFTER SORTING</em></strong></p>
+<p><strong><em>SECOND WAY:</em></strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="n">AGE</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">CUSTOMERS</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">CUSTOMERS</span><span class="w"> </span><span class="n">S</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">AGE</span><span class="o">&lt;</span><span class="n">S</span><span class="p">.</span><span class="n">AGE</span><span class="o">`</span>
+</code></pre></div>
+<p><strong><em>BEST WAY:</em></strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">AGE</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">CUSTOMERS</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">AGE</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">AGE</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">CUSTOMERS</span><span class="p">)</span><span class="o">`</span>
+</code></pre></div>
+<p><img alt="8.PNG" src="../img/8.PNG" /></p>
+<h2 id="q9-display-customer-details-who-customerid-is-4-and-show-the-details-for-all-the-customers-who-lives-in-same-country">Q9: Display customer details WHO CUSTOMERID IS 4 AND SHOW THE DETAILS FOR ALL THE CUSTOMERS WHO LIVES IN SAME COUNTRY?<a class="headerlink" href="#q9-display-customer-details-who-customerid-is-4-and-show-the-details-for-all-the-customers-who-lives-in-same-country" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">CUSTOMERS</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">COUNTRY</span><span class="o">=</span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">COUNTRY</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">CUSTOMERS</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">CUSTOMER_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;4&#39;</span><span class="p">)</span><span class="o">```</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="o">***</span><span class="n">BEST</span><span class="w"> </span><span class="n">WAY</span><span class="w"> </span><span class="p">:</span><span class="o">***</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="o">```</span><span class="k">sql</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">T2</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Customers</span><span class="w"> </span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">customerS</span><span class="w"> </span><span class="n">T2</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">T1</span><span class="p">.</span><span class="n">CUSTOMER_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;4&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">T1</span><span class="p">.</span><span class="n">cOUNTRY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T2</span><span class="p">.</span><span class="n">cOUNTRY</span><span class="p">;</span>
+</code></pre></div>
+<p><img alt="9.PNG" src="../img/9.PNG" /></p>
+<h2 id="q10-country-wise-highest-age-lowest-age">Q10: Country wise highest AGE , LOWEST AGE?<a class="headerlink" href="#q10-country-wise-highest-age-lowest-age" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">AGE</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">CUSTOMERS</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">FIRST_NAME</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">MIN</span><span class="p">(</span><span class="n">AGE</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">CUSTOMERS</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">CUSTOMER_iD</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">country</span><span class="p">,</span><span class="w"> </span><span class="k">MIN</span><span class="p">(</span><span class="n">AGE</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">lowest_age</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="k">FROM</span><span class="w"> </span><span class="n">Customers</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">country</span><span class="p">;</span>
+</code></pre></div>
+<p><img alt="10.1.PNG" src="../img/10.1.PNG" /></p>
+<hr />
+<p><img alt="10.2.PNG" src="../img/10.2.PNG" /></p>
+<h2 id="q11-counts-no-of-customers-in-each-country-or-counts-no-of-items-in-each-orderid">Q11: Counts No of CUSTOMERS in each COUNTRY or counts no of ITEMS in Each OrderID<a class="headerlink" href="#q11-counts-no-of-customers-in-each-country-or-counts-no-of-items-in-each-orderid" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">country</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">country</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">no_of_customer</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">customers</span><span class="w"> </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w">  </span><span class="n">country</span>
+</code></pre></div>
+<p><img alt="11.PNG" src="../img/11.PNG" /></p>
+<h2 id="q12-display-alternate-records135-or-246">Q12: Display Alternate Records(1,3,5 or 2,4,6) ?<a class="headerlink" href="#q12-display-alternate-records135-or-246" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">CUSTOMERS</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">CUSTOMER_ID</span><span class="o">%</span><span class="mi">2</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="p">(</span><span class="k">FOR</span><span class="w"> </span><span class="n">ODD</span><span class="p">)</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">CUSTOMERS</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">CUSTOMER_ID</span><span class="o">%</span><span class="mi">2</span><span class="o">!=</span><span class="mi">1</span><span class="w"> </span><span class="p">(</span><span class="k">FOR</span><span class="w"> </span><span class="n">EVEN</span><span class="p">)</span>
+</code></pre></div>
+<p>Note:  The modulo operation on CUSTOMER_ID will not guarantee alternating records in the sequence of rows returned.</p>
+<ul>
+<li>Alternate records without usinf customerID</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="w">        </span><span class="k">WITH</span><span class="w"> </span><span class="n">NumberedRows</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">            </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">ROW_NUMBER</span><span class="p">()</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">NULL</span><span class="p">))</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">RowNum</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">            </span><span class="k">FROM</span><span class="w"> </span><span class="n">Customers</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">            </span><span class="p">)</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">            </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">            </span><span class="k">FROM</span><span class="w"> </span><span class="n">NumberedRows</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">            </span><span class="k">WHERE</span><span class="w"> </span><span class="n">RowNum</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</code></pre></div>
+<p><img alt="12.PNG" src="../img/12.PNG" /></p>
+<h2 id="q13-show-first_name-and-last_name-and-age-by-desc-order-of-age">Q13: SHOW FIRST_NAME AND LAST_NAME AND AGE BY DESC ORDER OF AGE<a class="headerlink" href="#q13-show-first_name-and-last_name-and-age-by-desc-order-of-age" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">FIRST_NAME</span><span class="p">,</span><span class="n">LAST_NAME</span><span class="w"> </span><span class="p">,</span><span class="n">AGE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">CUSTOMERS</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">AGE</span><span class="w"> </span><span class="k">DESC</span>
+</code></pre></div>
+<p><img alt="13.PNG" src="../img/13.PNG" /></p>
+<h2 id="q14-display-duplicate-name-of-a-column">Q14 : Display Duplicate name of a Column<a class="headerlink" href="#q14-display-duplicate-name-of-a-column" title="Permanent link">&para;</a></h2>
+<ul>
+<li>(GROUP BY USING ALL DUPLICATE VALUES HAS BEEN REMOVED AND WE NEED TO SEARCH MORE ON IT)</li>
+<li>
+<p>Select first_name from customers group by first_name</p>
+</li>
+<li>
+<p>Display Duplicate of a Column (NEED TO SEARCH MORE HAVING BY &amp; GROUP BY)</p>
+</li>
+<li>
+<p><code>Select first_name,COUNT(*) from customers GROUP BY FIRST_NAME HAVING COUNT(*)&gt;1;</code></p>
+</li>
+<li>
+<p>OR (IF WE WANT TO PRINT THE FULL RECORD)</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="w">        </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">        </span><span class="k">FROM</span><span class="w"> </span><span class="n">CUSTOMERS</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">        </span><span class="k">WHERE</span><span class="w"> </span><span class="n">FIRST_NAME</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">            </span><span class="k">SELECT</span><span class="w"> </span><span class="n">FIRST_NAME</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">            </span><span class="k">FROM</span><span class="w"> </span><span class="n">CUSTOMERS</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">            </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">FIRST_NAME</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">            </span><span class="k">HAVING</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">        </span><span class="p">);</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">        </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">        </span><span class="k">FROM</span><span class="w"> </span><span class="n">your_table</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">        </span><span class="k">WHERE</span><span class="w"> </span><span class="k">column_name</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">            </span><span class="k">SELECT</span><span class="w"> </span><span class="k">column_name</span>
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">            </span><span class="k">FROM</span><span class="w"> </span><span class="n">your_table</span>
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">            </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">column_name</span>
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="w">            </span><span class="k">HAVING</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span>
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="w">        </span><span class="p">);</span>
+</code></pre></div>
+<p><img alt="14.PNG" src="../img/14.PNG" /></p>
+<h2 id="q15-select-first-4-row-from-tabel">Q15: Select first 4 row from tabel<a class="headerlink" href="#q15-select-first-4-row-from-tabel" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">CUSTOMERS</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">4</span>
+</code></pre></div>
+<p><img alt="15.PNG" src="../img/15.PNG" /></p>
+<h2 id="q16-joins-two-table-and-show-all-coulums-for-both-the-tables-and-print-last-three-lesser-amount">Q16: JOINS TWO TABLE AND SHOW ALL COULUMS FOR BOTH THE TABLES AND PRINT LAST THREE LESSER AMOUNT<a class="headerlink" href="#q16-joins-two-table-and-show-all-coulums-for-both-the-tables-and-print-last-three-lesser-amount" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">CUSTOMERS</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="k">JOIN</span><span class="w"> </span><span class="n">ORDERS</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">CUSTOMERS</span><span class="p">.</span><span class="n">CUSTOMER_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ORDERS</span><span class="p">.</span><span class="n">CUSTOMER_ID</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">     </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">AMOUNT</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+</code></pre></div>
+<p>NOTE : WE HAVE USE FULL JOIN HERE AND PRINT THE LOWEST THREE VALUES OF AMOUNT
+<img alt="16.PNG" src="../img/16.PNG" /></p>
+<h2 id="q17-print-first_name-last_name-and-amount-who-brought-keyboard">Q17: Print FIRST_NAME , LAST_NAME AND AMOUNT WHO BROUGHT KEYBOARD<a class="headerlink" href="#q17-print-first_name-last_name-and-amount-who-brought-keyboard" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">FIRST_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">LAST_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">AMOUNT</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">        </span><span class="k">FROM</span><span class="w"> </span><span class="n">CUSTOMERS</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">        </span><span class="k">JOIN</span><span class="w"> </span><span class="n">ORDERS</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">CUSTOMERS</span><span class="p">.</span><span class="n">CUSTOMER_ID</span><span class="o">=</span><span class="n">ORDERS</span><span class="p">.</span><span class="n">CUSTOMER_ID</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">        </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ITEM</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="err">&#39;</span><span class="o">%</span><span class="n">KEYBOARD</span><span class="o">%</span>
+</code></pre></div>
+<p><img alt="17.PNG" src="../img/17.PNG" /></p>
+<h2 id="q18-print-list-if-item-price-which-is-selling-in-usa-or-uk">Q18: PRINT LIST IF ITEM , PRICE WHICH IS SELLING IN USA OR UK<a class="headerlink" href="#q18-print-list-if-item-price-which-is-selling-in-usa-or-uk" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">ITEM</span><span class="p">,</span><span class="n">AMOUNT</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">CUSTOMERS</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="k">JOIN</span><span class="w"> </span><span class="n">ORDERS</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">    </span><span class="k">ON</span><span class="w"> </span><span class="n">CUSTOMERS</span><span class="p">.</span><span class="n">CUSTOMER_ID</span><span class="o">=</span><span class="n">ORDERS</span><span class="p">.</span><span class="n">CUSTOMER_ID</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">COUNTRY</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;USA&#39;</span><span class="p">,</span><span class="s1">&#39;UAE&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="18.PNG" src="../img/18.PNG" /></p>
+<h2 id="q-19-print-list-if-item-amountcountry-which-has-been-delivered">Q 19: PRINT LIST IF ITEM , AMOUNT,COUNTRY WHICH HAS BEEN DELIVERED<a class="headerlink" href="#q-19-print-list-if-item-amountcountry-which-has-been-delivered" title="Permanent link">&para;</a></h2>
+<ul>
+<li>(JOINS FOR THREE TABLES)</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">ITEM</span><span class="p">,</span><span class="n">AMOUNT</span><span class="p">,</span><span class="n">COUNTRY</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">CUSTOMERS</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">    </span><span class="k">JOIN</span><span class="w"> </span><span class="n">ORDERS</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">    </span><span class="k">ON</span><span class="w"> </span><span class="n">CUSTOMERS</span><span class="p">.</span><span class="n">CUSTOMER_ID</span><span class="o">=</span><span class="n">ORDERS</span><span class="p">.</span><span class="n">CUSTOMER_ID</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">    </span><span class="k">JOIN</span><span class="w"> </span><span class="n">SHIPPINGS</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">CUSTOMERs</span><span class="p">.</span><span class="n">CUSTOMER_ID</span><span class="o">=</span><span class="n">SHIPPINGS</span><span class="p">.</span><span class="n">CUSTOMER</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">STATUS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Delivered&#39;</span>
+</code></pre></div>
+<p><img alt="19.PNG" src="../img/19.PNG" /></p>
+<h2 id="q20-union-vs-uninonall">Q20 :  union vs uninonall<a class="headerlink" href="#q20-union-vs-uninonall" title="Permanent link">&para;</a></h2>
+<ul>
+<li>UNION (REMOVE DUPLICATES)</li>
+<li>Purpose: Combines the results of two or more queries and removes duplicate rows from the final result set</li>
+<li>Performance: May be slower compared to UNION ALL because it involves additional processing to remove duplicates.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">CUSTOMER_ID</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">CUSTOMERS</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">            </span><span class="k">UNION</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">            </span><span class="k">SELECT</span><span class="w"> </span><span class="n">CUSTOMER_ID</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">ORDERS</span>
+</code></pre></div>
+<p><img alt="20.1.PNG" src="../img/20.1.PNG" /></p>
+<ul>
+<li>UNION ALL (PRINT BOTH AS ITS IS)</li>
+<li>Purpose: Combines the results of two or more queries without removing duplicates.</li>
+<li>Performance: Generally faster than UNION because it does not perform the additional step of removing duplicates</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="w">   </span><span class="k">SELECT</span><span class="w"> </span><span class="n">CUSTOMER_ID</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">CUSTOMERS</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">   </span><span class="k">UNION</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">   </span><span class="k">SELECT</span><span class="w"> </span><span class="n">CUSTOMER_ID</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">ORDERS</span>
+</code></pre></div>
+<h2 id="union-all">UNION ALL<a class="headerlink" href="#union-all" title="Permanent link">&para;</a></h2>
+<p><img alt="20.2.PNG" src="../img/20.2.PNG" /></p>
+<h2 id="que-21-inner-join-only-shows-common-data">QUE 21 : INNER JOIN - ONLY SHOWS COMMON DATA<a class="headerlink" href="#que-21-inner-join-only-shows-common-data" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">C</span><span class="p">.</span><span class="n">CUSTOMER_ID</span><span class="p">,</span><span class="k">C</span><span class="p">.</span><span class="n">FIRST_NAME</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="k">C</span><span class="p">.</span><span class="n">LAST_NAME</span><span class="p">,</span><span class="w"> </span><span class="k">C</span><span class="p">.</span><span class="n">AGE</span><span class="p">,</span><span class="w"> </span><span class="n">O</span><span class="p">.</span><span class="n">ORDER_ID</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">O</span><span class="p">.</span><span class="n">ITEM</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">CUSTOMERS</span><span class="w"> </span><span class="k">C</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">ORDERS</span><span class="w"> </span><span class="n">O</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">C</span><span class="p">.</span><span class="n">CUSTOMER_ID</span><span class="o">=</span><span class="n">O</span><span class="p">.</span><span class="n">CUSTOMER_ID</span>
+</code></pre></div>
+<p><img alt="21.PNG" src="../img/21.PNG" /></p>
+<p>OR</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">C</span><span class="p">.</span><span class="n">CUSTOMER_ID</span><span class="p">,</span><span class="k">C</span><span class="p">.</span><span class="n">FIRST_NAME</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="k">C</span><span class="p">.</span><span class="n">LAST_NAME</span><span class="p">,</span><span class="w"> </span><span class="k">C</span><span class="p">.</span><span class="n">AGE</span><span class="p">,</span><span class="w"> </span><span class="n">O</span><span class="p">.</span><span class="n">ORDER_ID</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">O</span><span class="p">.</span><span class="n">ITEM</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">ORDERS</span><span class="w"> </span><span class="n">O</span><span class="p">,</span><span class="w"> </span><span class="n">CUSTOMERS</span><span class="w"> </span><span class="k">C</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">O</span><span class="p">.</span><span class="n">CUSTOMER_ID</span><span class="o">=</span><span class="k">C</span><span class="p">.</span><span class="n">CUSTOMER_ID</span>
+</code></pre></div>
+<p><img alt="21.1.PNG" src="../img/21.1.PNG" /></p>
+<h2 id="q-22-how-can-we-retrieve-the-names-of-customers-who-share-the-same-last-name-but-are-from-different-countries">Q 22: How can we retrieve the names of customers who share the same last name but are from different countries?<a class="headerlink" href="#q-22-how-can-we-retrieve-the-names-of-customers-who-share-the-same-last-name-but-are-from-different-countries" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">C1</span><span class="p">.</span><span class="n">FIRST_NAME</span><span class="p">,</span><span class="n">C1</span><span class="p">.</span><span class="n">LAST_NAME</span><span class="w"> </span><span class="p">,</span><span class="n">C1</span><span class="p">.</span><span class="n">COUNTRY</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">CUSTOMERS</span><span class="w"> </span><span class="n">C1</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">CUSTOMERS</span><span class="w"> </span><span class="n">C2</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="k">ON</span><span class="w"> </span><span class="n">C1</span><span class="p">.</span><span class="n">LAST_NAME</span><span class="o">=</span><span class="n">C2</span><span class="p">.</span><span class="n">LAST_NAME</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">C1</span><span class="p">.</span><span class="n">COUNTRY</span><span class="o">&lt;&gt;</span><span class="n">C2</span><span class="p">.</span><span class="n">COUNTRY</span>
+</code></pre></div>
+<p><img alt="22.PNG" src="../img/22.PNG" /></p>
+<h2 id="q-23-how-can-we-find-all-customers-who-share-the-same-first-name-and-are-of-the-same-age-group-within-a-7-year-range">Q 23: How can we find all customers who share the same first name and are of the same age group (within a 7-year range)?<a class="headerlink" href="#q-23-how-can-we-find-all-customers-who-share-the-same-first-name-and-are-of-the-same-age-group-within-a-7-year-range" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">CUSTOMERS</span><span class="w"> </span><span class="k">C</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">CUSTOMERS</span><span class="w"> </span><span class="n">C1</span><span class="w"> </span><span class="k">ON</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="k">C</span><span class="p">.</span><span class="n">FIRST_NAME</span><span class="o">=</span><span class="n">C1</span><span class="p">.</span><span class="n">FIRST_NAME</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="k">WHERE</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">customer_id</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">c1</span><span class="p">.</span><span class="n">customer_id</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="k">ABS</span><span class="p">(</span><span class="k">c</span><span class="p">.</span><span class="n">age</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">c1</span><span class="p">.</span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</code></pre></div>
+<p><img alt="23.PNG" src="../img/23.PNG" /></p>
+<h2 id="q-24-how-to-find-last-row">Q 24: HOW TO FIND LAST ROW<a class="headerlink" href="#q-24-how-to-find-last-row" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="o">`</span><span class="k">table_name</span><span class="o">`</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="o">`</span><span class="k">table_name</span><span class="o">`</span><span class="p">);</span>
+</code></pre></div>
+<p><img alt="24.PNG" src="../img/24.PNG" /></p>
+<h2 id="que-25-how-to-fetch-data-using-left-join">QUE 25 : HOW TO FETCH DATA USING LEFT JOIN<a class="headerlink" href="#que-25-how-to-fetch-data-using-left-join" title="Permanent link">&para;</a></h2>
+<p><img alt="25.PNG" src="../img/25.PNG" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2024 <a href="https://github.com/ashishbindra2"  target="_blank" rel="noopener">Ashish Bindra</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ashishbindra2" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M202.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M496 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://in.linkedin.com/in/ashishbindra2/" target="_blank" rel="noopener" title="in.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link", "content.code.annotation", "content.code.copy", "navigation.sections", "navigation.indexes", "navigation.instant", "navigation.tabs", "navigation.top", "navigation.tracking", "search.suggest", "search.highlight", "toc.follow"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

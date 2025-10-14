@@ -1,0 +1,2050 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>Docker for Beginners - Web Development Tutorials</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#docker-for-beginners" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Web Development Tutorials" class="md-header__button md-logo" aria-label="Web Development Tutorials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Web Development Tutorials
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Docker for Beginners
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../database/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  database
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Django/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Django
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../js/durgajs/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  js
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../FastApi/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Fastapi
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tools/poetry/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  tools
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../pydantic/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Pydantic
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../important/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  imp
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../revision/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  revision
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Web Development Tutorials" class="md-nav__button md-logo" aria-label="Web Development Tutorials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Web Development Tutorials
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../database/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    database
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            database
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/view/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    View
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/indexes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/equi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Equi-join
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/self_join/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    self-join
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/subqueries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    sub-query
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/sql%20faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ SQL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/DA_SQL_Sorting_Grouping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DA SQL Grouping
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/query/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    query
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    practice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/interview_pratical/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    interview praticale
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/interview_theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    interview theory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/radis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    radis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Django/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Django
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Django
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Django/Django/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Django
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    js
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            js
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../js/durgajs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../js/dom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DOM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../js/jQuery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JQuery
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../FastApi/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Fastapi
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Fastapi
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FastApi/celery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    celery
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FastApi/asynchronous_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Async_api
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/poetry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    poetry
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pydantic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pydantic
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../important/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    imp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../revision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    revision
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#containers-and-virtual-machines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Containers and Virtual Machines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Engine
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Desktop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Concepts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dockerfile
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dockerfile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from" class="md-nav__link">
+    <span class="md-ellipsis">
+      FROM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes-about-python310-slim-buster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes about python:3.10-slim-buster
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-small-docker-base-images-for-best-practices-on-which-base-image-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Small Docker Base Images for best practices on which base image to use
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    <span class="md-ellipsis">
+      RUN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#env" class="md-nav__link">
+    <span class="md-ellipsis">
+      ENV
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmd-and-entrypoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      CMD and ENTRYPOINT
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CMD and ENTRYPOINT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theres-actually-only-one-difference-between-those-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      There's actually only one difference between those instructions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-and-copy" class="md-nav__link">
+    <span class="md-ellipsis">
+      ADD and COPY
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Removing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remove
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prune" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prune
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container" class="md-nav__link">
+    <span class="md-ellipsis">
+      Container
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Running">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listing_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stopping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stopping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Removing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commands
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="docker-for-beginners">Docker for Beginners<a class="headerlink" href="#docker-for-beginners" title="Permanent link">&para;</a></h1>
+<h2 id="containers-and-virtual-machines">Containers and Virtual Machines<a class="headerlink" href="#containers-and-virtual-machines" title="Permanent link">&para;</a></h2>
+<p>Containers and virtual machines are similar in that they allow multiple apps to run on the same</p>
+<p>Their main difference is in the operating system.</p>
+<p>While containers uses the host's operating system, each virtual machine has its own guest operating system on top of the host's operating system.</p>
+<p><img alt="alt text" src="../img/vm_vs_docker.png" /></p>
+<p>if you have an application that needs to run on different operating systems, a virtual machine is the way to go.</p>
+<p>But if that's not a requirement, Docker has multiple advantages over a virtual machine:</p>
+<ol>
+<li>Lighter-weight</li>
+<li>Faster to build</li>
+<li>Can be easily ported across different platforms</li>
+<li>Less resource intensive</li>
+<li>Scaling up and duplicating is easier</li>
+</ol>
+<h2 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h2>
+<h2 id="docker-engine">Docker Engine<a class="headerlink" href="#docker-engine" title="Permanent link">&para;</a></h2>
+<p>When people refer to Docker, they're typically referring to Docker Engine.</p>
+<p>Docker Engine is the underlying open source containerization technology for building, managing, and running containerized applications</p>
+<p>It's a client-server application with the following components:</p>
+<ol>
+<li><strong>Docker daemon</strong> (called dockerd) is a service that runs in the background that listens for Docker Engine API requests and manages Docker objects like images and containers.</li>
+<li><strong>Docker Engine API</strong> is a RESTful API that's used to interact with Docker daemon.</li>
+<li><strong>Docker client</strong> (called docker) is the command line interface used for interacting with Docker daemon. So, when you use a command like docker build, you're using Docker client, which in turn leverages Docker Engine API to communicate with Docker daemon.</li>
+</ol>
+<h2 id="docker-desktop">Docker Desktop<a class="headerlink" href="#docker-desktop" title="Permanent link">&para;</a></h2>
+<p>While Docker Engine is included with Docker Desktop, it's important to understand that Docker Desktop is not the same as Docker Engine</p>
+<p>Docker Desktop is an integrated development environment for Docker containers</p>
+<p>It makes it much easier to get your operating system configured for working with Docker.</p>
+<h2 id="docker-concepts">Docker Concepts<a class="headerlink" href="#docker-concepts" title="Permanent link">&para;</a></h2>
+<p>there are three core concepts:</p>
+<ol>
+<li>
+<p>Dockerfile</p>
+<ul>
+<li>a text file that serves as a blueprint for your container. In it, you define a list of instructions that Docker uses to build an image.</li>
+</ul>
+</li>
+<li>
+<p>Image</p>
+<ul>
+<li>a read-only embodiment of the Dockerfile. It's built out of layers -- each layer corresponds to a single line of instructions from a Dockerfile.</li>
+</ul>
+</li>
+<li>
+<p>Container</p>
+<ul>
+<li>running a Docker image produces a container, which is a controlled environment for your application. If we draw parallels with object-oriented programming, a container is an instance of a Docker image.</li>
+</ul>
+</li>
+</ol>
+<p>A Dockerfile is used to create a Docker image, which is then used to create (multiple) Docker containers.</p>
+<p><img alt="alt text" src="../img/docker-architecture.webp" /></p>
+<h2 id="dockerfile">Dockerfile<a class="headerlink" href="#dockerfile" title="Permanent link">&para;</a></h2>
+<p>a Dockerfile is a text file that contains instructions for Docker on how to build an image. By default, a Dockerfile has no extension, but you can add one if you need more than one -- e.g., Dockerfile.prod.</p>
+<p>Here's an example of a very simple Dockerfile:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="l l-Scalar l-Scalar-Plain">FROM python:3.10-slim-buster</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="l l-Scalar l-Scalar-Plain">WORKDIR /usr/src/app</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="l l-Scalar l-Scalar-Plain">ENV PYTHONDONTWRITEBYTECODE 1</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="l l-Scalar l-Scalar-Plain">ENV PYTHONUNBUFFERED 1</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="l l-Scalar l-Scalar-Plain">RUN pip install --upgrade pip</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="l l-Scalar l-Scalar-Plain">COPY ./requirements.txt .</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="l l-Scalar l-Scalar-Plain">RUN pip install -r requirements.txt</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="l l-Scalar l-Scalar-Plain">COPY . .</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="l l-Scalar l-Scalar-Plain">CMD uvicorn main:app --reload --host 0.0.0.0 --port 8000</span>
+</code></pre></div>
+<p>The majority of the most widely used commands can be seen in the above Dockerfile. Let's look at each of them in detail...</p>
+<h3 id="from">FROM<a class="headerlink" href="#from" title="Permanent link">&para;</a></h3>
+<p>All Dockerfiles include a parent/base image on which the new image will be built. You use the FROM instruction to define the parent image:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="l l-Scalar l-Scalar-Plain">FROM python:3.10-slim-buster</span>
+</code></pre></div>
+<p>Note: A valid Dockerfile always includes a FROM instruction.</p>
+<p>parent and base image terms are sometimes used interchangeably, there's a difference between them. A parent image has its own parent image. Meanwhile, a base image has no parent; it starts with FROM scratch.</p>
+<p>Alpine image is a base image and Python:alpine is a parent image (whose parent (base) image is actually the alpine image).</p>
+<p>It's possible to create a base image on your own, but the probability of you needing your own image is small.</p>
+<p>You can find parent images on Docker Hub, which is Docker's library/registry for Docker images.</p>
+<h3 id="notes-about-python310-slim-buster">Notes about python:3.10-slim-buster<a class="headerlink" href="#notes-about-python310-slim-buster" title="Permanent link">&para;</a></h3>
+<p>The number tells you which version of the technology the image uses</p>
+<ul>
+<li>(e.g., the python:3.11.0a5 image uses Python version 3.11.0a5 while node:18.9.0 uses Node version 18.9.0). You'll probably want to avoid any versions with rc in it (e.g., python:3.11.0rc2) since rc means release candidate.</li>
+</ul>
+<p>image uses Python version 3.11.0a5 while node:18.9.0 uses Node version 18.9.0). You'll probably want to avoid any versions with rc in it (e.g., python:3.11.0rc2) since rc means release candidate.</p>
+<h3 id="use-small-docker-base-images-for-best-practices-on-which-base-image-to-use">Use Small Docker Base Images for best practices on which base image to use<a class="headerlink" href="#use-small-docker-base-images-for-best-practices-on-which-base-image-to-use" title="Permanent link">&para;</a></h3>
+<p>Smaller Docker images are more modular and secure.</p>
+<h3 id="run">RUN<a class="headerlink" href="#run" title="Permanent link">&para;</a></h3>
+<p>The RUN instruction executes any commands in a new layer on top of the current image and commits the result.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="l l-Scalar l-Scalar-Plain">RUN mkdir /home/app/web</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="l l-Scalar l-Scalar-Plain">RUN python manage.py collectstatic --noinput</span>
+</code></pre></div>
+<h3 id="env">ENV<a class="headerlink" href="#env" title="Permanent link">&para;</a></h3>
+<p>You use the ENV instruction to set an environment variable. This variable will be available in all subsequent instructions.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="l l-Scalar l-Scalar-Plain">ENV TZ=UTC</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="l l-Scalar l-Scalar-Plain">ENV HOME=/home/app</span>
+</code></pre></div>
+<h3 id="cmd-and-entrypoint">CMD and ENTRYPOINT<a class="headerlink" href="#cmd-and-entrypoint" title="Permanent link">&para;</a></h3>
+<p>Some Docker instructions are so similar it can be hard to understand why both commands are needed. One of those "couples" are CMD and ENTRYPOINT.</p>
+<p><strong>similarities</strong>
+CMD and ENTRYPOINT both specify a command / an executable that will be executed when running a container. Unlike RUN, which executes the command right away (the result is used in the image layer), the CMD/ENTRYPOINT command in the build-up specifies the command that will be used only when the container starts.</p>
+<p>You can have only one CMD/ENTRYPOINT instruction in a Dockerfile, but it can point to a more complicated executable file.</p>
+<h4 id="theres-actually-only-one-difference-between-those-instructions">There's actually only one difference between those instructions<a class="headerlink" href="#theres-actually-only-one-difference-between-those-instructions" title="Permanent link">&para;</a></h4>
+<p>CMD can easily be overridden from Docker CLI.</p>
+<p>You should use CMD if you want the flexibility to run different executables depending on your needs when starting the container. If you want to clearly communicate that command is not meant to be overridden and prevent accidentally changing it, use ENTRYPOINT.</p>
+<p>You'll probably use one or the other. If you don't use one, the container will be stopped immediately since there's no reason for it to exist (the exception being if you're also using Docker Compose).</p>
+<p>You can have only one CMD instruction in a Dockerfile, but it can point to a more complicated executable file. If you have more than one CMD, only the last CMD will take effect. The same goes for the ENTRYPOINT instruction.</p>
+<p>You may also use both CMD and ENTRYPOINT in the same Dockerfile, in which case CMD serves as the default argument for the ENTRYPOINT.</p>
+<p>Example of CMD instruction usage:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="l l-Scalar l-Scalar-Plain">CMD gunicorn core.wsgi:application --bind 0.0.0.0:$PORT</span>
+</code></pre></div>
+<p>here's a big chance you'll see the ENTRYPOINT argument as an executable file since commands that should be executed are often more than a one-liner.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="l l-Scalar l-Scalar-Plain">ENTRYPOINT [&quot;./entrypoint.sh&quot;]</span>
+</code></pre></div>
+<p>And this is what the entrypoint.sh file might look like:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="ch">#!/bin/sh</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>python<span class="w"> </span>manage.py<span class="w"> </span>migrate
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>python<span class="w"> </span>manage.py<span class="w"> </span>collectstatic<span class="w"> </span>--noinput
+</code></pre></div>
+<h3 id="add-and-copy">ADD and COPY<a class="headerlink" href="#add-and-copy" title="Permanent link">&para;</a></h3>
+<p>Another pair similar to one another is ADD and COPY.</p>
+<p>Both instructions copy new files or directories from the path to the filesystem of the image at the path:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="l l-Scalar l-Scalar-Plain">ADD &lt;src&gt; &lt;dest&gt;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="l l-Scalar l-Scalar-Plain">COPY &lt;src&gt; &lt;dest&gt;</span>
+</code></pre></div>
+<p>ADD can copy from remote file URLs (for example, it allows adding a git repository to an image directly) and directly from a compressed archive (ADD will automatically unpack the contents to the given location).</p>
+<p>You should prefer COPY over ADD unless you specifically need one of the two additional features of ADD -- i.e., downloading example files or unpacking a compressed file</p>
+<p>Examples of ADD and COPY instruction usage:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># copy local files on the host to the destination</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="l l-Scalar l-Scalar-Plain">COPY /source/path  /destination/path</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="l l-Scalar l-Scalar-Plain">COPY ./requirements.txt .</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="l l-Scalar l-Scalar-Plain"># download external file and copy to the destination</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="l l-Scalar l-Scalar-Plain">ADD http://external.file/url  /destination/path</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="l l-Scalar l-Scalar-Plain">ADD --keep-git-dir=true https://github.com/moby/buildkit.git#v0.10.1 /buildkit</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="l l-Scalar l-Scalar-Plain"># copy and extract local compresses files</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="l l-Scalar l-Scalar-Plain">ADD source.file.tar.gz /destination/path</span>
+</code></pre></div>
+<h3 id="image">Image<a class="headerlink" href="#image" title="Permanent link">&para;</a></h3>
+<p>An image might be the most confusing concept of the three. You create a Dockerfile and then use a container, but an image lies between those two.</p>
+<ul>
+<li>image is a read-only embodiment of a Dockerfile that's used to create a Docker container.</li>
+<li>It consists of layers -- each line in a Dockerfile makes one layer.</li>
+<li>You can't change an image directly; you change it by changing the Dockerfile.</li>
+<li>You don't directly use an image either; you use a container created from an image.</li>
+</ul>
+<p>The most important image-related tasks are:</p>
+<ol>
+<li>building images from Dockerfiles</li>
+<li>listing all the built images</li>
+<li>removing images</li>
+</ol>
+<h3 id="building">Building<a class="headerlink" href="#building" title="Permanent link">&para;</a></h3>
+<p>To build an image from a Dockerfile, you use the docker image build command.</p>
+<p>This command requires one argument: either a path or URL of the context.</p>
+<p>This image will use the current directory as a context:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w"> </span>docker<span class="w"> </span>image<span class="w"> </span>build<span class="w"> </span>.
+</code></pre></div>
+<p>There are a number of options you can provide.</p>
+<p>For example, <code>-f</code> is used to specify a specific Dockerfile when you have multiple Dockerfiles (e.g., Dockerfile.prod) or when the Dockerfile isn't in the current directory (e.g., <code>docker image build . -f docker/Dockerfile.prod</code>).</p>
+<p>Probably the most important is the -t tag that is used to name/tag an image.</p>
+<p>When you build an image, it gets assigned an ID. Contrary to what you might expect, the IDs are not unique. If you want to be able to easily reference your image, you should name/tag it. With -t, you can assign a name and a tag to it</p>
+<p>Here's an example of creating three images: one without the usage of -t, one with a name assigned, and one with a name and a tag assigned.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="l l-Scalar l-Scalar-Plain">$ docker image build .</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="l l-Scalar l-Scalar-Plain">$ docker image build . -t hello_world</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="l l-Scalar l-Scalar-Plain">$ docker image build . -t hello_world:67d19c27b60bd782c9d3600ae914604a94bddfd4</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="l l-Scalar l-Scalar-Plain">$ docker image ls</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="l l-Scalar l-Scalar-Plain">REPOSITORY           TAG       IMAGE ID       CREATED          SIZE</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="l l-Scalar l-Scalar-Plain">REPOSITORY    TAG                                        IMAGE ID       CREATED          SIZE</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="l l-Scalar l-Scalar-Plain">hello_world   67d19c27b60bd782c9d3600ae914604a94bddfd4   e03784993f22   25 minutes ago   181MB</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="l l-Scalar l-Scalar-Plain">hello_world   latest                                     e03784993f22   26 minutes ago   181MB</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="l l-Scalar l-Scalar-Plain">&lt;none&gt;        &lt;none&gt;                                     7a615d108866   29 minutes ago   181MB</span>
+</code></pre></div>
+<p>For the image that was built without a name or tag, you can only reference it via its image ID. Not only is it difficult to remember, but, again, it might not be unique (which is the case above). You should avoid this</p>
+<p>For the image that only has a name (-t hello_world), the tag is automatically set to latest. You should avoid this as well</p>
+<h3 id="listing">Listing<a class="headerlink" href="#listing" title="Permanent link">&para;</a></h3>
+<p>The docker image ls command lists all built images.</p>
+<p>Example</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>docker<span class="w"> </span>image<span class="w"> </span>ls
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>REPOSITORY<span class="w">      </span>TAG<span class="w">       </span>IMAGE<span class="w"> </span>ID<span class="w">       </span>CREATED<span class="w">         </span>SIZE
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>hello_world<span class="w">     </span>latest<span class="w">    </span>c50405e84d39<span class="w">   </span><span class="m">9</span><span class="w"> </span>minutes<span class="w"> </span>ago<span class="w">   </span>245MB
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>&lt;none&gt;<span class="w">          </span>&lt;none&gt;<span class="w">    </span>2700a62cd8f1<span class="w">   </span><span class="m">42</span><span class="w"> </span>hours<span class="w"> </span>ago<span class="w">    </span>245MB
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>alpine/git<span class="w">      </span>latest<span class="w">    </span>692618a0d74d<span class="w">   </span><span class="m">2</span><span class="w"> </span>weeks<span class="w"> </span>ago<span class="w">     </span><span class="m">43</span>.4MB
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>todo_app<span class="w">        </span><span class="nb">test</span><span class="w">      </span><span class="m">999740882932</span><span class="w">   </span><span class="m">3</span><span class="w"> </span>weeks<span class="w"> </span>ago<span class="w">     </span><span class="m">1</span>.03GB
+</code></pre></div>
+<h3 id="removing">Removing<a class="headerlink" href="#removing" title="Permanent link">&para;</a></h3>
+<p>There are two use cases for removing images:</p>
+<ol>
+<li>You want to remove one or more selected images</li>
+<li>You want to remove all the unused images (you don't care which images specifically)</li>
+</ol>
+<ul>
+<li>For the first case, you use <code>docker image rm</code></li>
+<li>for the second, you use <code>docker image prune</code>.</li>
+</ul>
+<h3 id="remove">Remove<a class="headerlink" href="#remove" title="Permanent link">&para;</a></h3>
+<p>docker image rm removes and untags the selected image(s). It requires one argument: The reference to the image(s) you want to remove. You can reference it by name or short/long ID.</p>
+<p>If you think back to the explanation of image tagging... there can be multiple images with a different name but the same ID. If you try to remove the image by image ID and multiple images with that ID exist, you'll get an image is referenced in multiple repositories error. In that case, you'll have to remove it by referencing it by name. If you wish to remove all images with the same ID, you can use the -f flag</p>
+<p>Example of unsuccessful and successful image removal:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>docker<span class="w"> </span>image<span class="w"> </span>ls
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>REPOSITORY<span class="w">   </span>TAG<span class="w">       </span>IMAGE<span class="w"> </span>ID<span class="w">       </span>CREATED<span class="w">          </span>SIZE
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>test1<span class="w">        </span>latest<span class="w">    </span>4659ba97837b<span class="w">   </span><span class="m">41</span><span class="w"> </span>seconds<span class="w"> </span>ago<span class="w">   </span>245MB
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>test2<span class="w">        </span>latest<span class="w">    </span>4659ba97837b<span class="w">   </span><span class="m">41</span><span class="w"> </span>seconds<span class="w"> </span>ago<span class="w">   </span>245MB
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="nb">test</span><span class="w">         </span>latest<span class="w">    </span>4659ba97837b<span class="w">   </span><span class="m">41</span><span class="w"> </span>seconds<span class="w"> </span>ago<span class="w">   </span>245MB
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>$<span class="w"> </span>docker<span class="w"> </span>rmi<span class="w"> </span>4659ba97837b
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>Error<span class="w"> </span>response<span class="w"> </span>from<span class="w"> </span>daemon:<span class="w"> </span>conflict:<span class="w"> </span>unable<span class="w"> </span>to<span class="w"> </span>delete<span class="w"> </span>4659ba97837b<span class="w"> </span><span class="o">(</span>must<span class="w"> </span>be<span class="w"> </span>forced<span class="o">)</span><span class="w"> </span>-<span class="w"> </span>image<span class="w"> </span>is<span class="w"> </span>referenced<span class="w"> </span><span class="k">in</span><span class="w"> </span>multiple<span class="w"> </span>repositories
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>$<span class="w"> </span>docker<span class="w"> </span>rmi<span class="w"> </span>test2
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>Untagged:<span class="w"> </span>test2:latest
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>$<span class="w"> </span>docker<span class="w"> </span>image<span class="w"> </span>ls
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>REPOSITORY<span class="w">   </span>TAG<span class="w">       </span>IMAGE<span class="w"> </span>ID<span class="w">       </span>CREATED<span class="w">         </span>SIZE
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>test1<span class="w">        </span>latest<span class="w">    </span>4659ba97837b<span class="w">   </span><span class="m">4</span><span class="w"> </span>minutes<span class="w"> </span>ago<span class="w">   </span>245MB
+<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="nb">test</span><span class="w">         </span>latest<span class="w">    </span>4659ba97837b<span class="w">   </span><span class="m">4</span><span class="w"> </span>minutes<span class="w"> </span>ago<span class="w">   </span>245MB
+</code></pre></div>
+<h3 id="prune">Prune<a class="headerlink" href="#prune" title="Permanent link">&para;</a></h3>
+<p>docker image prune removes dangling images.</p>
+<p>Since <code>prune</code> is a command that can be used for cleaning containers, images, volumes, and networks, this command doesn't have a shorter version. If you use the <code>-a</code> flag, all unused images are removed (i.e.,  <code>docker image prune -a</code>).</p>
+<ul>
+<li>A dangling image is an image that is not tagged and is not referenced by any container.</li>
+<li>An unused image is an image that isn't associated with at least one container</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>docker<span class="w"> </span>image<span class="w"> </span>prune
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>WARNING!<span class="w"> </span>This<span class="w"> </span>will<span class="w"> </span>remove<span class="w"> </span>all<span class="w"> </span>dangling<span class="w"> </span>images.
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>Are<span class="w"> </span>you<span class="w"> </span>sure<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span><span class="k">continue</span>?<span class="w"> </span><span class="o">[</span>y/N<span class="o">]</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>Deleted<span class="w"> </span>Images:
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>deleted:<span class="w"> </span>sha256:c9a6625eb29593463ea43aab4053090427bf29cc59bc97917b3298fda6a94e8a
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>deleted:<span class="w"> </span>sha256:284f940f39c3ef5be09440e23fdefdb00df0791344db5c340a9d11979a98039e
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>deleted:<span class="w"> </span>sha256:1934187bf17ccf4e754842a4ceeacf5c14aaa63ba7a04c0c520f53946426c902
+</code></pre></div>
+<h3 id="container">Container<a class="headerlink" href="#container" title="Permanent link">&para;</a></h3>
+<p>a container, which is a controlled environment for your application.</p>
+<p>An image becomes a container when it's run on Docker Engine.</p>
+<p>The main operations you can do with a container are</p>
+<ol>
+<li>running a container</li>
+<li>listing all the containers</li>
+<li>stopping a container</li>
+<li>removing a container</li>
+</ol>
+<h3 id="running">Running<a class="headerlink" href="#running" title="Permanent link">&para;</a></h3>
+<p>You can either create a new container of an image and run it, or you can start an existing container that was previously stopped.</p>
+<h4 id="run_1">Run<a class="headerlink" href="#run_1" title="Permanent link">&para;</a></h4>
+<p>The docker container run command actually combines two other commands, docker container create and docker container start.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>docker<span class="w"> </span>container<span class="w"> </span>run<span class="w"> </span>my_image
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="c1"># the same as:</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>$<span class="w"> </span>docker<span class="w"> </span>container<span class="w"> </span>create<span class="w"> </span>my_image
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>88ce9c60aeabbb970012b5f8dbae6f34581fa61ec20bd6d87c6831fbb5999263
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>$<span class="w"> </span>docker<span class="w"> </span>container<span class="w"> </span>start<span class="w"> </span>88ce9c60aeabbb970012b5f8dbae6f34581fa61ec20bd6d87c6831fbb5999263
+</code></pre></div>
+<p>You need to provide one argument: The image you want to use for the container.</p>
+<p>When you run the run command, Docker creates a writable container layer over the specified image and then starts it using the specified command (CMD/ENTRYPOINT in the Dockerfile).</p>
+<p>he most important option is --publish/-p, which is used to publish ports to the outside world. Although it is technically possible to run a container without a port, it's not very useful since the service(s) running inside the container wouldn't be accessible outside the container. You can use --publish/-p for both the create and run commands:</p>
+<p>Here's an example of how that looks like:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>docker<span class="w"> </span>container<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">8000</span>:8000<span class="w"> </span>my_image
+</code></pre></div>
+<p>You can run your container in detached mode by using --detach/-d, which lets you keep using the terminal.</p>
+<p>If you run a container in detached mode, Docker will just return the container ID:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>docker<span class="w"> </span>container<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">8000</span>:8000<span class="w"> </span>-d<span class="w"> </span>my_image
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>0eb20b715f42bc5a053dc7878b3312c761058a25fc1efaffb7920b3b4e48df03
+</code></pre></div>
+<p>Your container gets a unique, quirky name by default, but you can assign your own name:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="w"> </span>docker<span class="w"> </span>container<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">8000</span>:8000<span class="w"> </span>--name<span class="w"> </span>my_great_container<span class="w"> </span>my_image
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w"> </span><span class="sb">```</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="c1">### Start</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>use<span class="w"> </span>the<span class="w"> </span>docker<span class="w"> </span>container<span class="w"> </span>start<span class="w"> </span>command.<span class="w"> </span>Since<span class="w"> </span>with<span class="w"> </span>this<span class="w"> </span>command,<span class="w"> </span>you<span class="err">&#39;</span>re<span class="w"> </span>starting<span class="w"> </span>an<span class="w"> </span>existing<span class="w"> </span>container,<span class="w"> </span>you<span class="w"> </span>have<span class="w"> </span>to<span class="w"> </span>specify<span class="w"> </span>the<span class="w"> </span>container<span class="w"> </span>instead<span class="w"> </span>of<span class="w"> </span>an<span class="w"> </span>image<span class="w"> </span><span class="o">(</span>as<span class="w"> </span>with<span class="w"> </span>docker<span class="w"> </span>container<span class="w"> </span>run<span class="o">)</span>.
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>Another<span class="w"> </span>difference<span class="w"> </span>from<span class="w"> </span>docker<span class="w"> </span>container<span class="w"> </span>run<span class="w"> </span>is<span class="w"> </span>that<span class="w"> </span>docker<span class="w"> </span>container<span class="w"> </span>start<span class="w"> </span>by<span class="w"> </span>default<span class="w"> </span>runs<span class="w"> </span>the<span class="w"> </span>container<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>detached<span class="w"> </span>mode.<span class="w"> </span>You<span class="w"> </span>can<span class="w"> </span>attach<span class="w"> </span>it<span class="w"> </span>using<span class="w"> </span>--attach/-a<span class="w"> </span><span class="o">(</span>reverse<span class="w"> </span>from<span class="w"> </span>docker<span class="w"> </span>container<span class="w"> </span>run<span class="w"> </span>-d<span class="o">)</span>.
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="sb">```</span>yaml
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w"> </span>docker<span class="w"> </span>container<span class="w"> </span>start<span class="w"> </span>-a<span class="w"> </span>reverent_sammet
+</code></pre></div>
+<h3 id="listing_1">Listing<a class="headerlink" href="#listing_1" title="Permanent link">&para;</a></h3>
+<p>You can list all running containers with docker container ls.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>ocker<span class="w"> </span>container<span class="w"> </span>ls
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>CONTAINER<span class="w"> </span>ID<span class="w">   </span>IMAGE<span class="w">          </span>COMMAND<span class="w">                  </span>CREATED<span class="w">         </span>STATUS<span class="w">         </span>PORTS<span class="w">                    </span>NAMES
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>0f21395ec96c<span class="w">   </span>9973e9c65229<span class="w">   </span><span class="s2">&quot;/bin/sh -c &#39;gunicor…&quot;</span><span class="w">   </span><span class="m">6</span><span class="w"> </span>minutes<span class="w"> </span>ago<span class="w">   </span>Up<span class="w"> </span><span class="m">6</span><span class="w"> </span>minutes<span class="w">   </span><span class="m">0</span>.0.0.0:80-&gt;8000/tcp<span class="w">     </span>shopping
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>73bd69d041ae<span class="w">   </span>my_image<span class="w">       </span><span class="s2">&quot;/bin/sh -c &#39;uvicorn…&quot;</span><span class="w">   </span><span class="m">2</span><span class="w"> </span>hours<span class="w"> </span>ago<span class="w">     </span>Up<span class="w"> </span><span class="m">2</span><span class="w"> </span>hours<span class="w">     </span><span class="m">0</span>.0.0.0:8000-&gt;8000/tcp<span class="w">   </span>my_great_container
+</code></pre></div>
+<p>If you want to also see the stopped containers, you can add the -a flag:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>docker<span class="w"> </span>container<span class="w"> </span>ls<span class="w"> </span>-a
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>CONTAINER<span class="w"> </span>ID<span class="w">   </span>IMAGE<span class="w">          </span>COMMAND<span class="w">                  </span>CREATED<span class="w">              </span>STATUS<span class="w">                     </span>PORTS<span class="w">                    </span>NAMES
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>0f21395ec96c<span class="w">   </span>9973e9c65229<span class="w">   </span><span class="s2">&quot;/bin/sh -c &#39;gunicor…&quot;</span><span class="w">   </span>About<span class="w"> </span>a<span class="w"> </span>minute<span class="w"> </span>ago<span class="w">   </span>Up<span class="w"> </span>About<span class="w"> </span>a<span class="w"> </span>minute<span class="w">          </span><span class="m">0</span>.0.0.0:80-&gt;8000/tcp<span class="w">     </span>shopping
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>73bd69d041ae<span class="w">   </span>my_image<span class="w">       </span><span class="s2">&quot;/bin/sh -c &#39;uvicorn…&quot;</span><span class="w">   </span><span class="m">2</span><span class="w"> </span>hours<span class="w"> </span>ago<span class="w">          </span>Up<span class="w"> </span><span class="m">2</span><span class="w"> </span>hours<span class="w">                 </span><span class="m">0</span>.0.0.0:8000-&gt;8000/tcp<span class="w">   </span>my_great_container
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>0eb20b715f42<span class="w">   </span>my_image<span class="w">       </span><span class="s2">&quot;/bin/sh -c &#39;uvicorn…&quot;</span><span class="w">   </span><span class="m">2</span><span class="w"> </span>hours<span class="w"> </span>ago<span class="w">          </span>Exited<span class="w"> </span><span class="o">(</span><span class="m">137</span><span class="o">)</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>hours<span class="w"> </span>ago<span class="w">                            </span>agitated_gagarin
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>489a02b8cfac<span class="w">   </span>my_image<span class="w">       </span><span class="s2">&quot;/bin/sh -c &#39;uvicorn…&quot;</span><span class="w">   </span><span class="m">2</span><span class="w"> </span>hours<span class="w"> </span>ago<span class="w">          </span>Created<span class="w">   </span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>CONTAINER<span class="w"> </span>ID<span class="w">   </span>IMAGE<span class="w">          </span>COMMAND<span class="w">                  </span>CREATED<span class="w">         </span>STATUS<span class="w">         </span>PORTS<span class="w">                    </span>NAMES
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>73bd69d041ae<span class="w">   </span>my_image<span class="w">       </span><span class="s2">&quot;/bin/sh -c &#39;uvicorn…&quot;</span><span class="w">   </span><span class="m">2</span><span class="w"> </span>hours<span class="w"> </span>ago<span class="w">     </span>Up<span class="w"> </span><span class="m">2</span><span class="w"> </span>hours<span class="w">     </span><span class="m">0</span>.0.0.0:8000-&gt;8000/tcp<span class="w">   </span>my_great_container
+</code></pre></div>
+<ol>
+<li>CONTAINER ID (73bd69d041ae) and its NAMES (my_great_container) are both unique, so you can use them to access the container.</li>
+<li>IMAGE (my_image) tells you which image was used to run the container.</li>
+<li>CREATED is pretty self-explanatory: when the container was created (2 hours ago).</li>
+<li>We already discussed the need for specifying a command for starting a container... COMMAND tells you which command was used ("/bin/sh -c 'uvicorn…").</li>
+<li>STATUS is useful when you don't know why your container isn't working (Up 2 hours means your container is running, Exited or Created means it's not)</li>
+</ol>
+<p>Some of the information is truncated. If you want the untruncated version, add --no-trunc.</p>
+<h3 id="stopping">Stopping<a class="headerlink" href="#stopping" title="Permanent link">&para;</a></h3>
+<p>To stop a container, use docker container stop. The name or ID of the stopped container is then returned.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>docker<span class="w"> </span>container<span class="w"> </span>stop<span class="w"> </span>my_great_container
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>my_great_container
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>$<span class="w"> </span>docker<span class="w"> </span>container<span class="w"> </span>stop<span class="w"> </span>73bd69d041ae
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>73bd69d041ae
+</code></pre></div>
+<p>A container can be started again with docker container start.</p>
+<h3 id="removing_1">Removing<a class="headerlink" href="#removing_1" title="Permanent link">&para;</a></h3>
+<p>Similar to images, to remove a container, you can either:</p>
+<ol>
+<li>remove one or more selected containers via docker container rm.</li>
+<li>remove all stopped containers via docker container prune</li>
+</ol>
+<p>Example of docker container rm:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>docker<span class="w"> </span>container<span class="w"> </span>rm<span class="w"> </span>festive_euclid
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>festive_euclid
+</code></pre></div>
+<p>Example of docker container prune:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>docker<span class="w"> </span>container<span class="w"> </span>prune
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>WARNING!<span class="w"> </span>This<span class="w"> </span>will<span class="w"> </span>remove<span class="w"> </span>all<span class="w"> </span>stopped<span class="w"> </span>containers.
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>Are<span class="w"> </span>you<span class="w"> </span>sure<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span><span class="k">continue</span>?<span class="w"> </span><span class="o">[</span>y/N<span class="o">]</span><span class="w"> </span>y
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>Deleted<span class="w"> </span>Containers:
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>0f21395ec96c28b443bad8aac40197fe0468d24e0eed49e5f56011de1c81b589
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>80c693693f3d99999925eae5f4bbfc03236cde670db509797d83f50e732fcf31
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>0eb20b715f42bc5a053dc7878b3312c761058a25fc1efaffb7920b3b4e48df03
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>1273cf44c551f8ab9302e6d090e3c4e135ca6f7e1ab3d90a62bcbf5e83ba9342
+</code></pre></div>
+<h3 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h3>
+<p>ommand Alias Usage
+docker image build docker build Build an image from a Dockerfile
+docker image ls docker images List images
+docker image rm docker rmi Remove selected images
+docker image prune N/A Remove unused images
+docker container run docker run Create the container and start it
+docker container start docker start Start an existing container
+docker container ls docker ps List all containers
+docker container stop docker stop Stop a container
+docker container rm docker rm Remove a container
+docker container prune N/A Remove all stopped containers</p>
+<p>Using a Dockerfile as a blueprint, you build an image. Images can then be used to build other images and can be found on Docker Hub. Running an image produces a controlled environment for your application, called a container.</p>
+<p>imortant link</p>
+<p>https://docs.docker.com/get-started/docker-overview/
+https://docs.docker.com/engine/storage/
+https://docs.docker.com/compose/
+https://docs.docker.com/engine/storage/volumes/
+https://docs.docker.com/reference/dockerfile/#dockerignore-file
+https://docs.docker.com/compose/gettingstarted/</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2024 <a href="https://github.com/ashishbindra2"  target="_blank" rel="noopener">Ashish Bindra</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ashishbindra2" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M202.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M496 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://in.linkedin.com/in/ashishbindra2/" target="_blank" rel="noopener" title="in.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link", "content.code.annotation", "content.code.copy", "navigation.sections", "navigation.indexes", "navigation.instant", "navigation.tabs", "navigation.top", "navigation.tracking", "search.suggest", "search.highlight", "toc.follow"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
